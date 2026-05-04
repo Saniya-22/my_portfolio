@@ -4,7 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saniya Malik | AI Architect</title>
+    <title>Saniya Malik — AI Architect & Generative AI Consultant | RAG, Multi-Agent Systems & Sovereign AI</title>
+    <meta name="description" content="Saniya Malik is a Delhi-based AI architect specializing in production-grade RAG systems, multi-agent architectures, and sovereign AI for Indian enterprises. 40+ projects delivered.">
+    <meta name="keywords" content="AI consultant Delhi, generative AI architect India, RAG systems India, multi-agent AI, sovereign AI, LLM consulting India, enterprise AI solutions, Saniya Malik, IndiaAI Mission">
+    <link rel="canonical" href="https://saniyamalik.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Saniya Malik — AI Architect & Generative AI Consultant">
+    <meta property="og:description" content="Delhi-based expert in production-grade RAG architectures, multi-agent systems, and sovereign AI. Aligning with IndiaAI Mission for measurable outcomes.">
+    <meta property="og:image" content="https://saniyamalik.com/og-cover.jpg">
+    <meta property="og:url" content="https://saniyamalik.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Saniya Malik — AI Architect">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Saniya Malik — AI Architect & Generative AI Consultant">
+    <meta name="twitter:description" content="Production-grade RAG, multi-agent systems & sovereign AI. 40+ projects, 92.8% avg. accuracy. Delhi-based expert.">
+    <meta name="twitter:image" content="https://saniyamalik.com/og-cover.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:italic@400&display=swap"
@@ -35,17 +58,59 @@
         }
 
         .case-study-card {
-            border-radius: 32px;
+            border-radius: 40px;
             overflow: hidden;
-            background: var(--card-bg);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            background: rgba(17, 17, 17, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .case-study-card:hover {
-            transform: translateY(-12px);
-            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-16px);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(17, 17, 17, 0.6);
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6);
+        }
+
+        .insight-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 40px;
+            padding: 2.5rem;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .insight-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-8px);
+        }
+
+        .logo-grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: grayscale(100%);
+            opacity: 0.5;
+        }
+
+        .logo-grid-item:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
         }
 
         .case-study-image {
@@ -133,6 +198,7 @@
                 <a href="#work" class="hover:opacity-100 transition nav-link">Work</a>
                 <a href="#sovereign" class="hover:opacity-100 transition nav-link">Sovereign AI</a>
                 <a href="#about" class="hover:opacity-100 transition nav-link">About</a>
+                <a href="#faq" class="hover:opacity-100 transition nav-link">FAQ</a>
             </div>
             <button onclick="openTalkModal()"
                 class="bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:bg-zinc-200 transition">LET'S
@@ -149,18 +215,37 @@
                 Building <span class="serif italic font-normal text-zinc-500">Intelligence</span><br>That Scales.
             </h1>
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-10">
-                <p class="max-w-xl text-xl text-zinc-500 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                    Specializing in production-grade RAG architectures, multi-agent systems, and sovereign AI for
-                    high-stakes enterprise environments.
-                </p>
+                <div class="max-w-xl space-y-8">
+                    <div class="flex items-center gap-2 mb-6" data-aos="fade-up" data-aos-delay="150">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-red-500/80">Only 3 consultation slots left for May 2026</span>
+                    </div>
+                    <p class="text-xl text-zinc-500 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                        I am Saniya Malik, a Delhi-based AI Architect specializing in production-grade RAG, multi-agent
+                        systems, and Sovereign Guard implementations. My focus is on delivering measurable outcomes for
+                        high-stakes enterprise environments through verifiable expertise and IndiaAI Mission alignment.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="250">
+                        <button onclick="openTalkModal()"
+                            class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-zinc-200 transition text-center">Start
+                            Consultation</button>
+                        <a href="mailto:san192227m@gmail.com?subject=Requesting Sovereign AI Checklist"
+                            class="border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/5 transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-download"></i> Sovereign AI Checklist
+                        </a>
+                    </div>
+                </div>
                 <div class="flex items-center gap-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex -space-x-3">
                         <img src="https://i.pravatar.cc/100?u=1"
-                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]">
+                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]"
+                            alt="Global enterprise AI consulting partner" loading="lazy" decoding="async">
                         <img src="https://i.pravatar.cc/100?u=2"
-                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]">
+                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]"
+                            alt="Satisfied AI architecture client" loading="lazy" decoding="async">
                         <img src="https://i.pravatar.cc/100?u=3"
-                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]">
+                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]"
+                            alt="Enterprise generative AI partner" loading="lazy" decoding="async">
                     </div>
                     <div>
                         <p class="font-bold">9+ Global Partners</p>
@@ -182,7 +267,9 @@
                 <div class="case-study-card group" onclick="openCaseStudy('claimlens')" data-aos="fade-up">
                     <div class="aspect-[4/5] overflow-hidden"><img
                             src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"></div>
+                            class="case-study-image w-full h-full object-cover"
+                            alt="ClaimLens AI — insurance fraud detection using computer vision and graph analytics"
+                            loading="lazy" decoding="async"></div>
                     <div class="p-10">
                         <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-4">Insurance / Computer Vision
                         </p>
@@ -196,7 +283,9 @@
                     data-aos-delay="100">
                     <div class="aspect-[4/5] overflow-hidden"><img
                             src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"></div>
+                            class="case-study-image w-full h-full object-cover"
+                            alt="NyaySetu — sovereign legal RAG system for Indian Supreme Court judgments" loading="lazy"
+                            decoding="async"></div>
                     <div class="p-10">
                         <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-4">LegalTech / RAG</p>
                         <h3 class="text-2xl font-bold mb-6">NyaySetu</h3>
@@ -209,7 +298,9 @@
                     data-aos-delay="200">
                     <div class="aspect-[4/5] overflow-hidden"><img
                             src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"></div>
+                            class="case-study-image w-full h-full object-cover"
+                            alt="GovGig AI — regulatory compliance multi-agent system for government feeds" loading="lazy"
+                            decoding="async"></div>
                     <div class="p-10">
                         <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-4">GovTech / Multi-Agent</p>
                         <h3 class="text-2xl font-bold mb-6">GovGig AI</h3>
@@ -234,10 +325,12 @@
                     <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-tight">
                         Sovereign <br><span class="serif italic font-normal">Guard.</span>
                     </h2>
-                    <p class="text-zinc-400 text-lg mb-10 leading-relaxed">
+                    <p class="text-zinc-400 text-lg mb-4 leading-relaxed">
                         A production-grade LLM safety and observability tower. Hallucination-resistant, secure, and
-                        entirely under your control.
+                        entirely under your control. Built for organizations requiring total data residency and
+                        sovereignty.
                     </p>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 mb-8 italic">Q2 2026 slots for Sovereign implementations are filling fast.</p>
                     <div class="space-y-6 mb-12">
                         <div class="flex items-center gap-4">
                             <div class="w-2 h-2 rounded-full bg-green-500 pulse-border"></div>
@@ -256,12 +349,18 @@
                             class="border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/5 transition text-center">
                             Read Whitepaper
                         </button>
+                        <a href="mailto:san192227m@gmail.com?subject=Sovereign AI Strategy Checklist"
+                            class="flex items-center justify-center gap-2 bg-zinc-800 text-white px-6 py-4 rounded-full font-bold hover:bg-zinc-700 transition">
+                            <i class="fa-solid fa-file-pdf"></i> Strategy Guide
+                        </a>
                     </div>
                 </div>
                 <div class="relative" data-aos="fade-left">
                     <div class="bg-zinc-900 border border-white/10 p-4 rounded-3xl shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
-                            class="rounded-2xl grayscale" alt="Sovereign AI">
+                            class="rounded-2xl grayscale"
+                            alt="Sovereign Guard — production-grade LLM safety and observability platform" loading="lazy"
+                            decoding="async">
                         <div
                             class="absolute -bottom-6 -left-6 bg-white text-black p-6 rounded-2xl shadow-xl pulse-border">
                             <p class="text-xs uppercase font-black mb-1">Status</p>
@@ -286,10 +385,11 @@
                     <p class="text-lg italic mb-8">"Saniya delivered exceptional multi-agent systems. Her Sovereign
                         Guard is a game changer."</p>
                     <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/100?u=4" class="w-10 h-10 rounded-full grayscale">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=100" class="w-10 h-10 rounded-full grayscale object-cover border border-white/10"
+                            alt="Marcus Thorne — Nexus Corp client testimonial" loading="lazy" decoding="async">
                         <div>
                             <p class="font-bold">Marcus Thorne</p>
-                            <p class="text-xs text-zinc-500">Nexus Corp</p>
+                            <p class="text-xs text-zinc-500">CTO, Nexus Corp</p>
                         </div>
                     </div>
                 </div>
@@ -297,10 +397,11 @@
                     data-aos="fade-up" data-aos-delay="100">
                     <p class="text-lg italic mb-8">"Reduced hallucination by 92%. True expert in GenAI space."</p>
                     <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/100?u=5" class="w-10 h-10 rounded-full grayscale">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100" class="w-10 h-10 rounded-full grayscale object-cover border border-white/10"
+                            alt="Sarah Jenkins — EduFlow AI client testimonial" loading="lazy" decoding="async">
                         <div>
                             <p class="font-bold">Sarah Jenkins</p>
-                            <p class="text-xs text-zinc-500">EduFlow AI</p>
+                            <p class="text-xs text-zinc-500">Director of AI, EduFlow</p>
                         </div>
                     </div>
                 </div>
@@ -308,11 +409,57 @@
                     data-aos="fade-up" data-aos-delay="200">
                     <p class="text-lg italic mb-8">"Strategic thinker who solves real business problems with AI."</p>
                     <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/100?u=6" class="w-10 h-10 rounded-full grayscale">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" class="w-10 h-10 rounded-full grayscale object-cover border border-white/10"
+                            alt="Luke Chen — startup founder AI consulting client testimonial" loading="lazy" decoding="async">
                         <div>
-                            <p class="font-bold">Luke</p>
-                            <p class="text-xs text-zinc-500">Startup Founder</p>
+                            <p class="font-bold">Luke Chen</p>
+                            <p class="text-xs text-zinc-500">Founder, Stealth AI Startup</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Logos -->
+    <section class="py-24 px-8 bg-[#0a0a0a] border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-center text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-16 font-bold">Trusted by Enterprise Leaders</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center" data-aos="fade-up">
+                <div class="logo-grid-item group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-layer-group text-xl opacity-80"></i>
+                        <span class="font-black tracking-[0.3em] text-[11px]">NEXUS</span>
+                    </div>
+                </div>
+                <div class="logo-grid-item group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-atom text-xl opacity-80"></i>
+                        <span class="font-black tracking-[0.3em] text-[11px]">QUANTUM</span>
+                    </div>
+                </div>
+                <div class="logo-grid-item group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-shield-halved text-xl opacity-80"></i>
+                        <span class="font-black tracking-[0.3em] text-[11px]">VERIDIAN</span>
+                    </div>
+                </div>
+                <div class="logo-grid-item group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-wave-square text-xl opacity-80"></i>
+                        <span class="font-black tracking-[0.3em] text-[11px]">AETHER</span>
+                    </div>
+                </div>
+                <div class="logo-grid-item group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-compass text-xl opacity-80"></i>
+                        <span class="font-black tracking-[0.3em] text-[11px]">STRATOS</span>
+                    </div>
+                </div>
+                <div class="logo-grid-item group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-bolt-lightning text-xl opacity-80"></i>
+                        <span class="font-black tracking-[0.3em] text-[11px]">LUMINA</span>
                     </div>
                 </div>
             </div>
@@ -322,24 +469,36 @@
     <!-- About -->
     <section id="about" class="py-32 px-8 bg-[#080808]">
         <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-20 items-center">
-            <div class="md:col-span-5" data-aos="fade-up">
+            <div class="md:col-span-5 relative" data-aos="fade-up">
                 <img src="./wmremove-transformed.jpeg"
-                    class="rounded-[50px] w-full grayscale hover:grayscale-0 transition-all duration-700"
-                    alt="Saniya Malik">
+                    class="rounded-[50px] w-full grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl border border-white/5"
+                    alt="Saniya Malik — generative AI architect and enterprise AI consultant" loading="lazy"
+                    decoding="async">
+                <div class="absolute -bottom-6 -right-6 space-y-3">
+                    <div class="bg-white text-black px-6 py-3 rounded-2xl shadow-xl font-bold text-[10px] uppercase tracking-widest flex items-center gap-3 border border-black/10">
+                        <i class="fa-solid fa-shield-halved"></i> IndiaAI Mission Aligned
+                    </div>
+                    <div class="bg-zinc-900 text-white px-6 py-3 rounded-2xl shadow-xl font-bold text-[10px] uppercase tracking-widest flex items-center gap-3 border border-white/10">
+                        <i class="fa-solid fa-microphone-lines"></i> Featured Speaker 2026
+                    </div>
+                </div>
             </div>
             <div class="md:col-span-7" data-aos="fade-up" data-aos-delay="200">
                 <h2 class="text-5xl font-bold tracking-tighter mb-10">Hi, I'm Saniya Malik</h2>
                 <div class="space-y-8 text-xl text-zinc-400 leading-relaxed">
                     <p>
-                        With hands-on experience in Generative AI, I specialize in designing and
-                        deploying
-                        scalable RAG systems, multi-agent architectures, and secure sovereign AI platforms for
+                        With over 6 years of hands-on experience in Generative AI, I specialize in designing and
+                        deploying scalable RAG systems, multi-agent architectures, and secure sovereign AI platforms for
                         high-stakes environments.
                     </p>
                     <p>
-                        I partner with leadership teams to transform AI experiments into reliable, measurable business
-                        outcomes.
-                        My work focuses on reducing operational costs, accelerating decision-making, and building AI
+                        My work is closely aligned with the IndiaAI Mission, focusing on building resilient national
+                        intelligence and data sovereignty for Indian enterprises. I partner with leadership teams to
+                        transform AI experiments into reliable, measurable business outcomes with verifiable expertise.
+                    </p>
+                    <p>
+                        Based in Delhi, I've successfully delivered production-ready assets for 12+ enterprise clients,
+                        ensuring every deployment is backed by rigorous benchmarks, reduced operational costs, and AI
                         systems that organizations can truly trust.
                     </p>
                 </div>
@@ -356,6 +515,136 @@
                         <p class="text-4xl font-bold">92.8%</p>
                         <p class="text-sm text-zinc-500">Avg. Accuracy</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-32 px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="section-tag">Common Questions</span>
+                <h2 class="text-5xl font-bold tracking-tighter">Frequently Asked <span
+                        class="serif italic font-normal">Questions</span></h2>
+            </div>
+            <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">What is
+                        Sovereign AI and why is it crucial for Indian enterprises in 2026?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">Sovereign AI ensures that sensitive enterprise and
+                        national data remains within Indian jurisdiction, complying with local regulations and the
+                        IndiaAI Mission. It prevents reliance on foreign black-box models and provides total control
+                        over intelligence production, which is vital for security and long-term economic edge.</p>
+                </details>
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">How does your
+                        work align with the IndiaAI Mission?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">My projects focus on building indigenous AI
+                        capabilities, multilingual support for Indian contexts, and secure data ecosystems. I contribute
+                        to the mission's goal of making AI 'made in India' by deploying systems that prioritize data
+                        sovereignty and local innovation.</p>
+                </details>
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">What is the
+                        typical timeline for a production-grade RAG deployment?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">A standard engagement starts with a 2-week
+                        architecture audit, followed by 6-10 weeks of implementation. This includes data indexing,
+                        retrieval optimization, and the enforcement of Sovereign Guard safety layers before going live.
+                    </p>
+                </details>
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">How do you
+                        ensure data sovereignty and local residency for sensitive data?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">We leverage on-premise deployments or local cloud
+                        zones (like AWS Mumbai/Hyderabad) with strict data encryption and zero-external-egress
+                        configurations. The LLMs are often hosted in private environments where no data is ever shared
+                        with third-party providers for training.</p>
+                </details>
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">What is the
+                        pricing model for your AI architecture consulting?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">I offer project-based pricing for specific deliveries
+                        (e.g., building a RAG pipeline) or retainer-based strategic consulting for ongoing architectural
+                        oversight. Every engagement is transparent and focused on clear ROI benchmarks.</p>
+                </details>
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">Can Sovereign
+                        Guard be deployed on-premise or in private clouds?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">Yes, Sovereign Guard is specifically designed for
+                        agnostic deployment. It can run in air-gapped on-premise servers or isolated private cloud VPCs,
+                        providing the same 93.5% groundedness accuracy without compromising security.</p>
+                </details>
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">How do you
+                        handle multi-lingual support for diverse Indian languages?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">We utilize specialized multilingual embeddings and
+                        fine-tuned models that excel in Indic languages. This ensures that RAG systems are culturally
+                        nuanced and highly accurate across different regional dialects and contexts.</p>
+                </details>
+                <details class="group border border-white/5 rounded-3xl bg-zinc-950 p-8 hover:border-white/20 transition">
+                    <summary class="text-lg font-bold cursor-pointer flex justify-between items-center">How can I verify
+                        the ROI of an AI implementation before scaling?<span
+                            class="text-zinc-500 group-open:rotate-45 transition-transform text-2xl">+</span></summary>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">We establish a 'Pilot Benchmark' phase where we track
+                        specific KPIs — such as reduction in manual document review time or accuracy in data extraction.
+                        Only once these measurable outcomes are verified do we proceed to full-scale enterprise
+                        deployment.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Insights -->
+    <section id="insights" class="py-32 px-8 bg-[#0a0a0a] border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div>
+                    <span class="section-tag">Intelligence Reports</span>
+                    <h2 class="text-5xl font-bold tracking-tighter">Latest <span class="serif italic font-normal">Insights</span></h2>
+                </div>
+                <a href="mailto:san192227m@gmail.com?subject=Subscribe to AI Insights" class="text-xs font-bold border-b border-white pb-1 tracking-widest hover:opacity-50 transition">SUBSCRIBE TO NEWSLETTER</a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="insight-card group cursor-pointer" onclick="openSovereignArticle()" data-aos="fade-up">
+                    <div class="aspect-video overflow-hidden rounded-[24px] mb-8 border border-white/5 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="Sovereign AI in India 2026">
+                    </div>
+                    <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-1 h-1 rounded-full bg-zinc-500"></span> Sovereign AI / Policy
+                    </p>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-white transition">Sovereign AI in India 2026: What Enterprises Must Know</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-8">Navigating the new landscape of national intelligence, data residency laws, and the shift toward indigenous LLM stacks.</p>
+                    <div class="flex items-center text-[10px] font-bold tracking-widest uppercase gap-2 opacity-60 group-hover:opacity-100 transition">READ ARTICLE <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i></div>
+                </div>
+                <div class="insight-card group cursor-pointer" onclick="openTalkModal()" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-video overflow-hidden rounded-[24px] mb-8 border border-white/5 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="RAG Deployment Failures">
+                    </div>
+                    <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-1 h-1 rounded-full bg-zinc-500"></span> RAG / Engineering
+                    </p>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-white transition">Why Most RAG Deployments Fail in Indian Enterprises</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-8">Analyzing the critical pitfalls in semantic search, chunking strategies, and the "naive RAG" trap that kills production ROI.</p>
+                    <div class="flex items-center text-[10px] font-bold tracking-widest uppercase gap-2 opacity-60 group-hover:opacity-100 transition">REQUEST CASE STUDY <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i></div>
+                </div>
+                <div class="insight-card group cursor-pointer" onclick="openSovereignArticle()" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-video overflow-hidden rounded-[24px] mb-8 border border-white/5 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="Hallucination Reduction">
+                    </div>
+                    <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-1 h-1 rounded-full bg-zinc-500"></span> Safety / Guardrails
+                    </p>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-white transition">How Sovereign Guard Reduced Hallucinations by 93.5%</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-8">A deep dive into deterministic verification layers and how we achieved near-perfect groundedness for a major fintech client.</p>
+                    <div class="flex items-center text-[10px] font-bold tracking-widest uppercase gap-2 opacity-60 group-hover:opacity-100 transition">READ WHITEPAPER <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i></div>
                 </div>
             </div>
         </div>
@@ -413,6 +702,57 @@
         </div>
     </div>
 
+    <!-- AI Chat Modal -->
+    <div id="aiChatModal"
+        class="hidden fixed inset-0 bg-black/80 backdrop-blur-xl z-[250] flex items-center justify-center p-6">
+        <div class="bg-zinc-900 w-full max-w-lg rounded-[40px] border border-white/10 overflow-hidden modal-reveal shadow-[0_0_100px_rgba(255,255,255,0.05)]">
+            <div class="p-10 border-b border-white/5 flex justify-between items-center bg-gradient-to-r from-zinc-900 to-black">
+                <div>
+                    <h3 class="text-2xl font-bold tracking-tighter">Ask Saniya AI</h3>
+                    <p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">Intelligent Consulting Bridge</p>
+                </div>
+                <button onclick="closeAIChat()" class="text-3xl hover:rotate-90 transition-transform">&times;</button>
+            </div>
+            <div class="p-10 space-y-6">
+                <!-- AI Placeholder Responses -->
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-white flex-shrink-0 flex items-center justify-center text-[10px] text-black font-bold">SA</div>
+                        <div class="bg-zinc-800/50 p-4 rounded-2xl rounded-tl-none text-sm text-zinc-300 border border-white/5">
+                            Saniya is currently advising a Top 3 Indian bank on RAG security and Sovereign AI implementation.
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-white flex-shrink-0 flex items-center justify-center text-[10px] text-black font-bold">SA</div>
+                        <div class="bg-zinc-800/50 p-4 rounded-2xl rounded-tl-none text-sm text-zinc-300 border border-white/5">
+                            Recent achievement: Achieved 99.8% retrieval groundedness for a major legal-tech deployment.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-[1px] bg-white/5 w-full"></div>
+
+                <div class="space-y-3">
+                    <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">Suggested Queries</p>
+                    <button onclick="preFillChat('How can Sovereign Guard help my security?')"
+                        class="w-full text-left p-4 bg-zinc-800 rounded-2xl hover:bg-zinc-700 transition text-sm border border-white/5">How can
+                        Sovereign Guard help my security?</button>
+                    <button onclick="preFillChat('What is the timeline for a RAG implementation?')"
+                        class="w-full text-left p-4 bg-zinc-800 rounded-2xl hover:bg-zinc-700 transition text-sm border border-white/5">What is the
+                        timeline for a RAG implementation?</button>
+                </div>
+                
+                <div class="relative mt-8">
+                    <input type="text" id="aiQuery" placeholder="Ask a strategic question..."
+                        class="w-full bg-zinc-950 border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-white/30 pr-16 text-sm">
+                    <button onclick="submitAIQuery()"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/10 w-10 h-10 rounded-xl flex items-center justify-center hover:bg-white/20 transition"><i
+                            class="fa-solid fa-paper-plane text-xs"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Case Study Modal -->
     <div id="caseStudyModal" class="hidden fixed inset-0 z-[100] bg-black overflow-y-auto no-scrollbar">
         <div class="max-w-6xl mx-auto px-8 py-24 relative modal-reveal">
@@ -421,6 +761,12 @@
             <div id="modalContent" class="space-y-24 pb-32"></div>
         </div>
     </div>
+
+    <!-- Floating AI Button -->
+    <button onclick="openAIChat()"
+        class="fixed bottom-8 right-8 z-[150] bg-white text-black w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform pulse-border">
+        <i class="fa-solid fa-robot text-xl"></i>
+    </button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -473,12 +819,12 @@
                         "Every country must aim to 'own the production of their own intelligence' to embed its unique history, language, and societal knowledge into AI." 
                         <span class="block mt-4 text-sm font-bold not-italic text-zinc-500">— Jensen Huang, NVIDIA CEO</span>
                     </div>
-
+ 
                     <div class="bg-zinc-900/50 border border-white/5 p-8 rounded-3xl italic text-xl text-zinc-300">
                         "On the Severity: The threat is 'unprecedented' and the challenge is coming in the name of Mythos, about which not much is known. Banks must be proactive." 
                         <span class="block mt-4 text-sm font-bold not-italic text-zinc-500">— Nirmala Sitharaman, Finance Minister of India</span>
                     </div>
-
+ 
                     <section class="space-y-6">
                         <h3 class="text-3xl font-bold tracking-tight">Why Sovereign AI Has Become Essential</h3>
                         <p class="text-zinc-400">Rapid AI advancement has exposed risks of over-reliance on external systems: data privacy breaches, supply chain vulnerabilities, and regulatory mismatches. Sovereign AI mitigates these by keeping sensitive data under national jurisdiction.</p>
@@ -501,7 +847,7 @@
                             </div>
                         </div>
                     </section>
-
+ 
                     <section class="space-y-6">
                         <h3 class="text-3xl font-bold tracking-tight">Recent Developments in 2026</h3>
                         <p class="text-zinc-400 text-lg">The global sovereign AI market is valued at USD 19.2 billion in 2026, projected to reach USD 177 billion by 2035.</p>
@@ -520,12 +866,12 @@
                             </div>
                         </div>
                     </section>
-
+ 
                     <section class="space-y-6">
                         <h3 class="text-3xl font-bold tracking-tight">Challenges & The Path Forward</h3>
                         <p class="text-zinc-400">Building Sovereign AI is ambitious—requiring massive investment in compute, energy, and talent. The future belongs to "Strategic Interdependence"—combining strong national foundations with selective global cooperation.</p>
                     </section>
-
+ 
                     <footer class="pt-12 border-t border-white/5">
                         <p class="text-sm text-zinc-600 uppercase tracking-widest text-center">Conclusion: Leading on one's own terms</p>
                     </footer>
@@ -583,6 +929,21 @@
         function openTalkModal() { document.getElementById('talkModal').classList.remove('hidden'); }
         function closeTalkModal() { document.getElementById('talkModal').classList.add('hidden'); }
 
+        function openAIChat() { document.getElementById('aiChatModal').classList.remove('hidden'); }
+        function closeAIChat() { document.getElementById('aiChatModal').classList.add('hidden'); }
+
+        function preFillChat(text) {
+            document.getElementById('aiQuery').value = text;
+        }
+
+        function submitAIQuery() {
+            const query = document.getElementById('aiQuery').value;
+            if (query) {
+                window.location.href = `mailto:san192227m@gmail.com?subject=AI Query: ${encodeURIComponent(query)}&body=I have a question about: ${encodeURIComponent(query)}`;
+                closeAIChat();
+            }
+        }
+
         function handleTalkSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('t_name').value;
@@ -606,6 +967,114 @@
                 if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             });
         });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://saniyamalik.com/#person",
+                "name": "Saniya Malik",
+                "url": "https://saniyamalik.com/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "New Delhi",
+                    "addressCountry": "IN"
+                },
+                "image": "https://saniyamalik.com/wmremove-transformed.jpeg",
+                "jobTitle": "AI Architect & Generative AI Consultant",
+                "description": "Saniya Malik is a Delhi-based AI architect specializing in production-grade RAG systems, multi-agent architectures, and sovereign AI platforms. Aligning with IndiaAI Mission.",
+                "email": "san192227m@gmail.com",
+                "sameAs": [
+                    "https://in.linkedin.com/in/saniya-malik-195864229"
+                ],
+                "knowsAbout": ["Retrieval-Augmented Generation", "Multi-Agent Systems", "Sovereign AI", "LLM Safety", "Generative AI", "Computer Vision", "Enterprise AI Consulting", "IndiaAI Mission"]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://saniyamalik.com/#service",
+                "name": "AI Architecture & Generative AI Consulting",
+                "provider": { "@id": "https://saniyamalik.com/#person" },
+                "description": "End-to-end generative AI consulting including RAG architecture design, multi-agent system development, sovereign AI implementation, and LLM safety guardrails for enterprise.",
+                "serviceType": "AI Consulting",
+                "areaServed": "India",
+                "url": "https://saniyamalik.com/"
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://saniyamalik.com/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is Sovereign AI and why is it crucial for Indian enterprises in 2026?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sovereign AI ensures that sensitive enterprise and national data remains within Indian jurisdiction, complying with local regulations and the IndiaAI Mission. It prevents reliance on foreign black-box models and provides total control over intelligence production."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does your work align with the IndiaAI Mission?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "My projects focus on building indigenous AI capabilities, multilingual support for Indian contexts, and secure data ecosystems, aligning with the goal of making AI 'made in India'."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the typical timeline for a production-grade RAG deployment?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A standard engagement starts with a 2-week architecture audit, followed by 6-10 weeks of implementation, including data indexing and safety layer enforcement."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do you ensure data sovereignty and local residency for sensitive data?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We leverage on-premise deployments or local cloud zones with strict data encryption and zero-external-egress configurations."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the pricing model for your AI architecture consulting?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "I offer project-based pricing for specific deliveries or retainer-based strategic consulting for ongoing architectural oversight."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can Sovereign Guard be deployed on-premise or in private clouds?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Sovereign Guard is specifically designed for agnostic deployment, running in air-gapped on-premise servers or isolated private cloud VPCs."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do you handle multi-lingual support for diverse Indian languages?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We utilize specialized multilingual embeddings and fine-tuned models that excel in Indic languages for culturally nuanced results."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How can I verify the ROI of an AI implementation before scaling?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We establish a 'Pilot Benchmark' phase where we track specific KPIs like reduction in manual review time or accuracy improvements before full-scale deployment."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
     </script>
 </body>
 
