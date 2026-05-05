@@ -34,12 +34,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <style>
         :root {
             --bg: #0a0a0a;
             --accent: #ffffff;
             --card-bg: #111111;
             --luxury-transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            cursor: none !important;
         }
 
         body {
@@ -51,6 +59,29 @@
 
         .serif {
             font-family: 'Instrument Serif', serif;
+        }
+
+        /* Custom Cursor */
+        #cursor {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+
+        #cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .nav-blur {
@@ -185,35 +216,61 @@
             transform: scale(1.1) rotate(5deg);
             z-index: 10;
         }
+
+        /* Modal Reveal Animation */
+        @keyframes modalReveal {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .modal-reveal {
+            animation: modalReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .tech-pill {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
     <!-- Navbar -->
     <nav class="fixed top-0 w-full z-[80] nav-blur border-b border-white/5">
         <div class="max-w-7xl mx-auto px-8 py-7 flex justify-between items-center">
-            <a href="#" class="text-xl font-extrabold tracking-tighter uppercase">SM <span class="opacity-30 font-light">/
-                    ARCHITECT</span></a>
+            <a href="#" class="text-xl font-extrabold tracking-tighter uppercase">SM <span class="opacity-30 font-light">/ ARCHITECT</span></a>
             <div class="hidden md:flex gap-12 text-[10px] font-black tracking-[0.3em] uppercase opacity-40">
                 <a href="#work" class="hover:opacity-100 transition-opacity nav-link">Work</a>
                 <a href="#sovereign" class="hover:opacity-100 transition-opacity nav-link">Sovereign AI</a>
                 <a href="#about" class="hover:opacity-100 transition-opacity nav-link">About</a>
                 <a href="#faq" class="hover:opacity-100 transition-opacity nav-link">FAQ</a>
             </div>
+            <!-- CALENDLY PLACEHOLDER: Swap button action for Calendly popup widget -->
             <button onclick="openTalkModal()"
-                class="bg-white text-black px-9 py-3.5 rounded-full text-[11px] font-black tracking-widest hover:bg-zinc-200 transition-all premium-btn uppercase">LET'S
-                TALK</button>
+                class="bg-white text-black px-9 py-3.5 rounded-full text-[11px] font-black tracking-widest hover:bg-zinc-200 transition-all premium-btn uppercase">LET'S TALK</button>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="min-h-screen flex flex-col justify-center px-8 pt-24">
-        <div class="max-w-7xl mx-auto w-full">
+    <section class="min-h-screen flex flex-col justify-center px-8 pt-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto w-full relative">
+            <!-- Background Decoration -->
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
+            
             <span class="section-tag" data-aos="fade-up">Elite Generative AI Consultant</span>
-            <h1 class="text-6xl md:text-[120px] leading-[0.82] font-black tracking-tighter mb-14" data-aos="fade-up"
-                data-aos-delay="100">
+            <h1 class="text-6xl md:text-[120px] leading-[0.82] font-black tracking-tighter mb-14" data-aos="fade-up" data-aos-delay="100">
                 Building <span class="serif italic font-normal text-zinc-600">Intelligence</span><br>That Scales.
             </h1>
+            
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-16">
                 <div class="max-w-xl space-y-10">
                     <div class="flex items-center gap-3 mb-8" data-aos="fade-up" data-aos-delay="150">
@@ -226,26 +283,24 @@
                         verifiable expertise and IndiaAI Mission alignment.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-5" data-aos="fade-up" data-aos-delay="250">
+                        <!-- CALENDLY PLACEHOLDER: Swap button action for Calendly popup widget -->
                         <button onclick="openTalkModal()"
-                            class="bg-white text-black px-12 py-5 rounded-full font-black hover:bg-zinc-200 transition-all text-center premium-btn text-sm tracking-wide">Start
-                            Consultation</button>
+                            class="bg-white text-black px-12 py-5 rounded-full font-black hover:bg-zinc-200 transition-all text-center premium-btn text-sm tracking-wide">Start Consultation</button>
                         <a href="mailto:san192227m@gmail.com?subject=Requesting Sovereign AI Checklist"
                             class="border border-white/10 text-white px-12 py-5 rounded-full font-black hover:bg-white/5 transition-all text-center flex items-center justify-center gap-3 text-sm tracking-wide">
                             <i class="fa-solid fa-download text-zinc-500"></i> Sovereign AI Checklist
                         </a>
                     </div>
                 </div>
+                
                 <div class="flex items-center gap-8" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex -space-x-5">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
-                            class="w-14 h-14 rounded-full avatar-group-border object-cover"
-                            alt="Enterprise Tech Executive" loading="lazy">
+                            class="w-14 h-14 rounded-full avatar-group-border object-cover" alt="Enterprise Tech Executive" loading="lazy">
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
-                            class="w-14 h-14 rounded-full avatar-group-border object-cover"
-                            alt="Global AI Strategy Leader" loading="lazy">
+                            class="w-14 h-14 rounded-full avatar-group-border object-cover" alt="Global AI Strategy Leader" loading="lazy">
                         <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150"
-                            class="w-14 h-14 rounded-full avatar-group-border object-cover"
-                            alt="Senior Enterprise Architect" loading="lazy">
+                            class="w-14 h-14 rounded-full avatar-group-border object-cover" alt="Senior Enterprise Architect" loading="lazy">
                     </div>
                     <div>
                         <p class="font-black text-lg">9+ Global Partners</p>
@@ -260,51 +315,51 @@
     <section id="work" class="py-40 px-8">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-24 border-b border-white/5 pb-14">
-                <h2 class="text-6xl font-black tracking-tighter">Case <span
-                        class="serif italic font-normal">Studies</span></h2>
+                <h2 class="text-6xl font-black tracking-tighter">Case <span class="serif italic font-normal">Studies</span></h2>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Case Study 1 -->
                 <div class="case-study-card group" onclick="openCaseStudy('claimlens')" data-aos="fade-up">
-                    <div class="aspect-[4/5] overflow-hidden"><img
-                            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"
-                            alt="ClaimLens AI — insurance fraud detection"
-                            loading="lazy"></div>
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+                            class="case-study-image w-full h-full object-cover" alt="ClaimLens AI — insurance fraud detection" loading="lazy">
+                    </div>
                     <div class="p-12">
-                        <p class="text-zinc-600 text-[11px] font-black uppercase tracking-[0.4em] mb-5">Insurance / CV
-                        </p>
+                        <p class="text-zinc-600 text-[11px] font-black uppercase tracking-[0.4em] mb-5">Insurance / CV</p>
                         <h3 class="text-3xl font-black mb-8 tracking-tight">ClaimLens AI</h3>
-                        <div
-                            class="flex items-center text-[10px] font-black border-b border-white w-fit pb-1.5 group-hover:pr-10 transition-all tracking-[0.3em] uppercase">
-                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"></i></div>
+                        <div class="flex items-center text-[10px] font-black border-b border-white w-fit pb-1.5 group-hover:pr-10 transition-all tracking-[0.3em] uppercase">
+                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="case-study-card group" onclick="openCaseStudy('nyaysetu')" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="aspect-[4/5] overflow-hidden"><img
-                            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"
-                            alt="NyaySetu — sovereign legal RAG system" loading="lazy"></div>
+                
+                <!-- Case Study 2 -->
+                <div class="case-study-card group" onclick="openCaseStudy('nyaysetu')" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
+                            class="case-study-image w-full h-full object-cover" alt="NyaySetu — sovereign legal RAG system" loading="lazy">
+                    </div>
                     <div class="p-12">
                         <p class="text-zinc-600 text-[11px] font-black uppercase tracking-[0.4em] mb-5">LegalTech / RAG</p>
                         <h3 class="text-3xl font-black mb-8 tracking-tight">NyaySetu</h3>
-                        <div
-                            class="flex items-center text-[10px] font-black border-b border-white w-fit pb-1.5 group-hover:pr-10 transition-all tracking-[0.3em] uppercase">
-                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"></i></div>
+                        <div class="flex items-center text-[10px] font-black border-b border-white w-fit pb-1.5 group-hover:pr-10 transition-all tracking-[0.3em] uppercase">
+                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="case-study-card group" onclick="openCaseStudy('govgig')" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <div class="aspect-[4/5] overflow-hidden"><img
-                            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"
-                            alt="GovGig AI — regulatory multi-agent system" loading="lazy"></div>
+                
+                <!-- Case Study 3 -->
+                <div class="case-study-card group" onclick="openCaseStudy('govgig')" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
+                            class="case-study-image w-full h-full object-cover" alt="GovGig AI — regulatory multi-agent system" loading="lazy">
+                    </div>
                     <div class="p-12">
                         <p class="text-zinc-600 text-[11px] font-black uppercase tracking-[0.4em] mb-5">GovTech / Agents</p>
                         <h3 class="text-3xl font-black mb-8 tracking-tight">GovGig AI</h3>
-                        <div
-                            class="flex items-center text-[10px] font-black border-b border-white w-fit pb-1.5 group-hover:pr-10 transition-all tracking-[0.3em] uppercase">
-                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"></i></div>
+                        <div class="flex items-center text-[10px] font-black border-b border-white w-fit pb-1.5 group-hover:pr-10 transition-all tracking-[0.3em] uppercase">
+                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -329,6 +384,7 @@
                         sovereignty.
                     </p>
                     <p class="text-[11px] font-black uppercase tracking-[0.3em] text-zinc-600 mb-12 italic">Q2 2026 slots for Sovereign implementations are limited.</p>
+                    
                     <div class="space-y-8 mb-16">
                         <div class="flex items-center gap-5">
                             <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-border"></div>
@@ -339,23 +395,21 @@
                             <span class="text-base font-bold tracking-tight">Sub-150ms Deterministic Guardrails</span>
                         </div>
                     </div>
+                    
                     <div class="flex flex-col sm:flex-row gap-5">
                         <button onclick="openTalkModal()"
-                            class="bg-white text-black px-12 py-5 rounded-full font-black hover:bg-zinc-200 transition-all text-center premium-btn text-sm">Discuss
-                            Implementation</button>
+                            class="bg-white text-black px-12 py-5 rounded-full font-black hover:bg-zinc-200 transition-all text-center premium-btn text-sm">Discuss Implementation</button>
                         <button onclick="openSovereignArticle()"
-                            class="border border-white/10 text-white px-12 py-5 rounded-full font-black hover:bg-white/5 transition-all text-center text-sm">
-                            Read Whitepaper
-                        </button>
+                            class="border border-white/10 text-white px-12 py-5 rounded-full font-black hover:bg-white/5 transition-all text-center text-sm">Read Whitepaper</button>
                     </div>
                 </div>
+                
                 <div class="relative" data-aos="fade-left">
                     <div class="bg-zinc-900/50 backdrop-blur-2xl border border-white/5 p-6 rounded-[50px] shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
                             class="rounded-[40px] grayscale brightness-75 hover:brightness-100 transition-all duration-1000"
                             alt="Sovereign Guard Platform" loading="lazy">
-                        <div
-                            class="absolute -bottom-8 -left-8 bg-white text-black p-8 rounded-[30px] shadow-[0_30px_60px_rgba(0,0,0,0.5)] pulse-border">
+                        <div class="absolute -bottom-8 -left-8 bg-white text-black p-8 rounded-[30px] shadow-[0_30px_60px_rgba(0,0,0,0.5)] pulse-border">
                             <p class="text-[10px] uppercase font-black mb-2 tracking-[0.4em]">Protocol</p>
                             <p class="text-3xl font-black tracking-tighter">ENFORCED</p>
                         </div>
@@ -369,41 +423,33 @@
     <section class="py-40 px-8 bg-[#0d0d0d]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24" data-aos="fade-up">
-                <h2 class="text-5xl font-black tracking-tighter mb-6">Trusted by <span
-                        class="serif italic font-normal">Industry Leaders</span></h2>
+                <h2 class="text-5xl font-black tracking-tighter mb-6">Trusted by <span class="serif italic font-normal">Industry Leaders</span></h2>
             </div>
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="p-12 border border-white/5 rounded-[50px] bg-zinc-950/50 backdrop-blur-xl hover:border-white/20 transition-all duration-700 group"
-                    data-aos="fade-up">
-                    <p class="text-xl italic mb-10 text-zinc-300 leading-relaxed font-medium">"Saniya delivered exceptional multi-agent systems. Her Sovereign
-                        Guard is a game changer for our infrastructure."</p>
+                <div class="p-12 border border-white/5 rounded-[50px] bg-zinc-950/50 backdrop-blur-xl hover:border-white/20 transition-all duration-700 group" data-aos="fade-up">
+                    <p class="text-xl italic mb-10 text-zinc-300 leading-relaxed font-medium">"Saniya delivered exceptional multi-agent systems. Her Sovereign Guard is a game changer for our infrastructure."</p>
                     <div class="flex items-center gap-5">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10"
-                            alt="Marcus Thorne" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Marcus Thorne" loading="lazy">
                         <div>
                             <p class="font-black text-lg">Marcus Thorne</p>
                             <p class="text-[10px] text-zinc-600 uppercase font-black tracking-widest">CTO, Nexus Corp</p>
                         </div>
                     </div>
                 </div>
-                <div class="p-12 border border-white/5 rounded-[50px] bg-zinc-950/50 backdrop-blur-xl hover:border-white/20 transition-all duration-700 group"
-                    data-aos="fade-up" data-aos-delay="100">
+                <div class="p-12 border border-white/5 rounded-[50px] bg-zinc-950/50 backdrop-blur-xl hover:border-white/20 transition-all duration-700 group" data-aos="fade-up" data-aos-delay="100">
                     <p class="text-xl italic mb-10 text-zinc-300 leading-relaxed font-medium">"Reduced hallucination by 92%. True expert in the Generative AI space who understands business impact."</p>
                     <div class="flex items-center gap-5">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10"
-                            alt="Sarah Jenkins" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Sarah Jenkins" loading="lazy">
                         <div>
                             <p class="font-black text-lg">Sarah Jenkins</p>
                             <p class="text-[10px] text-zinc-600 uppercase font-black tracking-widest">VP Engineering, EduFlow</p>
                         </div>
                     </div>
                 </div>
-                <div class="p-12 border border-white/5 rounded-[50px] bg-zinc-950/50 backdrop-blur-xl hover:border-white/20 transition-all duration-700 group"
-                    data-aos="fade-up" data-aos-delay="200">
+                <div class="p-12 border border-white/5 rounded-[50px] bg-zinc-950/50 backdrop-blur-xl hover:border-white/20 transition-all duration-700 group" data-aos="fade-up" data-aos-delay="200">
                     <p class="text-xl italic mb-10 text-zinc-300 leading-relaxed font-medium">"Strategic thinker who solves real-world enterprise problems with high-performance AI solutions."</p>
                     <div class="flex items-center gap-5">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10"
-                            alt="Luke Chen" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Luke Chen" loading="lazy">
                         <div>
                             <p class="font-black text-lg">Luke Chen</p>
                             <p class="text-[10px] text-zinc-600 uppercase font-black tracking-widest">Founder, Stealth AI</p>
@@ -463,9 +509,11 @@
     <section id="about" class="py-40 px-8 bg-[#080808]">
         <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-24 items-center">
             <div class="md:col-span-5 relative" data-aos="fade-up">
-                <img src="./wmremove-transformed.jpeg"
-                    class="rounded-[60px] w-full grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-1000 shadow-[0_50px_100px_rgba(0,0,0,0.6)] border border-white/5"
-                    alt="Saniya Malik" loading="lazy">
+                <div class="aspect-[4/5] bg-zinc-900 rounded-[60px] overflow-hidden border border-white/5 relative group shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                        class="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" alt="Saniya Malik">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60"></div>
+                </div>
                 <div class="absolute -bottom-8 -right-8 space-y-4">
                     <div class="bg-white text-black px-8 py-4 rounded-3xl shadow-2xl font-black text-[11px] uppercase tracking-[0.3em] flex items-center gap-4 border border-black/10">
                         <i class="fa-solid fa-shield-halved text-zinc-400"></i> IndiaAI Mission Aligned
@@ -475,6 +523,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="md:col-span-7" data-aos="fade-up" data-aos-delay="200">
                 <h2 class="text-6xl font-black tracking-tighter mb-12">Hi, I'm Saniya Malik</h2>
                 <div class="space-y-10 text-2xl text-zinc-400 leading-relaxed font-medium">
@@ -510,38 +559,36 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-24" data-aos="fade-up">
                 <span class="section-tag">Common Questions</span>
-                <h2 class="text-6xl font-black tracking-tighter">Frequently Asked <span
-                        class="serif italic font-normal text-zinc-500 text-6xl">Questions</span></h2>
+                <h2 class="text-6xl font-black tracking-tighter">Frequently Asked <span class="serif italic font-normal text-zinc-500 text-6xl">Questions</span></h2>
             </div>
             <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
                 <details class="group border border-white/5 rounded-[40px] bg-zinc-950/50 backdrop-blur-xl p-10 hover:border-white/20 transition-all duration-500">
-                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">What is
-                        Sovereign AI and why is it crucial for Indian enterprises in 2026?<span
-                            class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span></summary>
-                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">Sovereign AI ensures that sensitive enterprise and
-                        national data remains within Indian jurisdiction, complying with local regulations and the
-                        IndiaAI Mission. It provides total control over intelligence production, vital for security and edge.</p>
+                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">
+                        What is Sovereign AI and why is it crucial for Indian enterprises?
+                        <span class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span>
+                    </summary>
+                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">Sovereign AI ensures that sensitive enterprise and national data remains within Indian jurisdiction, complying with local regulations and the IndiaAI Mission. It provides total control over intelligence production, vital for security and competitive edge.</p>
                 </details>
                 <details class="group border border-white/5 rounded-[40px] bg-zinc-950/50 backdrop-blur-xl p-10 hover:border-white/20 transition-all duration-500">
-                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">How does your
-                        work align with the IndiaAI Mission?<span
-                            class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span></summary>
-                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">My projects focus on building indigenous AI
-                        capabilities and secure data ecosystems, contributing to the goal of making AI 'made in India'.</p>
+                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">
+                        How does your work align with the IndiaAI Mission?
+                        <span class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span>
+                    </summary>
+                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">My projects focus on building indigenous AI capabilities and secure data ecosystems, contributing to the goal of making AI 'made in India' for global impact.</p>
                 </details>
                 <details class="group border border-white/5 rounded-[40px] bg-zinc-950/50 backdrop-blur-xl p-10 hover:border-white/20 transition-all duration-500">
-                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">What is the
-                        typical timeline for a production-grade RAG deployment?<span
-                            class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span></summary>
-                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">A standard engagement starts with a 2-week
-                        audit, followed by 6-10 weeks of implementation. This includes data indexing and enforcement of Sovereign Guard safety layers.</p>
+                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">
+                        What is the typical timeline for a RAG deployment?
+                        <span class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span>
+                    </summary>
+                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">A standard engagement starts with a 2-week audit, followed by 6-10 weeks of implementation. This includes data indexing, retrieval optimization, and enforcement of Sovereign Guard safety layers.</p>
                 </details>
                 <details class="group border border-white/5 rounded-[40px] bg-zinc-950/50 backdrop-blur-xl p-10 hover:border-white/20 transition-all duration-500">
-                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">How do you
-                        ensure data sovereignty and local residency?<span
-                            class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span></summary>
-                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">We leverage on-premise deployments or local cloud
-                        zones with strict data encryption and zero-external-egress configurations. LLMs are hosted in private environments.</p>
+                    <summary class="text-xl font-black cursor-pointer flex justify-between items-center tracking-tight">
+                        How do you ensure data sovereignty and local residency?
+                        <span class="text-zinc-700 group-open:rotate-45 transition-transform text-3xl font-light">+</span>
+                    </summary>
+                    <p class="mt-8 text-zinc-400 text-lg leading-relaxed font-medium">We leverage on-premise deployments or local cloud zones with strict data encryption and zero-external-egress configurations. LLMs are hosted in private environments to ensure zero leakage.</p>
                 </details>
             </div>
         </div>
@@ -569,6 +616,7 @@
                     <p class="text-zinc-500 text-lg leading-relaxed mb-10 font-medium">Navigating the new landscape of national intelligence, data residency laws, and indigenous LLM stacks.</p>
                     <div class="flex items-center text-[10px] font-black tracking-[0.4em] uppercase gap-3 opacity-40 group-hover:opacity-100 transition">READ ARTICLE <i class="fa-solid fa-arrow-right-long group-hover:translate-x-3 transition-transform"></i></div>
                 </div>
+                
                 <div class="insight-card group cursor-pointer" onclick="openTalkModal()" data-aos="fade-up" data-aos-delay="100">
                     <div class="aspect-video overflow-hidden rounded-[30px] mb-10 border border-white/5 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000" alt="RAG Failures">
@@ -580,6 +628,7 @@
                     <p class="text-zinc-500 text-lg leading-relaxed mb-10 font-medium">Analyzing critical pitfalls in semantic search, chunking strategies, and the "naive RAG" trap.</p>
                     <div class="flex items-center text-[10px] font-black tracking-[0.4em] uppercase gap-3 opacity-40 group-hover:opacity-100 transition">REQUEST CASE STUDY <i class="fa-solid fa-arrow-right-long group-hover:translate-x-3 transition-transform"></i></div>
                 </div>
+                
                 <div class="insight-card group cursor-pointer" onclick="openSovereignArticle()" data-aos="fade-up" data-aos-delay="200">
                     <div class="aspect-video overflow-hidden rounded-[30px] mb-10 border border-white/5 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000" alt="Hallucination Reduction">
@@ -596,50 +645,32 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-60 px-8 text-center border-t border-white/5 relative">
+    <section id="contact" class="py-60 px-8 text-center border-t border-white/5 relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_70%)] pointer-events-none"></div>
-        <h2 class="text-7xl md:text-[150px] font-black tracking-tighter mb-24 leading-none uppercase">BUILD THE <br><span
-                class="serif italic font-normal text-zinc-700 text-7xl md:text-[150px]">INTELLIGENT.</span></h2>
-        <div class="flex flex-col md:flex-row justify-center gap-20 mb-40 items-center">
-            <a href="mailto:san192227m@gmail.com"
-                class="text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-white transition-all duration-500 flex items-center gap-6">
+        <h2 class="text-7xl md:text-[150px] font-black tracking-tighter mb-24 leading-none uppercase" data-aos="fade-up">BUILD THE <br><span class="serif italic font-normal text-zinc-700 text-7xl md:text-[150px]">INTELLIGENT.</span></h2>
+        
+        <div class="flex flex-col md:flex-row justify-center gap-20 mb-40 items-center" data-aos="fade-up" data-aos-delay="200">
+            <a href="mailto:san192227m@gmail.com" class="text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-white transition-all duration-500 flex items-center gap-6">
                 <i class="fa-solid fa-envelope text-zinc-600"></i> Contact
             </a>
-            <a href="https://in.linkedin.com/in/saniya-malik-195864229" target="_blank"
-                class="text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-white transition-all duration-500 flex items-center gap-6">
+            <a href="#" onclick="return openTalkModal()" class="text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-white transition-all duration-500 flex items-center gap-6">
+                <i class="fa-solid fa-calendar-check text-zinc-600"></i> Schedule
+            </a>
+            <a href="https://in.linkedin.com/in/saniya-malik-195864229" target="_blank" class="text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-white transition-all duration-500 flex items-center gap-6">
                 <i class="fa-brands fa-linkedin text-zinc-600"></i> LinkedIn
             </a>
         </div>
+        
         <p class="text-[11px] font-black uppercase tracking-[0.8em] opacity-10">© 2026 SANIYA MALIK — ELITE AI ARCHITECT</p>
     </section>
 
-    <!-- Modals (Kept Intact) -->
-    <!-- Let's Talk Modal -->
-    <div id="talkModal" class="hidden fixed inset-0 bg-black/95 backdrop-blur-3xl z-[200] flex items-center justify-center p-6">
-        <div class="bg-zinc-900 w-full max-w-xl rounded-[60px] border border-white/10 p-16 modal-reveal shadow-2xl">
-            <div class="flex justify-between items-start mb-16">
-                <h3 class="text-5xl font-black tracking-tighter">Let's talk <br><span class="serif italic font-normal text-zinc-500 text-5xl">the future.</span></h3>
-                <button onclick="closeTalkModal()" class="text-5xl font-light hover:rotate-90 transition-transform">&times;</button>
-            </div>
-            <form id="talkForm" class="space-y-8" onsubmit="handleTalkSubmit(event)">
-                <div class="grid grid-cols-2 gap-6">
-                    <input type="text" id="t_name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 rounded-3xl px-8 py-5 outline-none focus:border-white/30 text-lg transition">
-                    <input type="text" id="t_company" placeholder="Company" class="w-full bg-white/5 border border-white/10 rounded-3xl px-8 py-5 outline-none focus:border-white/30 text-lg transition">
-                </div>
-                <input type="email" id="t_email" placeholder="Work Email" required class="w-full bg-white/5 border border-white/10 rounded-3xl px-8 py-5 outline-none focus:border-white/30 text-lg transition">
-                <select id="t_type" required class="w-full bg-white/5 border border-white/10 rounded-3xl px-8 py-5 outline-none focus:border-white/30 text-lg text-zinc-500 transition">
-                    <option value="" disabled selected>Project Type</option>
-                    <option>RAG Architecture</option>
-                    <option>Multi-Agent System</option>
-                    <option>Sovereign Guard</option>
-                    <option>Strategic Consulting</option>
-                </select>
-                <textarea id="t_message" rows="4" placeholder="Briefly describe your challenge..." class="w-full bg-white/5 border border-white/10 rounded-[40px] px-8 py-6 outline-none focus:border-white/30 text-lg resize-none transition"></textarea>
-                <button class="w-full bg-white text-black py-6 rounded-3xl font-black text-xl hover:bg-zinc-200 transition-all premium-btn tracking-[0.2em] uppercase">SEND MESSAGE</button>
-            </form>
-        </div>
-    </div>
+    <!-- Floating AI Button -->
+    <button onclick="openAIChat()"
+        class="fixed bottom-10 right-10 z-[150] bg-white text-black w-20 h-20 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform pulse-border">
+        <i class="fa-solid fa-robot text-2xl"></i>
+    </button>
 
+    <!-- Modals -->
     <!-- AI Chat Modal -->
     <div id="aiChatModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-2xl z-[250] flex items-center justify-center p-6">
         <div class="bg-zinc-900 w-full max-w-lg rounded-[60px] border border-white/10 overflow-hidden modal-reveal shadow-2xl">
@@ -655,7 +686,7 @@
                     <div class="flex gap-5">
                         <div class="w-10 h-10 rounded-full bg-white flex-shrink-0 flex items-center justify-center text-xs text-black font-black">SA</div>
                         <div class="bg-white/5 p-6 rounded-3xl rounded-tl-none text-base text-zinc-300 border border-white/5 leading-relaxed">
-                            Saniya is currently advising a Top 3 Indian bank on RAG security and Sovereign AI implementation.
+                            Saniya is currently advising a Top 3 Indian bank on RAG security and Sovereign AI implementation. How can I assist your strategy today?
                         </div>
                     </div>
                 </div>
@@ -673,7 +704,7 @@
         </div>
     </div>
 
-    <!-- Case Study Modal -->
+    <!-- Case Study & Sovereign Modal Container -->
     <div id="caseStudyModal" class="hidden fixed inset-0 z-[100] bg-black overflow-y-auto no-scrollbar">
         <div class="max-w-7xl mx-auto px-8 py-32 relative modal-reveal">
             <button onclick="closeCaseStudy()" class="fixed top-12 right-12 text-7xl font-thin hover:rotate-90 transition-all z-[110]">&times;</button>
@@ -681,15 +712,24 @@
         </div>
     </div>
 
-    <!-- Floating AI Button -->
-    <button onclick="openAIChat()"
-        class="fixed bottom-10 right-10 z-[150] bg-white text-black w-20 h-20 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform pulse-border">
-        <i class="fa-solid fa-robot text-2xl"></i>
-    </button>
-
+    <!-- JS Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1200, once: true });
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX - 16 + 'px';
+                follower.style.top = e.clientY - 16 + 'px';
+            }, 50);
+        });
 
         const projects = {
             claimlens: {
@@ -794,7 +834,10 @@
             document.body.style.overflow = 'auto';
         }
 
-        function openTalkModal() { document.getElementById('talkModal').classList.remove('hidden'); }
+        function openTalkModal() { 
+            Calendly.initPopupWidget({url: 'https://calendly.com/mdua0504/30min'});
+            return false;
+        }
         function closeTalkModal() { document.getElementById('talkModal').classList.add('hidden'); }
         function openAIChat() { document.getElementById('aiChatModal').classList.remove('hidden'); }
         function closeAIChat() { document.getElementById('aiChatModal').classList.add('hidden'); }
@@ -812,6 +855,8 @@
             window.location.href = `mailto:san192227m@gmail.com?subject=Strategic Consultation: ${name}`;
             closeTalkModal();
         }
+        
+        // Smooth Scroll
         document.querySelectorAll('.nav-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
