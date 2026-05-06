@@ -2,19 +2,23 @@
 <html lang="en" class="scroll-smooth">
 
 <!-- HEADER -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saniya Malik — AI Architect & Generative AI Consultant | RAG, Multi-Agent Systems & Sovereign AI</title>
-    
+
     <!-- SEO & Meta Tags -->
-    <meta name="description" content="Saniya Malik is a Delhi-based AI architect specializing in production-grade RAG systems, multi-agent architectures, and sovereign AI for Indian enterprises. 40+ projects delivered.">
-    <meta name="keywords" content="AI consultant Delhi, generative AI architect India, RAG systems India, multi-agent AI, sovereign AI, LLM consulting India, enterprise AI solutions, Saniya Malik, IndiaAI Mission">
+    <meta name="description"
+        content="Saniya Malik is a Delhi-based AI architect specializing in production-grade RAG systems, multi-agent architectures, and sovereign AI for Indian enterprises. 40+ projects delivered.">
+    <meta name="keywords"
+        content="AI consultant Delhi, generative AI architect India, RAG systems India, multi-agent AI, sovereign AI, LLM consulting India, enterprise AI solutions, Saniya Malik, IndiaAI Mission">
     <link rel="canonical" href="https://saniyamalik.com/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Saniya Malik — AI Architect & Generative AI Consultant">
-    <meta property="og:description" content="Delhi-based expert in production-grade RAG architectures, multi-agent systems, and sovereign AI. Aligning with IndiaAI Mission for measurable outcomes.">
+    <meta property="og:description"
+        content="Delhi-based expert in production-grade RAG architectures, multi-agent systems, and sovereign AI. Aligning with IndiaAI Mission for measurable outcomes.">
     <meta property="og:image" content="https://saniyamalik.com/og-cover.jpg">
     <meta property="og:url" content="https://saniyamalik.com/">
     <meta property="og:type" content="website">
@@ -23,26 +27,30 @@
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Saniya Malik — AI Architect & Generative AI Consultant">
-    <meta name="twitter:description" content="Production-grade RAG, multi-agent systems & sovereign AI. 40+ projects, 92.8% avg. accuracy. Delhi-based expert.">
+    <meta name="twitter:description"
+        content="Production-grade RAG, multi-agent systems & sovereign AI. 40+ projects, 92.8% avg. accuracy. Delhi-based expert.">
     <meta name="twitter:image" content="https://saniyamalik.com/og-cover.jpg">
 
     <!-- Favicons -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='black'/><text x='50%' y='50%' font-family='sans-serif' font-size='50' fill='white' text-anchor='middle' dy='.35em'>SM</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='black'/><text x='50%' y='50%' font-family='sans-serif' font-size='50' fill='white' text-anchor='middle' dy='.35em'>SM</text></svg>">
 
     <!-- CDNs & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:italic@400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:italic@400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Image Preloads for Critical Dashboard Performance -->
     <link rel="preload" as="image" href="assets/images/flowsight_ai_dashboard.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/images/yojana_ai_dashboard.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/images/flowsight_ai_modal.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/images/yojana_ai_modal.png" fetchpriority="high">
-    
+
     <!-- Calendly -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -85,7 +93,8 @@
         }
 
         /* Custom Cursor - Desktop Only with Fine Pointer */
-        #cursor, #cursor-follower {
+        #cursor,
+        #cursor-follower {
             display: none;
             pointer-events: none;
             position: fixed;
@@ -93,7 +102,12 @@
         }
 
         @media (pointer: fine) {
-            html, body, a, button, summary {
+
+            html,
+            body,
+            a,
+            button,
+            summary {
                 cursor: none !important;
             }
 
@@ -118,7 +132,9 @@
             }
         }
 
-        .serif { font-family: 'Instrument Serif', serif; }
+        .serif {
+            font-family: 'Instrument Serif', serif;
+        }
 
         /* --- UI Components --- */
         .nav-blur {
@@ -127,6 +143,7 @@
             background: rgba(5, 5, 5, 0.8);
             transition: background-color 0.5s ease;
         }
+
         .standard-mode .nav-blur {
             background: rgba(248, 250, 252, 0.8);
         }
@@ -192,14 +209,21 @@
         .premium-btn::after {
             content: '';
             position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
             transition: 0.6s;
         }
 
-        .premium-btn:hover::after { left: 100%; }
-        .premium-btn:hover { box-shadow: 0 0 20px var(--glow); }
+        .premium-btn:hover::after {
+            left: 100%;
+        }
+
+        .premium-btn:hover {
+            box-shadow: 0 0 20px var(--glow);
+        }
 
         /* --- Mobile Navigation --- */
         #mobile-menu {
@@ -208,10 +232,14 @@
             background: rgba(5, 5, 5, 0.98);
             backdrop-filter: blur(20px);
         }
+
         .standard-mode #mobile-menu {
             background: rgba(248, 250, 252, 0.98);
         }
-        #mobile-menu.active { transform: translateX(0); }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
 
         .hamburger-line {
             height: 2px;
@@ -221,16 +249,34 @@
             border-radius: 2px;
         }
 
-        .active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-        .active .hamburger-line:nth-child(2) { opacity: 0; }
-        .active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        .active .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .active .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
 
         /* --- Animations --- */
         @keyframes modalReveal {
-            from { opacity: 0; transform: scale(0.98) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+            from {
+                opacity: 0;
+                transform: scale(0.98) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
-        .modal-reveal { animation: modalReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        .modal-reveal {
+            animation: modalReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
         .section-tag {
             font-size: 10px;
@@ -255,15 +301,25 @@
             transition: var(--luxury-transition);
         }
 
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        * { scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            scrollbar-width: none;
+        }
 
         /* --- FAQ / details Custom Style --- */
-        details summary::-webkit-details-marker { display: none; }
-        details summary { list-style: none; }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary {
+            list-style: none;
+        }
 
         /* Slider Toggle Customization */
-        .switch-input:checked + .switch-label .switch-dot {
+        .switch-input:checked+.switch-label .switch-dot {
             transform: translateX(24px);
         }
 
@@ -271,9 +327,15 @@
         .arch-node {
             animation: pulse-border 2s infinite alternate;
         }
+
         @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.4); }
-            100% { box-shadow: 0 0 10px 4px rgba(147, 51, 234, 0.1); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 10px 4px rgba(147, 51, 234, 0.1);
+            }
         }
     </style>
 </head>
@@ -287,34 +349,46 @@
     <!-- Background Elements -->
     <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
         <div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-purple-900/10 blur-[150px] rounded-full"></div>
-        <div class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-purple-900/10 blur-[150px] rounded-full"></div>
+        <div class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-purple-900/10 blur-[150px] rounded-full">
+        </div>
     </div>
 
     <!-- NAV -->
-    <nav class="fixed top-0 w-full z-[90] nav-blur border-b border-white/5" role="navigation" aria-label="Main Navigation">
+    <nav class="fixed top-0 w-full z-[90] nav-blur border-b border-white/5" role="navigation"
+        aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <a href="#" class="text-xl font-extrabold tracking-tighter uppercase" aria-label="Saniya Malik Home">SM <span class="opacity-30 font-light text-purple-400">/ ARCHITECT</span></a>
-            
+            <a href="#" class="text-xl font-extrabold tracking-tighter uppercase" aria-label="Saniya Malik Home">SM
+                <span class="opacity-30 font-light text-purple-400">/ ARCHITECT</span></a>
+
             <!-- Desktop Nav -->
-            <div class="hidden lg:flex gap-12 text-[10px] font-black tracking-[0.4em] uppercase opacity-50 items-center">
-                <a href="#work" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">Work</a>
-                <a href="#sovereign" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">Sovereign AI</a>
-                <a href="#about" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">About</a>
-                <a href="#faq" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">FAQ</a>
+            <div
+                class="hidden lg:flex gap-12 text-[10px] font-black tracking-[0.4em] uppercase opacity-50 items-center">
+                <a href="#work"
+                    class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">Work</a>
+                <a href="#sovereign"
+                    class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">Sovereign
+                    AI</a>
+                <a href="#about"
+                    class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">About</a>
+                <a href="#faq"
+                    class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">FAQ</a>
             </div>
 
             <div class="flex items-center gap-6">
                 <!-- Sovereign Mode Toggle Button -->
                 <div class="flex items-center gap-3">
                     <span class="text-[9px] font-black tracking-widest uppercase opacity-60">SOVEREIGN MODE</span>
-                    <div class="relative w-14 h-8 bg-zinc-900 rounded-full p-1 cursor-pointer border border-white/10" id="mode-toggle" onclick="toggleSovereignMode()" aria-label="Toggle Sovereign Mode">
-                        <div class="w-6 h-6 bg-purple-600 rounded-full transition-transform duration-300 transform" id="mode-toggle-dot"></div>
+                    <div class="relative w-14 h-8 bg-zinc-900 rounded-full p-1 cursor-pointer border border-white/10"
+                        id="mode-toggle" onclick="toggleSovereignMode()" aria-label="Toggle Sovereign Mode">
+                        <div class="w-6 h-6 bg-purple-600 rounded-full transition-transform duration-300 transform"
+                            id="mode-toggle-dot"></div>
                     </div>
                 </div>
 
                 <button onclick="openTalkModal()" aria-label="Book a consultation"
-                    class="hidden sm:block bg-[var(--text)] text-[var(--bg)] px-9 py-3.5 rounded-full text-[11px] font-black tracking-widest hover:bg-purple-600 hover:text-white transition-all premium-btn uppercase">LET'S TALK</button>
-                
+                    class="hidden sm:block bg-[var(--text)] text-[var(--bg)] px-9 py-3.5 rounded-full text-[11px] font-black tracking-widest hover:bg-purple-600 hover:text-white transition-all premium-btn uppercase">LET'S
+                    TALK</button>
+
                 <!-- Hamburger Button -->
                 <button id="hamburger-btn" class="lg:hidden flex flex-col gap-2 p-2 z-[110]" aria-label="Toggle Menu">
                     <span class="hamburger-line"></span>
@@ -326,62 +400,82 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] lg:hidden flex flex-col justify-center items-center text-center px-12" aria-hidden="true">
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[100] lg:hidden flex flex-col justify-center items-center text-center px-12"
+        aria-hidden="true">
         <div class="flex flex-col gap-10 text-5xl font-black tracking-tighter uppercase">
             <a href="#work" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">Work</a>
-            <a href="#sovereign" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">Sovereign AI</a>
-            <a href="#about" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">About</a>
+            <a href="#sovereign"
+                class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">Sovereign AI</a>
+            <a href="#about"
+                class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">About</a>
             <a href="#faq" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">FAQ</a>
         </div>
         <div class="mt-20 w-full max-w-xs">
-            <button onclick="openTalkModal(); toggleMobileMenu();" class="w-full bg-purple-600 text-white py-6 rounded-full font-black text-xl uppercase tracking-widest shadow-2xl">LET'S TALK</button>
+            <button onclick="openTalkModal(); toggleMobileMenu();"
+                class="w-full bg-purple-600 text-white py-6 rounded-full font-black text-xl uppercase tracking-widest shadow-2xl">LET'S
+                TALK</button>
         </div>
     </div>
 
     <main id="main-content">
         <!-- HERO -->
-        <section class="min-h-screen flex flex-col justify-center px-8 pt-24 overflow-hidden" aria-labelledby="hero-title">
+        <section class="min-h-screen flex flex-col justify-center px-8 pt-24 overflow-hidden"
+            aria-labelledby="hero-title">
             <div class="max-w-7xl mx-auto w-full relative">
-                <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-600/5 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
-                
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-600/5 blur-[120px] rounded-full pointer-events-none"
+                    aria-hidden="true"></div>
+
                 <span class="section-tag" data-aos="fade-up">Elite Generative AI Consultant</span>
-                <h1 id="hero-title" class="text-6xl md:text-[130px] leading-[0.8] font-black tracking-tighter mb-14" data-aos="fade-up" data-aos-delay="100">
-                    Building <span class="serif italic font-normal text-purple-600/60">Intelligence</span><br>That Scales.
+                <h1 id="hero-title" class="text-6xl md:text-[130px] leading-[0.8] font-black tracking-tighter mb-14"
+                    data-aos="fade-up" data-aos-delay="100">
+                    Building <span class="serif italic font-normal text-purple-600/60">Intelligence</span><br>That
+                    Scales.
                 </h1>
-                
+
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-16">
                     <div class="max-w-2xl space-y-12">
                         <div class="flex items-center gap-3" data-aos="fade-up" data-aos-delay="150">
                             <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping" aria-hidden="true"></span>
-                            <span class="text-[11px] font-black uppercase tracking-[0.3em] text-red-500/90">Only 3 consultation slots left for May 2026</span>
+                            <span class="text-[11px] font-black uppercase tracking-[0.3em] text-red-500/90">Only 3
+                                consultation slots left for May 2026</span>
                         </div>
-                        <p class="text-xl md:text-2xl text-[var(--text-muted)] leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
-                            I am Saniya Malik, a Delhi-based AI Architect specializing in production-grade RAG, multi-agent
-                            systems, and Sovereign Guard implementations. Delivering measurable enterprise outcomes through 
+                        <p class="text-xl md:text-2xl text-[var(--text-muted)] leading-relaxed font-medium"
+                            data-aos="fade-up" data-aos-delay="200">
+                            I am Saniya Malik, a Delhi-based AI Architect specializing in production-grade RAG,
+                            multi-agent
+                            systems, and Sovereign Guard implementations. Delivering measurable enterprise outcomes
+                            through
                             verifiable expertise and IndiaAI Mission alignment.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-6" data-aos="fade-up" data-aos-delay="250">
                             <button onclick="openTalkModal()" aria-label="Start consultation via Calendly"
-                                class="bg-[var(--text)] text-[var(--bg)] px-12 py-5 rounded-full font-black hover:bg-purple-600 hover:text-white transition-all premium-btn text-sm tracking-widest uppercase shadow-xl">Start Consultation</button>
-                            <a href="mailto:san192227m@gmail.com?subject=Requesting Sovereign AI Checklist" aria-label="Download Sovereign AI Checklist via email"
+                                class="bg-[var(--text)] text-[var(--bg)] px-12 py-5 rounded-full font-black hover:bg-purple-600 hover:text-white transition-all premium-btn text-sm tracking-widest uppercase shadow-xl">Start
+                                Consultation</button>
+                            <a href="mailto:san192227m@gmail.com?subject=Requesting Sovereign AI Checklist"
+                                aria-label="Download Sovereign AI Checklist via email"
                                 class="border border-[var(--border)] text-[var(--text)] px-12 py-5 rounded-full font-black hover:bg-white/5 hover:border-purple-500/30 transition-all text-center flex items-center justify-center gap-3 text-sm tracking-widest uppercase">
                                 <i class="fa-solid fa-download text-purple-500" aria-hidden="true"></i> AI Checklist
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center gap-8" data-aos="fade-up" data-aos-delay="300">
                         <div class="flex -space-x-5">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
-                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform" alt="Enterprise Tech Executive Client" loading="lazy">
+                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform"
+                                alt="Enterprise Tech Executive Client" loading="lazy">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
-                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform" alt="Global AI Strategy Leader Client" loading="lazy">
+                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform"
+                                alt="Global AI Strategy Leader Client" loading="lazy">
                             <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150"
-                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform" alt="Senior Enterprise Architect Client" loading="lazy">
+                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform"
+                                alt="Senior Enterprise Architect Client" loading="lazy">
                         </div>
                         <div>
                             <p class="font-black text-lg tracking-tight text-[var(--text)]">9+ Global Partners</p>
-                            <p class="text-[10px] text-purple-500/60 uppercase tracking-[0.4em] font-bold">Elite Consulting</p>
+                            <p class="text-[10px] text-purple-500/60 uppercase tracking-[0.4em] font-bold">Elite
+                                Consulting</p>
                         </div>
                     </div>
                 </div>
@@ -392,113 +486,156 @@
         <section id="work" class="py-48 px-8" aria-labelledby="work-title">
             <div class="max-w-7xl mx-auto">
                 <div class="flex justify-between items-end mb-24 border-b border-[var(--border)] pb-14">
-                    <h2 id="work-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">Selected <span class="serif italic font-normal text-purple-500">Works</span></h2>
+                    <h2 id="work-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">Selected <span
+                            class="serif italic font-normal text-purple-500">Works</span></h2>
                 </div>
                 <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] md:grid-cols-2 xl:grid-cols-4 gap-10">
                     <!-- Case Study 1 -->
-                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('claimlens')" data-aos="fade-up" data-aos-delay="0" data-reveal-step="1">
+                    <article class="case-study-card glass-card group cursor-pointer"
+                        onclick="openCaseStudy('claimlens')" data-aos="fade-up" data-aos-delay="0" data-reveal-step="1">
                         <div class="aspect-[4/5] overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
-                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="ClaimLens AI — Advanced insurance fraud detection dashboard" loading="lazy">
-                            <div class="absolute top-6 right-6 bg-black/60 backdrop-blur-md text-white rounded-full px-4 py-2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img"
+                                alt="ClaimLens AI — Advanced insurance fraud detection dashboard" loading="lazy">
+                            <div
+                                class="absolute top-6 right-6 bg-black/60 backdrop-blur-md text-white rounded-full px-4 py-2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                                 Interactive Architecture Graph inside
                             </div>
                         </div>
                         <div class="p-10 bg-[var(--card-bg)]">
-                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Insurance / CV</p>
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Insurance
+                                / CV</p>
                             <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">ClaimLens AI</h3>
                             <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
-                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Advanced document forgery and sophisticated multi-party insurance fraud loops.</p>
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Advanced document
+                                    forgery and sophisticated multi-party insurance fraud loops.</p>
                                 <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
-                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="92">0</span>%
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span
+                                        class="results-counter" data-target="92">0</span>%
                                 </div>
                             </div>
-                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
-                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            <div
+                                class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i
+                                    class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"
+                                    aria-hidden="true"></i>
                             </div>
                         </div>
                     </article>
-                    
+
                     <!-- Case Study 2 -->
-                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('nyaysetu')" data-aos="fade-up" data-aos-delay="100" data-reveal-step="2">
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('nyaysetu')"
+                        data-aos="fade-up" data-aos-delay="100" data-reveal-step="2">
                         <div class="aspect-[4/5] overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
-                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="NyaySetu — Sovereign legal RAG system" loading="lazy">
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img"
+                                alt="NyaySetu — Sovereign legal RAG system" loading="lazy">
                         </div>
                         <div class="p-10 bg-[var(--card-bg)]">
-                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">LegalTech / RAG</p>
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">LegalTech
+                                / RAG</p>
                             <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">NyaySetu</h3>
                             <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
-                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Fragmented legal contexts and citations hallucinatory behaviors across 25k records.</p>
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Fragmented legal
+                                    contexts and citations hallucinatory behaviors across 25k records.</p>
                                 <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
-                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="99">0</span>.8%
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span
+                                        class="results-counter" data-target="99">0</span>.8%
                                 </div>
                             </div>
-                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
-                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            <div
+                                class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i
+                                    class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"
+                                    aria-hidden="true"></i>
                             </div>
                         </div>
                     </article>
-                    
+
                     <!-- Case Study 3 -->
-                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('govgig')" data-aos="fade-up" data-aos-delay="200" data-reveal-step="3">
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('govgig')"
+                        data-aos="fade-up" data-aos-delay="200" data-reveal-step="3">
                         <div class="aspect-[4/5] overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
-                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="GovGig AI — Regulatory multi-agent network" loading="lazy">
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img"
+                                alt="GovGig AI — Regulatory multi-agent network" loading="lazy">
                         </div>
                         <div class="p-10 bg-[var(--card-bg)]">
-                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech / Agents</p>
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech /
+                                Agents</p>
                             <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">GovGig AI</h3>
                             <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
-                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Tracking 50+ real-time policy changes daily and mapping them compliance correctly.</p>
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Tracking 50+
+                                    real-time policy changes daily and mapping them compliance correctly.</p>
                                 <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
-                                    <i class="fa-solid fa-square-poll-vertical"></i> Audit Cycle Reduction: <span class="results-counter" data-target="80">0</span>%
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Audit Cycle Reduction: <span
+                                        class="results-counter" data-target="80">0</span>%
                                 </div>
                             </div>
-                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
-                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            <div
+                                class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i
+                                    class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"
+                                    aria-hidden="true"></i>
                             </div>
                         </div>
                     </article>
 
                     <!-- Case Study 4 -->
-                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('flowsight')" data-aos="fade-up" data-aos-delay="300" data-reveal-step="4">
+                    <article class="case-study-card glass-card group cursor-pointer"
+                        onclick="openCaseStudy('flowsight')" data-aos="fade-up" data-aos-delay="300"
+                        data-reveal-step="4">
                         <div class="aspect-[4/5] overflow-hidden relative">
                             <img src="assets/images/flowsight_ai_dashboard.png"
-                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="FlowSight AI — Supply Chain Control Tower" loading="lazy">
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img"
+                                alt="FlowSight AI — Supply Chain Control Tower" loading="lazy">
                         </div>
                         <div class="p-10 bg-[var(--card-bg)]">
-                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Logistics / Cybernetic</p>
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Logistics
+                                / Cybernetic</p>
                             <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">FlowSight AI</h3>
                             <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
-                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Dynamic supply chain delays, routing optimization, and automated real-time alerts.</p>
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Dynamic supply chain
+                                    delays, routing optimization, and automated real-time alerts.</p>
                                 <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
-                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="85">0</span>%
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span
+                                        class="results-counter" data-target="85">0</span>%
                                 </div>
                             </div>
-                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
-                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            <div
+                                class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i
+                                    class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"
+                                    aria-hidden="true"></i>
                             </div>
                         </div>
                     </article>
 
                     <!-- Case Study 5 -->
-                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('yojana')" data-aos="fade-up" data-aos-delay="400" data-reveal-step="5">
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('yojana')"
+                        data-aos="fade-up" data-aos-delay="400" data-reveal-step="5">
                         <div class="aspect-[4/5] overflow-hidden relative">
                             <img src="assets/images/yojana_ai_dashboard.png"
-                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="Yojana-AI — Sovereign government schemes RAG platform" loading="lazy">
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img"
+                                alt="Yojana-AI — Sovereign government schemes RAG platform" loading="lazy">
                         </div>
                         <div class="p-10 bg-[var(--card-bg)]">
-                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech / Sovereign RAG</p>
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech /
+                                Sovereign RAG</p>
                             <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">Yojana-AI</h3>
                             <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
-                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Fragmented citizen qualification logic and hallucinatory schemes eligibility answers.</p>
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Fragmented citizen
+                                    qualification logic and hallucinatory schemes eligibility answers.</p>
                                 <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
-                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="93">0</span>%
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span
+                                        class="results-counter" data-target="93">0</span>%
                                 </div>
                             </div>
-                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
-                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            <div
+                                class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i
+                                    class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform"
+                                    aria-hidden="true"></i>
                             </div>
                         </div>
                     </article>
@@ -507,117 +644,197 @@
         </section>
 
         <!-- CONSULTING SERVICES -->
-        <section id="services" class="py-48 px-8 border-t border-[var(--border)] bg-[#050505]" aria-labelledby="services-title">
+        <section id="services" class="py-48 px-8 border-t border-[var(--border)] bg-[#050505]"
+            aria-labelledby="services-title">
             <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 pb-14 border-b border-[var(--border)]">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 pb-14 border-b border-[var(--border)]">
                     <div data-aos="fade-right">
                         <div class="flex items-center gap-5 mb-6">
                             <span class="w-16 h-[1px] bg-purple-500/30" aria-hidden="true"></span>
-                            <span class="text-[10px] uppercase tracking-[0.6em] font-black text-purple-400">Strategic Offerings</span>
+                            <span class="text-[10px] uppercase tracking-[0.6em] font-black text-purple-400">Strategic
+                                Offerings</span>
                         </div>
-                        <h2 id="services-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">Consulting <span class="serif italic font-normal text-purple-500">Services</span></h2>
+                        <h2 id="services-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">
+                            Consulting <span class="serif italic font-normal text-purple-500">Services</span></h2>
                     </div>
                     <p class="text-zinc-500 text-sm max-w-md mt-6 md:mt-0 leading-relaxed" data-aos="fade-left">
-                        Tailored enterprise consulting, sovereign AI architectures, and executive strategy workshops driving deterministic compliance and sub-second agentic efficiency.
+                        Tailored enterprise consulting, sovereign AI architectures, and executive strategy workshops
+                        driving deterministic compliance and sub-second agentic efficiency.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] md:grid-cols-2 xl:grid-cols-4 gap-10">
                     <!-- Package 1 -->
-                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
-                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden"
+                        data-aos="fade-up" data-aos-delay="0">
+                        <div
+                            class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500">
+                        </div>
                         <div>
-                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                            <div
+                                class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
-                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">Sovereign AI Readiness Audit</h3>
-                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">2-week deep dive audit evaluating sovereign compliance and architectural efficiency.</p>
+                            <h3
+                                class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">
+                                Sovereign AI Readiness Audit</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">2-week deep dive audit evaluating
+                                sovereign compliance and architectural efficiency.</p>
                             <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> 2-Week Deep Dive</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> IndiaAI Mission Compliance</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Data Sovereignty Check</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Detailed Report & Roadmap</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> 2-Week Deep
+                                    Dive</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> IndiaAI
+                                    Mission Compliance</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Data
+                                    Sovereignty Check</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Detailed
+                                    Report & Roadmap</li>
                             </ul>
                         </div>
                         <div class="mt-8 pt-6 border-t border-white/5">
-                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
-                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹1.5 Lakh</span></div>
-                            <button onclick="openTalkModal()" aria-label="Book Sovereign AI Readiness Audit Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment
+                            </div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span
+                                    class="text-purple-500">₹1.5 Lakh</span></div>
+                            <button onclick="openTalkModal()"
+                                aria-label="Book Sovereign AI Readiness Audit Strategy Call"
+                                class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
                                 Book Strategy Call
                             </button>
                         </div>
                     </div>
 
                     <!-- Package 2 -->
-                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500">
+                        </div>
                         <div>
-                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                            <div
+                                class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
                                 <i class="fa-solid fa-chalkboard-user"></i>
                             </div>
-                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">AI Strategy Workshop</h3>
-                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Interactive leadership sessions aligning executive vision with next-gen technical capabilities.</p>
+                            <h3
+                                class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">
+                                AI Strategy Workshop</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Interactive leadership sessions
+                                aligning executive vision with next-gen technical capabilities.</p>
                             <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Half-Day or Full-Day Session</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> GovTech & Supply Chain Focus</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Public Schemes Framework</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Custom AI Strategy Deck</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Half-Day or
+                                    Full-Day Session</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> GovTech &
+                                    Supply Chain Focus</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Public Schemes
+                                    Framework</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Custom AI
+                                    Strategy Deck</li>
                             </ul>
                         </div>
                         <div class="mt-8 pt-6 border-t border-white/5">
-                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
-                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹75,000</span></div>
-                            <button onclick="openTalkModal()" aria-label="Book AI Strategy Workshop Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment
+                            </div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span
+                                    class="text-purple-500">₹75,000</span></div>
+                            <button onclick="openTalkModal()" aria-label="Book AI Strategy Workshop Strategy Call"
+                                class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
                                 Book Strategy Call
                             </button>
                         </div>
                     </div>
 
                     <!-- Package 3 -->
-                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500">
+                        </div>
                         <div>
-                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                            <div
+                                class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
                                 <i class="fa-solid fa-code"></i>
                             </div>
-                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">End-to-End AI Implementation</h3>
-                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Custom high-performance solution building modeled like FlowSight and Yojana-AI.</p>
+                            <h3
+                                class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">
+                                End-to-End AI Implementation</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Custom high-performance solution
+                                building modeled like FlowSight and Yojana-AI.</p>
                             <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Full-Scale Custom Development</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Ideation to Live Deployment</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> High-Precision Multi-Agent RAG</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Specialized Team Training</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Full-Scale
+                                    Custom Development</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Ideation to
+                                    Live Deployment</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> High-Precision
+                                    Multi-Agent RAG</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Specialized
+                                    Team Training</li>
                             </ul>
                         </div>
                         <div class="mt-8 pt-6 border-t border-white/5">
-                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
-                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹8 Lakh+</span></div>
-                            <button onclick="openTalkModal()" aria-label="Book End-to-End AI Implementation Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment
+                            </div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span
+                                    class="text-purple-500">₹8 Lakh+</span></div>
+                            <button onclick="openTalkModal()"
+                                aria-label="Book End-to-End AI Implementation Strategy Call"
+                                class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
                                 Book Strategy Call
                             </button>
                         </div>
                     </div>
 
                     <!-- Package 4 -->
-                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500">
+                        </div>
                         <div>
-                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                            <div
+                                class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
                                 <i class="fa-solid fa-handshake-angle"></i>
                             </div>
-                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">Monthly AI Advisory Retainer</h3>
-                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Ongoing strategic support, technical reviews, and prioritized emergency consulting.</p>
+                            <h3
+                                class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">
+                                Monthly AI Advisory Retainer</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Ongoing strategic support, technical
+                                reviews, and prioritized emergency consulting.</p>
                             <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Strategic Retainer Advisory</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Priority Multi-Agent Support</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Recurrent Core Tech Audits</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Emergency Architectural Calls</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Strategic
+                                    Retainer Advisory</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Priority
+                                    Multi-Agent Support</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Recurrent Core
+                                    Tech Audits</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Emergency
+                                    Architectural Calls</li>
                             </ul>
                         </div>
                         <div class="mt-8 pt-6 border-t border-white/5">
-                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
-                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹1.2 L / mo</span></div>
-                            <button onclick="openTalkModal()" aria-label="Book Monthly AI Advisory Retainer Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment
+                            </div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span
+                                    class="text-purple-500">₹1.2 L / mo</span></div>
+                            <button onclick="openTalkModal()"
+                                aria-label="Book Monthly AI Advisory Retainer Strategy Call"
+                                class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
                                 Book Strategy Call
                             </button>
                         </div>
@@ -628,17 +845,21 @@
 
         <!-- SOVEREIGN AI -->
         <section id="sovereign" class="py-48 px-8" aria-labelledby="sovereign-title">
-            <div class="max-w-7xl mx-auto rounded-[60px] p-12 md:p-32 relative overflow-hidden shadow-2xl border border-white/5 bg-[#080808]">
+            <div
+                class="max-w-7xl mx-auto rounded-[60px] p-12 md:p-32 relative overflow-hidden shadow-2xl border border-white/5 bg-[#080808]">
                 <!-- Purple Radial Glow -->
-                <div class="absolute top-0 right-0 w-[50%] h-[50%] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
-                
+                <div class="absolute top-0 right-0 w-[50%] h-[50%] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none"
+                    aria-hidden="true"></div>
+
                 <div class="grid md:grid-cols-2 gap-24 items-center">
                     <div data-aos="fade-right">
                         <div class="flex items-center gap-5 mb-10">
                             <span class="w-16 h-[1px] bg-purple-500/30" aria-hidden="true"></span>
-                            <span class="text-[10px] uppercase tracking-[0.6em] font-black text-purple-400">Proprietary Technology</span>
+                            <span class="text-[10px] uppercase tracking-[0.6em] font-black text-purple-400">Proprietary
+                                Technology</span>
                         </div>
-                        <h2 id="sovereign-title" class="text-6xl md:text-8xl font-black tracking-tighter mb-10 leading-[0.9] text-[var(--text)]">
+                        <h2 id="sovereign-title"
+                            class="text-6xl md:text-8xl font-black tracking-tighter mb-10 leading-[0.9] text-[var(--text)]">
                             Sovereign <br><span class="serif italic font-normal text-purple-600/50">Guard.</span>
                         </h2>
                         <p class="text-[var(--text-muted)] text-xl mb-12 leading-relaxed font-medium">
@@ -646,32 +867,40 @@
                             entirely under your control. Built for organizations requiring total data residency and
                             sovereignty.
                         </p>
-                        
+
                         <div class="space-y-8 mb-16">
                             <div class="flex items-center gap-5">
-                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-border" aria-hidden="true"></div>
-                                <span class="text-base font-bold tracking-tight text-zinc-300">93.5% Groundedness Accuracy</span>
+                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-border" aria-hidden="true">
+                                </div>
+                                <span class="text-base font-bold tracking-tight text-zinc-300">93.5% Groundedness
+                                    Accuracy</span>
                             </div>
                             <div class="flex items-center gap-5">
                                 <div class="w-2.5 h-2.5 rounded-full bg-purple-500" aria-hidden="true"></div>
-                                <span class="text-base font-bold tracking-tight text-zinc-300">Sub-150ms Deterministic Guardrails</span>
+                                <span class="text-base font-bold tracking-tight text-zinc-300">Sub-150ms Deterministic
+                                    Guardrails</span>
                             </div>
                         </div>
-                        
+
                         <div class="flex flex-col sm:flex-row gap-6">
                             <button onclick="openTalkModal()" aria-label="Discuss Sovereign AI implementation"
-                                class="bg-[var(--text)] text-[var(--bg)] px-12 py-5 rounded-full font-black hover:bg-purple-600 hover:text-white transition-all premium-btn text-sm uppercase tracking-widest">Discuss Implementation</button>
+                                class="bg-[var(--text)] text-[var(--bg)] px-12 py-5 rounded-full font-black hover:bg-purple-600 hover:text-white transition-all premium-btn text-sm uppercase tracking-widest">Discuss
+                                Implementation</button>
                             <button onclick="openSovereignArticle()" aria-label="Read Sovereign AI whitepaper"
-                                class="border border-[var(--border)] text-[var(--text)] px-12 py-5 rounded-full font-black hover:bg-white/5 hover:border-purple-500/20 transition-all text-center text-sm uppercase tracking-widest">Read Whitepaper</button>
+                                class="border border-[var(--border)] text-[var(--text)] px-12 py-5 rounded-full font-black hover:bg-white/5 hover:border-purple-500/20 transition-all text-center text-sm uppercase tracking-widest">Read
+                                Whitepaper</button>
                         </div>
                     </div>
-                    
+
                     <div class="relative" data-aos="fade-left">
-                        <div class="bg-zinc-900/30 backdrop-blur-3xl border border-white/5 p-6 rounded-[50px] shadow-2xl">
+                        <div
+                            class="bg-zinc-900/30 backdrop-blur-3xl border border-white/5 p-6 rounded-[50px] shadow-2xl">
                             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
                                 class="rounded-[40px] grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000"
-                                alt="Abstract representation of Sovereign Guard AI platform security infrastructure" loading="lazy">
-                            <div class="absolute -bottom-8 -left-8 bg-purple-600 text-white p-8 rounded-[30px] shadow-2xl pulse-border">
+                                alt="Abstract representation of Sovereign Guard AI platform security infrastructure"
+                                loading="lazy">
+                            <div
+                                class="absolute -bottom-8 -left-8 bg-purple-600 text-white p-8 rounded-[30px] shadow-2xl pulse-border">
                                 <p class="text-[10px] uppercase font-black mb-2 tracking-[0.4em]">Protocol</p>
                                 <p class="text-3xl font-black tracking-tighter">ENFORCED</p>
                             </div>
@@ -687,41 +916,56 @@
                 <div class="text-center mb-16" data-aos="fade-up">
                     <span class="section-tag">Interactive Environment</span>
                     <h2 class="text-5xl font-black tracking-tighter mb-4 text-[var(--text)]">Try Sovereign AI Live</h2>
-                    <p class="text-xl text-[var(--text-muted)] max-w-2xl mx-auto font-medium">Test real-time client-side RAG capabilities, groundedness scoring, thinking steps and citation routing.</p>
+                    <p class="text-xl text-[var(--text-muted)] max-w-2xl mx-auto font-medium">Test real-time client-side
+                        RAG capabilities, groundedness scoring, thinking steps and citation routing.</p>
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-12 items-stretch" data-aos="fade-up">
                     <!-- Prompt Suggestions Panel -->
-                    <div class="lg:col-span-4 bg-[var(--card-bg)] border border-[var(--border)] rounded-[40px] p-8 space-y-6 flex flex-col justify-between">
+                    <div
+                        class="lg:col-span-4 bg-[var(--card-bg)] border border-[var(--border)] rounded-[40px] p-8 space-y-6 flex flex-col justify-between">
                         <div>
-                            <p class="text-xs font-black tracking-widest uppercase text-purple-400 mb-6 flex items-center gap-2">
+                            <p
+                                class="text-xs font-black tracking-widest uppercase text-purple-400 mb-6 flex items-center gap-2">
                                 <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span> Select Query Chip
                             </p>
-                            <div class="space-y-3 max-h-[380px] overflow-y-auto pr-2 no-scrollbar" id="playground-chips-container">
+                            <div class="space-y-3 max-h-[380px] overflow-y-auto pr-2 no-scrollbar"
+                                id="playground-chips-container">
                                 <!-- Preloaded chips dynamically rendered here -->
                             </div>
                         </div>
-                        <p class="text-[10px] text-[var(--text-muted)] leading-relaxed italic">Clicking a prompt automatically populates and runs the live RAG query inside the console.</p>
+                        <p class="text-[10px] text-[var(--text-muted)] leading-relaxed italic">Clicking a prompt
+                            automatically populates and runs the live RAG query inside the console.</p>
                     </div>
 
                     <!-- Sandbox Console Console Area -->
-                    <div class="lg:col-span-8 bg-zinc-950/80 border border-[var(--border)] rounded-[40px] p-8 flex flex-col justify-between relative shadow-2xl">
+                    <div
+                        class="lg:col-span-8 bg-zinc-950/80 border border-[var(--border)] rounded-[40px] p-8 flex flex-col justify-between relative shadow-2xl">
                         <!-- Upper control bar -->
                         <div class="flex justify-between items-center border-b border-[var(--border)] pb-6 mb-6">
                             <div class="flex items-center gap-3">
                                 <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                                <span class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">SOVEREIGN-GUARD-v2.1 LIVE</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">SOVEREIGN-GUARD-v2.1
+                                    LIVE</span>
                             </div>
-                            <span class="text-[10px] font-black px-3 py-1 bg-purple-900/40 text-purple-400 rounded-full uppercase tracking-widest border border-purple-500/20">IndiaAI Corp Context</span>
+                            <span
+                                class="text-[10px] font-black px-3 py-1 bg-purple-900/40 text-purple-400 rounded-full uppercase tracking-widest border border-purple-500/20">IndiaAI
+                                Corp Context</span>
                         </div>
 
                         <!-- Chat Console area -->
                         <div class="space-y-6 min-h-[350px] flex flex-col justify-end">
-                            <div id="playground-output-area" class="space-y-6 overflow-y-auto max-h-[320px] pr-2 no-scrollbar">
+                            <div id="playground-output-area"
+                                class="space-y-6 overflow-y-auto max-h-[320px] pr-2 no-scrollbar">
                                 <div class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-purple-900/40 text-purple-400 flex items-center justify-center font-black text-xs flex-shrink-0">SG</div>
-                                    <div class="bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl p-5 text-sm leading-relaxed text-[var(--text-muted)]">
-                                        Select a pre-loaded query chip from the left panel or type your custom generative inquiry below to run live RAG simulation with complete guardrails.
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-purple-900/40 text-purple-400 flex items-center justify-center font-black text-xs flex-shrink-0">
+                                        SG</div>
+                                    <div
+                                        class="bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl p-5 text-sm leading-relaxed text-[var(--text-muted)]">
+                                        Select a pre-loaded query chip from the left panel or type your custom
+                                        generative inquiry below to run live RAG simulation with complete guardrails.
                                     </div>
                                 </div>
                             </div>
@@ -729,8 +973,13 @@
 
                         <!-- Input container -->
                         <div class="mt-8 relative flex items-center gap-4">
-                            <textarea id="playground-textarea" rows="2" placeholder="Formulate custom query or run chip..." aria-label="Sovereign AI Playground Query" class="w-full bg-black/60 border border-[var(--border)] rounded-2xl px-6 py-4 pr-16 text-sm outline-none focus:border-purple-500/60 transition-all text-[var(--text)] resize-none"></textarea>
-                            <button onclick="runPlaygroundQuery()" class="absolute right-4 bg-purple-600 hover:bg-purple-500 text-white w-12 h-12 rounded-xl flex items-center justify-center hover:scale-105 transition shadow-lg" aria-label="Execute query">
+                            <textarea id="playground-textarea" rows="2"
+                                placeholder="Formulate custom query or run chip..."
+                                aria-label="Sovereign AI Playground Query"
+                                class="w-full bg-black/60 border border-[var(--border)] rounded-2xl px-6 py-4 pr-16 text-sm outline-none focus:border-purple-500/60 transition-all text-[var(--text)] resize-none"></textarea>
+                            <button onclick="runPlaygroundQuery()"
+                                class="absolute right-4 bg-purple-600 hover:bg-purple-500 text-white w-12 h-12 rounded-xl flex items-center justify-center hover:scale-105 transition shadow-lg"
+                                aria-label="Execute query">
                                 <i class="fa-solid fa-paper-plane text-xs"></i>
                             </button>
                         </div>
@@ -743,36 +992,57 @@
         <section class="py-48 px-8" aria-label="Client Testimonials">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-24" data-aos="fade-up">
-                    <h2 class="text-5xl font-black tracking-tighter mb-6 text-[var(--text)]">Trusted by <span class="serif italic font-normal text-purple-600">Industry Leaders</span></h2>
+                    <h2 class="text-5xl font-black tracking-tighter mb-6 text-[var(--text)]">Trusted by <span
+                            class="serif italic font-normal text-purple-600">Industry Leaders</span></h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <blockquote class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group" data-aos="fade-up">
-                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Saniya delivered exceptional multi-agent systems. Her Sovereign Guard is a game changer for our infrastructure."</p>
+                    <blockquote
+                        class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group"
+                        data-aos="fade-up">
+                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Saniya
+                            delivered exceptional multi-agent systems. Her Sovereign Guard is a game changer for our
+                            infrastructure."</p>
                         <footer class="flex items-center gap-5">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Marcus Thorne, CTO of Nexus Corp" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150"
+                                class="w-12 h-12 rounded-full grayscale object-cover border border-white/10"
+                                alt="Marcus Thorne, CTO of Nexus Corp" loading="lazy">
                             <div>
                                 <cite class="font-black text-lg not-italic text-[var(--text)]">Marcus Thorne</cite>
-                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">CTO, Nexus Corp</p>
+                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">CTO,
+                                    Nexus Corp</p>
                             </div>
                         </footer>
                     </blockquote>
-                    <blockquote class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Reduced hallucination by 92%. True expert in the Generative AI space who understands business impact."</p>
+                    <blockquote
+                        class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Reduced
+                            hallucination by 92%. True expert in the Generative AI space who understands business
+                            impact."</p>
                         <footer class="flex items-center gap-5">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Sarah Jenkins, VP Engineering of EduFlow" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150"
+                                class="w-12 h-12 rounded-full grayscale object-cover border border-white/10"
+                                alt="Sarah Jenkins, VP Engineering of EduFlow" loading="lazy">
                             <div>
                                 <cite class="font-black text-lg not-italic text-[var(--text)]">Sarah Jenkins</cite>
-                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">VP Engineering, EduFlow</p>
+                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">VP
+                                    Engineering, EduFlow</p>
                             </div>
                         </footer>
                     </blockquote>
-                    <blockquote class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group" data-aos="fade-up" data-aos-delay="200">
-                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Strategic thinker who solves real-world enterprise problems with high-performance AI solutions."</p>
+                    <blockquote
+                        class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Strategic
+                            thinker who solves real-world enterprise problems with high-performance AI solutions."</p>
                         <footer class="flex items-center gap-5">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Luke Chen, Founder of Stealth AI" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
+                                class="w-12 h-12 rounded-full grayscale object-cover border border-white/10"
+                                alt="Luke Chen, Founder of Stealth AI" loading="lazy">
                             <div>
                                 <cite class="font-black text-lg not-italic text-[var(--text)]">Luke Chen</cite>
-                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">Founder, Stealth AI</p>
+                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">Founder,
+                                    Stealth AI</p>
                             </div>
                         </footer>
                     </blockquote>
@@ -781,43 +1051,51 @@
         </section>
 
         <!-- TRUSTED BY LOGOS -->
-        <section class="py-32 px-8 bg-black/20 border-t border-[var(--border)]" aria-label="Trusted Enterprise Partners">
+        <section class="py-32 px-8 bg-black/20 border-t border-[var(--border)]"
+            aria-label="Trusted Enterprise Partners">
             <div class="max-w-7xl mx-auto">
-                <p class="text-center text-[10px] uppercase tracking-[0.6em] text-zinc-600 mb-20 font-black">Trusted by Enterprise Leaders</p>
+                <p class="text-center text-[10px] uppercase tracking-[0.6em] text-zinc-600 mb-20 font-black">Trusted by
+                    Enterprise Leaders</p>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-stretch" data-aos="fade-up">
                     <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <i class="fa-solid fa-layer-group text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <i class="fa-solid fa-layer-group text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400"
+                                aria-hidden="true"></i>
                             <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">NEXUS</span>
                         </div>
                     </div>
                     <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <i class="fa-solid fa-atom text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <i class="fa-solid fa-atom text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400"
+                                aria-hidden="true"></i>
                             <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">QUANTUM</span>
                         </div>
                     </div>
                     <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <i class="fa-solid fa-shield-halved text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <i class="fa-solid fa-shield-halved text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400"
+                                aria-hidden="true"></i>
                             <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">VERIDIAN</span>
                         </div>
                     </div>
                     <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <i class="fa-solid fa-wave-square text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <i class="fa-solid fa-wave-square text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400"
+                                aria-hidden="true"></i>
                             <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">AETHER</span>
                         </div>
                     </div>
                     <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <i class="fa-solid fa-compass text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <i class="fa-solid fa-compass text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400"
+                                aria-hidden="true"></i>
                             <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">STRATOS</span>
                         </div>
                     </div>
                     <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <i class="fa-solid fa-bolt-lightning text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <i class="fa-solid fa-bolt-lightning text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400"
+                                aria-hidden="true"></i>
                             <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">LUMINA</span>
                         </div>
                     </div>
@@ -829,27 +1107,35 @@
         <section id="about" class="py-48 px-8 bg-black/40" aria-labelledby="about-title">
             <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-24 items-center">
                 <div class="md:col-span-5 relative" data-aos="fade-up">
-                    <div class="aspect-[4/5] bg-zinc-900 rounded-[60px] overflow-hidden border border-white/5 relative group shadow-2xl">
+                    <div
+                        class="aspect-[4/5] bg-zinc-900 rounded-[60px] overflow-hidden border border-white/5 relative group shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
-                            class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" alt="Professional portrait of Saniya Malik, AI Architect">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-60" aria-hidden="true"></div>
+                            class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000"
+                            alt="Professional portrait of Saniya Malik, AI Architect">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-60"
+                            aria-hidden="true"></div>
                     </div>
                     <div class="absolute -bottom-8 -right-8 space-y-4">
-                        <div class="bg-white text-black px-8 py-4 rounded-3xl shadow-2xl font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-4 border border-black/10">
+                        <div
+                            class="bg-white text-black px-8 py-4 rounded-3xl shadow-2xl font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-4 border border-black/10">
                             <i class="fa-solid fa-shield-halved text-purple-600" aria-hidden="true"></i> IndiaAI Mission
                         </div>
-                        <div class="bg-zinc-900/90 backdrop-blur-xl text-white px-8 py-4 rounded-3xl shadow-2xl font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-4 border border-white/10">
-                            <i class="fa-solid fa-microphone-lines text-purple-400" aria-hidden="true"></i> Featured Speaker
+                        <div
+                            class="bg-zinc-900/90 backdrop-blur-xl text-white px-8 py-4 rounded-3xl shadow-2xl font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-4 border border-white/10">
+                            <i class="fa-solid fa-microphone-lines text-purple-400" aria-hidden="true"></i> Featured
+                            Speaker
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="md:col-span-7" data-aos="fade-up" data-aos-delay="200">
-                    <h2 id="about-title" class="text-6xl font-black tracking-tighter mb-12 text-[var(--text)]">Hi, I'm Saniya Malik</h2>
+                    <h2 id="about-title" class="text-6xl font-black tracking-tighter mb-12 text-[var(--text)]">Hi, I'm
+                        Saniya Malik</h2>
                     <div class="space-y-10 text-xl md:text-2xl text-[var(--text-muted)] leading-relaxed font-medium">
                         <p>
                             With over 6 years of hands-on experience in Generative AI, I specialize in designing and
-                            deploying scalable RAG systems, multi-agent architectures, and secure sovereign AI platforms.
+                            deploying scalable RAG systems, multi-agent architectures, and secure sovereign AI
+                            platforms.
                         </p>
                         <p>
                             My work is closely aligned with the IndiaAI Mission, focusing on building resilient national
@@ -858,32 +1144,48 @@
                     </div>
 
                     <!-- IMPACT EXPLORER DASHBOARD -->
-                    <div class="mt-14 p-8 bg-[var(--card-bg)] border border-[var(--border)] rounded-[30px]" id="impact-dashboard">
+                    <div class="mt-14 p-8 bg-[var(--card-bg)] border border-[var(--border)] rounded-[30px]"
+                        id="impact-dashboard">
                         <div class="flex justify-between items-center mb-6 border-b border-[var(--border)] pb-4">
-                            <p class="text-[10px] font-black uppercase tracking-widest text-purple-400">Impact Metrics Explorer</p>
+                            <p class="text-[10px] font-black uppercase tracking-widest text-purple-400">Impact Metrics
+                                Explorer</p>
                             <div class="flex gap-2">
-                                <button onclick="switchImpactMetric('all')" class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full bg-purple-900/30 text-purple-400 border border-purple-500/20 uppercase" id="btn-impact-all">All</button>
-                                <button onclick="switchImpactMetric('accuracy')" class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full hover:bg-zinc-800 transition uppercase" id="btn-impact-accuracy">Accuracy</button>
-                                <button onclick="switchImpactMetric('roi')" class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full hover:bg-zinc-800 transition uppercase" id="btn-impact-roi">ROI</button>
+                                <button onclick="switchImpactMetric('all')"
+                                    class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full bg-purple-900/30 text-purple-400 border border-purple-500/20 uppercase"
+                                    id="btn-impact-all">All</button>
+                                <button onclick="switchImpactMetric('accuracy')"
+                                    class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full hover:bg-zinc-800 transition uppercase"
+                                    id="btn-impact-accuracy">Accuracy</button>
+                                <button onclick="switchImpactMetric('roi')"
+                                    class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full hover:bg-zinc-800 transition uppercase"
+                                    id="btn-impact-roi">ROI</button>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-3 gap-8" id="stats-numbers-container">
                             <div class="stat-group" id="stat-projects">
-                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span class="count-number" data-target="40">0</span>+</p>
-                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Projects</p>
+                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span
+                                        class="count-number" data-target="40">0</span>+</p>
+                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">
+                                    Projects</p>
                             </div>
                             <div class="stat-group" id="stat-clients">
-                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span class="count-number" data-target="12">0</span></p>
-                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Enterprise Clients</p>
+                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span
+                                        class="count-number" data-target="12">0</span></p>
+                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">
+                                    Enterprise Clients</p>
                             </div>
                             <div class="stat-group" id="stat-accuracy">
-                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span class="count-number" data-target="92.8" data-decimal="1">0</span>%</p>
-                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Accuracy</p>
+                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span
+                                        class="count-number" data-target="92.8" data-decimal="1">0</span>%</p>
+                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">
+                                    Accuracy</p>
                             </div>
                         </div>
-                        <div class="mt-6 text-xs text-[var(--text-muted)] leading-relaxed italic border-t border-[var(--border)] pt-4" id="impact-metric-desc">
-                            Displaying holistic combined metrics verifying high enterprise delivery, groundedness accuracy, and successful system setups.
+                        <div class="mt-6 text-xs text-[var(--text-muted)] leading-relaxed italic border-t border-[var(--border)] pt-4"
+                            id="impact-metric-desc">
+                            Displaying holistic combined metrics verifying high enterprise delivery, groundedness
+                            accuracy, and successful system setups.
                         </div>
                     </div>
                 </div>
@@ -893,92 +1195,126 @@
         <!-- FAQ -->
         <section id="faq" class="py-24 bg-black/40 border-t border-[var(--border)]" aria-labelledby="faq-title">
             <div class="max-w-4xl mx-auto px-6">
-                <h2 id="faq-title" class="text-5xl font-serif text-center mb-8 text-[var(--text)]">Frequently Asked Questions</h2>
-                
+                <h2 id="faq-title" class="text-5xl font-serif text-center mb-8 text-[var(--text)]">Frequently Asked
+                    Questions</h2>
+
                 <!-- FAQ Search / Filter Input -->
                 <div class="mb-12 max-w-md mx-auto relative">
-                    <input type="text" id="faq-search" placeholder="Search questions..." class="w-full bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl px-6 py-4 text-sm outline-none focus:border-purple-500/60 transition-all text-[var(--text)]">
+                    <input type="text" id="faq-search" placeholder="Search questions..."
+                        class="w-full bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl px-6 py-4 text-sm outline-none focus:border-purple-500/60 transition-all text-[var(--text)]">
                     <i class="fa-solid fa-magnifying-glass absolute right-6 top-1/2 -translate-y-1/2 text-zinc-500"></i>
                 </div>
 
                 <div class="space-y-6" id="faq-accordion-container">
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             What is Sovereign AI and why does India need it?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            Sovereign AI means building complete AI systems that are developed, trained, governed, and deployed entirely within India's data boundaries using Indian infrastructure and regulations. It protects national data sovereignty, reduces foreign dependency, ensures compliance with local laws, and supports IndiaAI Mission goals.
+                            Sovereign AI means building complete AI systems that are developed, trained, governed, and
+                            deployed entirely within India's data boundaries using Indian infrastructure and
+                            regulations. It protects national data sovereignty, reduces foreign dependency, ensures
+                            compliance with local laws, and supports IndiaAI Mission goals.
                         </div>
                     </details>
 
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             How is your RAG implementation different from standard solutions?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            I implement advanced ReflectionRAG, Multi-Agent RAG, and GraphRAG architectures with proper chunking strategies, metadata filtering, and self-correction loops. This achieves 93%+ groundedness and reduces hallucinations significantly compared to basic vector search RAG.
+                            I implement advanced ReflectionRAG, Multi-Agent RAG, and GraphRAG architectures with proper
+                            chunking strategies, metadata filtering, and self-correction loops. This achieves 93%+
+                            groundedness and reduces hallucinations significantly compared to basic vector search RAG.
                         </div>
                     </details>
 
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             What is the typical project timeline and investment?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            POC/MVP: 6-8 weeks | Full Production System: 3-5 months. Investment starts from ₹18 lakhs for enterprise RAG solutions and goes up based on complexity and scale. I offer flexible milestone-based payment terms.
+                            POC/MVP: 6-8 weeks | Full Production System: 3-5 months. Investment starts from ₹18 lakhs
+                            for enterprise RAG solutions and goes up based on complexity and scale. I offer flexible
+                            milestone-based payment terms.
                         </div>
                     </details>
 
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             Which industries do you serve?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            LegalTech, Government & Public Sector, Healthcare, Finance & Insurance, Education, and Agritech. I have deep experience working with regulated industries and IndiaAI Mission aligned projects.
+                            LegalTech, Government & Public Sector, Healthcare, Finance & Insurance, Education, and
+                            Agritech. I have deep experience working with regulated industries and IndiaAI Mission
+                            aligned projects.
                         </div>
                     </details>
 
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             How do you ensure data privacy and security?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            All solutions are deployed on Indian data centers (MeitY empaneled) or private VPC. I follow strict data residency, encryption at rest & transit, role-based access, audit logging, and regular security assessments.
+                            All solutions are deployed on Indian data centers (MeitY empaneled) or private VPC. I follow
+                            strict data residency, encryption at rest & transit, role-based access, audit logging, and
+                            regular security assessments.
                         </div>
                     </details>
 
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             When should I use Multi-Agent systems?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            Multi-agent systems are ideal when you need complex workflows, specialized roles (researcher, critic, executor), or when handling tasks that require multiple reasoning steps and collaboration between different AI personas.
+                            Multi-agent systems are ideal when you need complex workflows, specialized roles
+                            (researcher, critic, executor), or when handling tasks that require multiple reasoning steps
+                            and collaboration between different AI personas.
                         </div>
                     </details>
 
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             Do you provide post-deployment support?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            Yes. I offer 6-12 months of complimentary support, monitoring, fine-tuning, and quarterly optimization sprints. Long-term maintenance contracts are also available.
+                            Yes. I offer 6-12 months of complimentary support, monitoring, fine-tuning, and quarterly
+                            optimization sprints. Long-term maintenance contracts are also available.
                         </div>
                     </details>
 
                     <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
-                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                        <summary
+                            class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
                             How do you measure ROI and success?
-                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                            <span
+                                class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
                         </summary>
                         <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
-                            Success is measured through groundedness accuracy, latency reduction, cost savings, user adoption rate, and direct business impact (e.g., hours saved, cases processed, compliance achieved). Every project includes clear baseline vs post-implementation KPIs.
+                            Success is measured through groundedness accuracy, latency reduction, cost savings, user
+                            adoption rate, and direct business impact (e.g., hours saved, cases processed, compliance
+                            achieved). Every project includes clear baseline vs post-implementation KPIs.
                         </div>
                     </details>
                 </div>
@@ -986,36 +1322,36 @@
         </section>
 
         <!-- CONTACT -->
-        <section id="contact" class="py-64 px-8 text-center border-t border-[var(--border)] relative overflow-hidden" aria-labelledby="contact-title">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.03)_0%,transparent_70%)] pointer-events-none" aria-hidden="true"></div>
-            <h2 id="contact-title" class="text-7xl md:text-[160px] font-black tracking-tighter mb-24 leading-none uppercase text-[var(--text)]" data-aos="fade-up">BUILD THE <br><span class="serif italic font-normal text-purple-700">INTELLIGENT.</span></h2>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-20 mb-48 items-center" data-aos="fade-up" data-aos-delay="200">
-                <a href="mailto:san192227m@gmail.com" aria-label="Send an email to Saniya Malik" class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
+        <section id="contact" class="py-64 px-8 text-center border-t border-[var(--border)] relative overflow-hidden"
+            aria-labelledby="contact-title">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.03)_0%,transparent_70%)] pointer-events-none"
+                aria-hidden="true"></div>
+            <h2 id="contact-title"
+                class="text-7xl md:text-[160px] font-black tracking-tighter mb-24 leading-none uppercase text-[var(--text)]"
+                data-aos="fade-up">BUILD THE <br><span
+                    class="serif italic font-normal text-purple-700">INTELLIGENT.</span></h2>
+
+            <div class="flex flex-col md:flex-row justify-center gap-20 mb-48 items-center" data-aos="fade-up"
+                data-aos-delay="200">
+                <a href="mailto:san192227m@gmail.com" aria-label="Send an email to Saniya Malik"
+                    class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
                     <i class="fa-solid fa-envelope text-purple-600" aria-hidden="true"></i> Contact
                 </a>
-                <a href="#" onclick="return openTalkModal()" aria-label="Schedule a meeting via Calendly" class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
+                <a href="#" onclick="return openTalkModal()" aria-label="Schedule a meeting via Calendly"
+                    class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
                     <i class="fa-solid fa-calendar-check text-purple-600" aria-hidden="true"></i> Schedule
                 </a>
-                <a href="https://in.linkedin.com/in/saniya-malik-195864229" target="_blank" aria-label="Visit Saniya Malik's LinkedIn profile" class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
+                <a href="https://in.linkedin.com/in/saniya-malik-195864229" target="_blank"
+                    aria-label="Visit Saniya Malik's LinkedIn profile"
+                    class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
                     <i class="fa-brands fa-linkedin text-purple-600" aria-hidden="true"></i> LinkedIn
                 </a>
             </div>
-            
-            <p class="text-[10px] font-black uppercase tracking-[1em] opacity-20 text-[var(--text)]">© 2026 SANIYA MALIK — ELITE AI ARCHITECT</p>
+
+            <p class="text-[10px] font-black uppercase tracking-[1em] opacity-20 text-[var(--text)]">© 2026 SANIYA MALIK
+                — ELITE AI ARCHITECT</p>
         </section>
     </main>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919999999999?text=Hello%20Saniya,%20I'm%20interested%20in%20your%20AI%20consulting%20services." 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Contact Saniya Malik on WhatsApp" 
-       class="fixed bottom-10 left-10 z-[150] bg-emerald-500/10 hover:bg-emerald-500 border border-emerald-500/30 text-emerald-400 hover:text-white w-16 h-16 md:w-20 md:h-20 rounded-full shadow-[0_0_30px_rgba(16,185,129,0.2)] flex items-center justify-center hover:scale-110 transition-all duration-300 group">
-        <i class="fa-brands fa-whatsapp text-3xl md:text-4xl transition-transform duration-300 group-hover:rotate-[360deg]" aria-hidden="true"></i>
-        <!-- Subtle pulsing effect -->
-        <span class="absolute inset-0 rounded-full border border-emerald-500/50 animate-ping opacity-25"></span>
-    </a>
 
     <!-- SIDEBAR CHAT (Ask Saniya AI Sidebar) -->
     <button onclick="toggleAISidebar()" aria-label="Toggle Saniya AI assistant"
@@ -1023,22 +1359,30 @@
         <i class="fa-solid fa-robot text-xl md:text-2xl" aria-hidden="true"></i>
     </button>
 
-    <div id="aiSidebar" class="fixed top-0 right-[-100%] h-full w-full max-w-md bg-black/90 backdrop-blur-3xl z-[200] border-l border-white/10 shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden">
+    <div id="aiSidebar"
+        class="fixed top-0 right-[-100%] h-full w-full max-w-md bg-black/90 backdrop-blur-3xl z-[200] border-l border-white/10 shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden">
         <!-- Sidebar Header -->
         <div class="p-6 border-b border-white/10 flex justify-between items-center bg-zinc-950/80">
             <div>
                 <h3 class="text-xl font-black text-white tracking-tight">Ask Saniya AI</h3>
-                <p class="text-[9px] text-purple-400 uppercase tracking-widest font-bold mt-1">Sovereign Guard Assistant</p>
+                <p class="text-[9px] text-purple-400 uppercase tracking-widest font-bold mt-1">Sovereign Guard Assistant
+                </p>
             </div>
-            <button onclick="toggleAISidebar()" class="text-3xl font-light text-white hover:text-purple-500 hover:rotate-90 transition-all" aria-label="Close Chat">&times;</button>
+            <button onclick="toggleAISidebar()"
+                class="text-3xl font-light text-white hover:text-purple-500 hover:rotate-90 transition-all"
+                aria-label="Close Chat">&times;</button>
         </div>
 
         <!-- Sidebar Messages Container -->
         <div id="sidebar-messages" class="flex-1 p-6 space-y-4 overflow-y-auto no-scrollbar">
             <div class="flex gap-4">
-                <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold text-white">SM</div>
-                <div class="bg-white/5 border border-white/10 rounded-2xl rounded-tl-none p-4 text-xs text-zinc-300 max-w-[80%] leading-relaxed">
-                    Sovereign AI Greeting. I am Saniya Malik's AI proxy, expert in production RAG systems, multi-agent frameworks, and Sovereign Guard deployment. How can I help map your enterprise strategy today?
+                <div
+                    class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold text-white">
+                    SM</div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl rounded-tl-none p-4 text-xs text-zinc-300 max-w-[80%] leading-relaxed">
+                    Sovereign AI Greeting. I am Saniya Malik's AI proxy, expert in production RAG systems, multi-agent
+                    frameworks, and Sovereign Guard deployment. How can I help map your enterprise strategy today?
                 </div>
             </div>
         </div>
@@ -1047,14 +1391,23 @@
         <div class="p-6 border-t border-white/10 bg-zinc-950/80 space-y-4">
             <p class="text-[9px] font-black text-zinc-600 uppercase tracking-widest mb-2">Prompt Suggestions</p>
             <div class="flex flex-wrap gap-2 overflow-x-auto no-scrollbar pb-2">
-                <button onclick="sendSidebarSuggestion('How can Sovereign Guard help my security?')" class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">Sovereign Guard Security</button>
-                <button onclick="sendSidebarSuggestion('What is the timeline for RAG setup?')" class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">RAG Timeline</button>
-                <button onclick="sendSidebarSuggestion('Discuss IndiaAI alignment?')" class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">IndiaAI Mission</button>
+                <button onclick="sendSidebarSuggestion('How can Sovereign Guard help my security?')"
+                    class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">Sovereign
+                    Guard Security</button>
+                <button onclick="sendSidebarSuggestion('What is the timeline for RAG setup?')"
+                    class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">RAG
+                    Timeline</button>
+                <button onclick="sendSidebarSuggestion('Discuss IndiaAI alignment?')"
+                    class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">IndiaAI
+                    Mission</button>
             </div>
 
             <div class="relative">
-                <input type="text" id="sidebar-input" placeholder="Query Saniya AI..." aria-label="AI Sidebar Query" class="w-full bg-black border border-white/10 rounded-xl px-5 py-3 pr-12 text-xs outline-none focus:border-purple-500/60 text-white">
-                <button onclick="submitSidebarQuery()" class="absolute right-3 top-1/2 -translate-y-1/2 text-white bg-purple-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-purple-500" aria-label="Submit query">
+                <input type="text" id="sidebar-input" placeholder="Query Saniya AI..." aria-label="AI Sidebar Query"
+                    class="w-full bg-black border border-white/10 rounded-xl px-5 py-3 pr-12 text-xs outline-none focus:border-purple-500/60 text-white">
+                <button onclick="submitSidebarQuery()"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 text-white bg-purple-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-purple-500"
+                    aria-label="Submit query">
                     <i class="fa-solid fa-paper-plane text-[10px]"></i>
                 </button>
             </div>
@@ -1062,9 +1415,12 @@
     </div>
 
     <!-- CASE STUDY & SOVEREIGN MODAL CONTAINER -->
-    <div id="caseStudyModal" class="hidden fixed inset-0 z-[100] bg-black overflow-y-auto no-scrollbar" role="dialog" aria-modal="true">
+    <div id="caseStudyModal" class="hidden fixed inset-0 z-[100] bg-black overflow-y-auto no-scrollbar" role="dialog"
+        aria-modal="true">
         <div class="max-w-7xl mx-auto px-8 py-32 relative modal-reveal">
-            <button onclick="closeCaseStudy()" class="fixed top-12 right-12 text-5xl md:text-7xl font-thin hover:rotate-90 hover:text-purple-500 transition-all z-[120] text-white" aria-label="Close modal">&times;</button>
+            <button onclick="closeCaseStudy()"
+                class="fixed top-12 right-12 text-5xl md:text-7xl font-thin hover:rotate-90 hover:text-purple-500 transition-all z-[120] text-white"
+                aria-label="Close modal">&times;</button>
             <div id="modalContent" class="space-y-16 pb-40"></div>
         </div>
     </div>
@@ -1242,7 +1598,7 @@
             const container = document.getElementById('stats-numbers-container');
             const desc = document.getElementById('impact-metric-desc');
             desc.textContent = impactDescriptions[metric];
-            
+
             document.querySelectorAll('#impact-dashboard button').forEach(btn => {
                 btn.classList.remove('bg-purple-900/30', 'text-purple-400', 'border', 'border-purple-500/20');
                 btn.classList.add('hover:bg-zinc-800');
@@ -1651,7 +2007,7 @@
 
         function openTalkModal() {
             if (typeof Calendly !== 'undefined') {
-                Calendly.initPopupWidget({url: 'https://calendly.com/mdua0504/30min'});
+                Calendly.initPopupWidget({ url: 'https://calendly.com/mdua0504/30min' });
             } else {
                 window.open('https://calendly.com/mdua0504/30min', '_blank');
             }
@@ -1675,7 +2031,7 @@
         function openCaseStudy(id) {
             const p = projects[id];
             const content = document.getElementById('modalContent');
-            
+
             content.innerHTML = `
                 <!-- Case Study Header -->
                 <div class="space-y-10">
@@ -1817,7 +2173,7 @@
             const modalTitle = document.getElementById('node-prop-title');
             const modalDesc = document.getElementById('node-prop-desc');
             const activeTabButton = document.querySelector('#modalContent button.text-purple-400');
-            
+
             // Check if interactive graph is visible and fetch current node properties
             const projectId = activeTabButton ? activeTabButton.getAttribute('onclick').match(/'([^']+)'/)[1] : null;
             if (projectId) {
@@ -1875,4 +2231,5 @@
         });
     </script>
 </body>
+
 </html>
