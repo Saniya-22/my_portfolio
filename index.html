@@ -38,10 +38,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Image Preloads for Critical Dashboard Performance -->
-    <link rel="preload" as="image" href="flowsight_ai_dashboard.png" fetchpriority="high">
-    <link rel="preload" as="image" href="yojana_ai_dashboard.png" fetchpriority="high">
-    <link rel="preload" as="image" href="flowsight_ai_modal.png" fetchpriority="high">
-    <link rel="preload" as="image" href="yojana_ai_modal.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/flowsight_ai_dashboard.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/yojana_ai_dashboard.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/flowsight_ai_modal.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/yojana_ai_modal.png" fetchpriority="high">
     
     <!-- Calendly -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -464,7 +464,7 @@
                     <!-- Case Study 4 -->
                     <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('flowsight')" data-aos="fade-up" data-aos-delay="300" data-reveal-step="4">
                         <div class="aspect-[4/5] overflow-hidden relative">
-                            <img src="flowsight_ai_dashboard.png"
+                            <img src="assets/images/flowsight_ai_dashboard.png"
                                 class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="FlowSight AI — Supply Chain Control Tower" loading="lazy">
                         </div>
                         <div class="p-10 bg-[var(--card-bg)]">
@@ -485,7 +485,7 @@
                     <!-- Case Study 5 -->
                     <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('yojana')" data-aos="fade-up" data-aos-delay="400" data-reveal-step="5">
                         <div class="aspect-[4/5] overflow-hidden relative">
-                            <img src="yojana_ai_dashboard.png"
+                            <img src="assets/images/yojana_ai_dashboard.png"
                                 class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="Yojana-AI — Sovereign government schemes RAG platform" loading="lazy">
                         </div>
                         <div class="p-10 bg-[var(--card-bg)]">
@@ -1468,7 +1468,7 @@
             flowsight: {
                 title: "FlowSight AI",
                 subtitle: "Supply Chain Predictive Control Tower",
-                img: "flowsight_ai_modal.png",
+                img: "assets/images/flowsight_ai_modal.png",
                 overview: "FlowSight AI is an enterprise logistics control tower designed to optimize shipping networks across India, predict delay risks, and deliver LLM-grounded operational insights.",
                 challenge: ["Complex delays across states", "Poor routing optimization", "Manual event tracking", "Unexplainable system outputs"],
                 strategy: ["<b>Prediction Engine:</b> CatBoost & XGBoost ensemble models.", "<b>India Logistics Map:</b> Real-time geo-routing visualizations.", "<b>Explainable Ops:</b> Groq LLM natural language diagnostic reports."],
@@ -1486,7 +1486,7 @@
             yojana: {
                 title: "Yojana-AI",
                 subtitle: "Sovereign Multi-Agent Scheme RAG",
-                img: "yojana_ai_modal.png",
+                img: "assets/images/yojana_ai_modal.png",
                 overview: "Yojana-AI is a high-security, multi-agent government schemes discovery platform, allowing Indian citizens to instantly analyze criteria and qualification citations.",
                 challenge: ["Complex and fragmented eligibility criteria", "Hallucinatory responses in legal schemes", "High manual inquiry loads", "Sovereign data security mandates"],
                 strategy: ["<b>Multi-Agent Framework:</b> LangGraph-orchestrated intent, retrieval, and quality agents.", "<b>Citation Engine:</b> Qdrant vector grounded citations.", "<b>Hybrid Host:</b> Dual Ollama Local + Groq cloud failover."],
