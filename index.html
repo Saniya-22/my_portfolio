@@ -1,545 +1,1670 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
+<!-- HEADER -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saniya Malik | AI Architect</title>
+    <title>Saniya Malik — AI Architect & Generative AI Consultant | RAG, Multi-Agent Systems & Sovereign AI</title>
+    
+    <!-- SEO & Meta Tags -->
+    <meta name="description" content="Saniya Malik is a Delhi-based AI architect specializing in production-grade RAG systems, multi-agent architectures, and sovereign AI for Indian enterprises. 40+ projects delivered.">
+    <meta name="keywords" content="AI consultant Delhi, generative AI architect India, RAG systems India, multi-agent AI, sovereign AI, LLM consulting India, enterprise AI solutions, Saniya Malik, IndiaAI Mission">
+    <link rel="canonical" href="https://saniyamalik.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Saniya Malik — AI Architect & Generative AI Consultant">
+    <meta property="og:description" content="Delhi-based expert in production-grade RAG architectures, multi-agent systems, and sovereign AI. Aligning with IndiaAI Mission for measurable outcomes.">
+    <meta property="og:image" content="https://saniyamalik.com/og-cover.jpg">
+    <meta property="og:url" content="https://saniyamalik.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Saniya Malik — AI Architect">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Saniya Malik — AI Architect & Generative AI Consultant">
+    <meta name="twitter:description" content="Production-grade RAG, multi-agent systems & sovereign AI. 40+ projects, 92.8% avg. accuracy. Delhi-based expert.">
+    <meta name="twitter:image" content="https://saniyamalik.com/og-cover.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='black'/><text x='50%' y='50%' font-family='sans-serif' font-size='50' fill='white' text-anchor='middle' dy='.35em'>SM</text></svg>">
+
+    <!-- CDNs & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:italic@400&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:italic@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Image Preloads for Critical Dashboard Performance -->
+    <link rel="preload" as="image" href="assets/images/flowsight_ai_dashboard.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/yojana_ai_dashboard.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/flowsight_ai_modal.png" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/yojana_ai_modal.png" fetchpriority="high">
+    
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- STYLES -->
     <style>
+        /* --- Design System & Variables --- */
         :root {
-            --bg: #0a0a0a;
-            --accent: #ffffff;
-            --card-bg: #111111;
+            --bg: #050505;
+            --text: #ffffff;
+            --text-muted: #a1a1aa;
+            --accent: #9333ea;
+            --accent-glow: rgba(147, 51, 234, 0.15);
+            --card-bg: rgba(20, 20, 20, 0.4);
+            --border: rgba(255, 255, 255, 0.08);
+            --glow: rgba(147, 51, 234, 0.15);
+            --luxury-transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Standard Mode (Light Mode) Styling */
+        .standard-mode {
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #475569;
+            --accent: #4f46e5;
+            --accent-glow: rgba(79, 70, 229, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --border: rgba(15, 23, 42, 0.08);
+            --glow: rgba(79, 70, 229, 0.1);
+        }
+
+        /* --- Base Styles --- */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
-            color: var(--accent);
+            color: var(--text);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
-        .serif {
-            font-family: 'Instrument Serif', serif;
+        /* Custom Cursor - Desktop Only with Fine Pointer */
+        #cursor, #cursor-follower {
+            display: none;
+            pointer-events: none;
+            position: fixed;
+            z-index: 10000;
         }
 
+        @media (pointer: fine) {
+            html, body, a, button, summary {
+                cursor: none !important;
+            }
+
+            #cursor {
+                display: block;
+                width: 6px;
+                height: 6px;
+                background: var(--text);
+                border-radius: 50%;
+                transition: transform 0.1s;
+            }
+
+            #cursor-follower {
+                display: block;
+                width: 38px;
+                height: 38px;
+                border: 1px solid var(--accent);
+                border-radius: 50%;
+                transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+                background: var(--accent-glow);
+                backdrop-filter: blur(2px);
+            }
+        }
+
+        .serif { font-family: 'Instrument Serif', serif; }
+
+        /* --- UI Components --- */
         .nav-blur {
-            backdrop-filter: blur(20px);
-            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            background: rgba(5, 5, 5, 0.8);
+            transition: background-color 0.5s ease;
+        }
+        .standard-mode .nav-blur {
+            background: rgba(248, 250, 252, 0.8);
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            border: 1px solid var(--border);
+            transition: var(--luxury-transition);
         }
 
         .case-study-card {
-            border-radius: 32px;
+            border-radius: 40px;
             overflow: hidden;
-            background: var(--card-bg);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
         }
 
         .case-study-card:hover {
-            transform: translateY(-12px);
-            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-15px) scale(1.01);
+            border-color: var(--accent);
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.9), 0 0 20px var(--glow);
         }
 
-        .case-study-image {
-            transition: transform 0.8s ease;
+        .insight-card {
+            border-radius: 40px;
+            padding: 3rem;
+        }
+
+        .insight-card:hover {
+            border-color: var(--accent);
+            background: var(--card-bg);
+            transform: translateY(-10px);
+        }
+
+        .logo-grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            transition: var(--luxury-transition);
             filter: grayscale(100%);
+            opacity: 0.3;
         }
 
-        .case-study-card:hover .case-study-image {
-            transform: scale(1.08);
+        .logo-grid-item:hover {
             filter: grayscale(0%);
+            opacity: 0.9;
+            background: var(--accent-glow);
+            border-color: var(--accent);
+            transform: scale(1.05);
         }
 
-        .sovereign-section {
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-            border: 1px solid #222;
+        .premium-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .pulse-border {
-            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-            animation: pulse 2s infinite;
+        .premium-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+            transition: 0.6s;
         }
 
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-            }
+        .premium-btn:hover::after { left: 100%; }
+        .premium-btn:hover { box-shadow: 0 0 20px var(--glow); }
 
-            70% {
-                box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
-            }
+        /* --- Mobile Navigation --- */
+        #mobile-menu {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(100%);
+            background: rgba(5, 5, 5, 0.98);
+            backdrop-filter: blur(20px);
+        }
+        .standard-mode #mobile-menu {
+            background: rgba(248, 250, 252, 0.98);
+        }
+        #mobile-menu.active { transform: translateX(0); }
 
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-            }
+        .hamburger-line {
+            height: 2px;
+            width: 24px;
+            background: var(--text);
+            transition: all 0.3s;
+            border-radius: 2px;
         }
 
-        .modal-reveal {
-            animation: modalSlide 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+        .active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .active .hamburger-line:nth-child(2) { opacity: 0; }
+        .active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-        @keyframes modalSlide {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        /* --- Animations --- */
+        @keyframes modalReveal {
+            from { opacity: 0; transform: scale(0.98) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
-
-        .tech-pill {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-        }
+        .modal-reveal { animation: modalReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
         .section-tag {
             font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.4em;
-            color: #71717a;
+            font-weight: 900;
+            letter-spacing: 0.5em;
+            color: var(--accent);
             text-transform: uppercase;
             margin-bottom: 2rem;
             display: block;
         }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        .tech-pill {
+            background: var(--accent-glow);
+            border: 1px solid var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            transition: var(--luxury-transition);
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        * { scrollbar-width: none; }
+
+        /* --- FAQ / details Custom Style --- */
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+
+        /* Slider Toggle Customization */
+        .switch-input:checked + .switch-label .switch-dot {
+            transform: translateX(24px);
+        }
+
+        /* Architecture Flow Nodes & Paths */
+        .arch-node {
+            animation: pulse-border 2s infinite alternate;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.4); }
+            100% { box-shadow: 0 0 10px 4px rgba(147, 51, 234, 0.1); }
         }
     </style>
 </head>
 
-<body>
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-[80] nav-blur border-b border-white/5">
+<body class="bg-[var(--bg)] text-[var(--text)] transition-all duration-500">
+    <!-- Custom Cursor Canvas & Particles -->
+    <div id="cursor" aria-hidden="true"></div>
+    <div id="cursor-follower" aria-hidden="true"></div>
+    <canvas id="cursor-particles" class="fixed inset-0 pointer-events-none z-[10001]"></canvas>
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-purple-900/10 blur-[150px] rounded-full"></div>
+        <div class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-purple-900/10 blur-[150px] rounded-full"></div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full z-[90] nav-blur border-b border-white/5" role="navigation" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tighter uppercase">SM <span class="opacity-40 font-normal">/
-                    ARCHITECT</span></a>
-            <div class="hidden md:flex gap-10 text-[11px] font-bold tracking-[0.2em] uppercase opacity-60">
-                <a href="#work" class="hover:opacity-100 transition nav-link">Work</a>
-                <a href="#sovereign" class="hover:opacity-100 transition nav-link">Sovereign AI</a>
-                <a href="#about" class="hover:opacity-100 transition nav-link">About</a>
+            <a href="#" class="text-xl font-extrabold tracking-tighter uppercase" aria-label="Saniya Malik Home">SM <span class="opacity-30 font-light text-purple-400">/ ARCHITECT</span></a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex gap-12 text-[10px] font-black tracking-[0.4em] uppercase opacity-50 items-center">
+                <a href="#work" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">Work</a>
+                <a href="#sovereign" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">Sovereign AI</a>
+                <a href="#about" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">About</a>
+                <a href="#faq" class="hover:text-purple-400 hover:opacity-100 transition-all nav-link text-[var(--text)]">FAQ</a>
             </div>
-            <button onclick="openTalkModal()"
-                class="bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:bg-zinc-200 transition">LET'S
-                TALK</button>
+
+            <div class="flex items-center gap-6">
+                <!-- Sovereign Mode Toggle Button -->
+                <div class="flex items-center gap-3">
+                    <span class="text-[9px] font-black tracking-widest uppercase opacity-60">SOVEREIGN MODE</span>
+                    <div class="relative w-14 h-8 bg-zinc-900 rounded-full p-1 cursor-pointer border border-white/10" id="mode-toggle" onclick="toggleSovereignMode()" aria-label="Toggle Sovereign Mode">
+                        <div class="w-6 h-6 bg-purple-600 rounded-full transition-transform duration-300 transform" id="mode-toggle-dot"></div>
+                    </div>
+                </div>
+
+                <button onclick="openTalkModal()" aria-label="Book a consultation"
+                    class="hidden sm:block bg-[var(--text)] text-[var(--bg)] px-9 py-3.5 rounded-full text-[11px] font-black tracking-widest hover:bg-purple-600 hover:text-white transition-all premium-btn uppercase">LET'S TALK</button>
+                
+                <!-- Hamburger Button -->
+                <button id="hamburger-btn" class="lg:hidden flex flex-col gap-2 p-2 z-[110]" aria-label="Toggle Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="min-h-screen flex flex-col justify-center px-8 pt-20">
-        <div class="max-w-7xl mx-auto w-full">
-            <span class="section-tag" data-aos="fade-up">Generative AI Consultant</span>
-            <h1 class="text-6xl md:text-[110px] leading-[0.85] font-bold tracking-tighter mb-12" data-aos="fade-up"
-                data-aos-delay="100">
-                Building <span class="serif italic font-normal text-zinc-500">Intelligence</span><br>That Scales.
-            </h1>
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-10">
-                <p class="max-w-xl text-xl text-zinc-500 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                    Specializing in production-grade RAG architectures, multi-agent systems, and sovereign AI for
-                    high-stakes enterprise environments.
-                </p>
-                <div class="flex items-center gap-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex -space-x-3">
-                        <img src="https://i.pravatar.cc/100?u=1"
-                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]">
-                        <img src="https://i.pravatar.cc/100?u=2"
-                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]">
-                        <img src="https://i.pravatar.cc/100?u=3"
-                            class="w-12 h-12 rounded-full border-4 border-[#0a0a0a]">
-                    </div>
-                    <div>
-                        <p class="font-bold">9+ Global Partners</p>
-                        <p class="text-[10px] text-zinc-500 uppercase tracking-widest">5-Star Consulting Performance</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] lg:hidden flex flex-col justify-center items-center text-center px-12" aria-hidden="true">
+        <div class="flex flex-col gap-10 text-5xl font-black tracking-tighter uppercase">
+            <a href="#work" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">Work</a>
+            <a href="#sovereign" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">Sovereign AI</a>
+            <a href="#about" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">About</a>
+            <a href="#faq" class="mobile-nav-link hover:text-purple-500 transition-colors text-[var(--text)]">FAQ</a>
         </div>
-    </section>
+        <div class="mt-20 w-full max-w-xs">
+            <button onclick="openTalkModal(); toggleMobileMenu();" class="w-full bg-purple-600 text-white py-6 rounded-full font-black text-xl uppercase tracking-widest shadow-2xl">LET'S TALK</button>
+        </div>
+    </div>
 
-    <!-- Work -->
-    <section id="work" class="py-32 px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-20 border-b border-white/5 pb-12">
-                <h2 class="text-5xl font-bold tracking-tighter">Case <span
-                        class="serif italic font-normal">Studies</span></h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="case-study-card group" onclick="openCaseStudy('claimlens')" data-aos="fade-up">
-                    <div class="aspect-[4/5] overflow-hidden"><img
-                            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"></div>
-                    <div class="p-10">
-                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-4">Insurance / Computer Vision
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="min-h-screen flex flex-col justify-center px-8 pt-24 overflow-hidden" aria-labelledby="hero-title">
+            <div class="max-w-7xl mx-auto w-full relative">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-600/5 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
+                
+                <span class="section-tag" data-aos="fade-up">Elite Generative AI Consultant</span>
+                <h1 id="hero-title" class="text-6xl md:text-[130px] leading-[0.8] font-black tracking-tighter mb-14" data-aos="fade-up" data-aos-delay="100">
+                    Building <span class="serif italic font-normal text-purple-600/60">Intelligence</span><br>That Scales.
+                </h1>
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-16">
+                    <div class="max-w-2xl space-y-12">
+                        <div class="flex items-center gap-3" data-aos="fade-up" data-aos-delay="150">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping" aria-hidden="true"></span>
+                            <span class="text-[11px] font-black uppercase tracking-[0.3em] text-red-500/90">Only 3 consultation slots left for May 2026</span>
+                        </div>
+                        <p class="text-xl md:text-2xl text-[var(--text-muted)] leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="200">
+                            I am Saniya Malik, a Delhi-based AI Architect specializing in production-grade RAG, multi-agent
+                            systems, and Sovereign Guard implementations. Delivering measurable enterprise outcomes through 
+                            verifiable expertise and IndiaAI Mission alignment.
                         </p>
-                        <h3 class="text-2xl font-bold mb-6">ClaimLens AI</h3>
-                        <div
-                            class="flex items-center text-xs font-bold border-b border-white w-fit pb-1 group-hover:pr-6 transition-all tracking-widest">
-                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-2"></i></div>
+                        <div class="flex flex-col sm:flex-row gap-6" data-aos="fade-up" data-aos-delay="250">
+                            <button onclick="openTalkModal()" aria-label="Start consultation via Calendly"
+                                class="bg-[var(--text)] text-[var(--bg)] px-12 py-5 rounded-full font-black hover:bg-purple-600 hover:text-white transition-all premium-btn text-sm tracking-widest uppercase shadow-xl">Start Consultation</button>
+                            <a href="mailto:san192227m@gmail.com?subject=Requesting Sovereign AI Checklist" aria-label="Download Sovereign AI Checklist via email"
+                                class="border border-[var(--border)] text-[var(--text)] px-12 py-5 rounded-full font-black hover:bg-white/5 hover:border-purple-500/30 transition-all text-center flex items-center justify-center gap-3 text-sm tracking-widest uppercase">
+                                <i class="fa-solid fa-download text-purple-500" aria-hidden="true"></i> AI Checklist
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="case-study-card group" onclick="openCaseStudy('nyaysetu')" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="aspect-[4/5] overflow-hidden"><img
-                            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"></div>
-                    <div class="p-10">
-                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-4">LegalTech / RAG</p>
-                        <h3 class="text-2xl font-bold mb-6">NyaySetu</h3>
-                        <div
-                            class="flex items-center text-xs font-bold border-b border-white w-fit pb-1 group-hover:pr-6 transition-all tracking-widest">
-                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-2"></i></div>
-                    </div>
-                </div>
-                <div class="case-study-card group" onclick="openCaseStudy('govgig')" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <div class="aspect-[4/5] overflow-hidden"><img
-                            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
-                            class="case-study-image w-full h-full object-cover"></div>
-                    <div class="p-10">
-                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-4">GovTech / Multi-Agent</p>
-                        <h3 class="text-2xl font-bold mb-6">GovGig AI</h3>
-                        <div
-                            class="flex items-center text-xs font-bold border-b border-white w-fit pb-1 group-hover:pr-6 transition-all tracking-widest">
-                            VIEW PROJECT <i class="fa-solid fa-arrow-right-long ml-2"></i></div>
+                    
+                    <div class="flex items-center gap-8" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex -space-x-5">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
+                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform" alt="Enterprise Tech Executive Client" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
+                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform" alt="Global AI Strategy Leader Client" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150"
+                                class="w-14 h-14 rounded-full border-4 border-[var(--bg)] object-cover hover:z-10 hover:scale-110 transition-transform" alt="Senior Enterprise Architect Client" loading="lazy">
+                        </div>
+                        <div>
+                            <p class="font-black text-lg tracking-tight text-[var(--text)]">9+ Global Partners</p>
+                            <p class="text-[10px] text-purple-500/60 uppercase tracking-[0.4em] font-bold">Elite Consulting</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sovereign AI -->
-    <section id="sovereign" class="py-32 px-8">
-        <div class="max-w-7xl mx-auto sovereign-section rounded-[60px] p-12 md:p-24 relative overflow-hidden">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right">
-                    <div class="flex items-center gap-4 mb-8">
-                        <span class="w-12 h-[1px] bg-white"></span>
-                        <span class="text-xs uppercase tracking-widest font-bold">Flagship Solution</span>
+        <!-- CASE STUDIES (Selected Works) -->
+        <section id="work" class="py-48 px-8" aria-labelledby="work-title">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-24 border-b border-[var(--border)] pb-14">
+                    <h2 id="work-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">Selected <span class="serif italic font-normal text-purple-500">Works</span></h2>
+                </div>
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] md:grid-cols-2 xl:grid-cols-4 gap-10">
+                    <!-- Case Study 1 -->
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('claimlens')" data-aos="fade-up" data-aos-delay="0" data-reveal-step="1">
+                        <div class="aspect-[4/5] overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="ClaimLens AI — Advanced insurance fraud detection dashboard" loading="lazy">
+                            <div class="absolute top-6 right-6 bg-black/60 backdrop-blur-md text-white rounded-full px-4 py-2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                                Interactive Architecture Graph inside
+                            </div>
+                        </div>
+                        <div class="p-10 bg-[var(--card-bg)]">
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Insurance / CV</p>
+                            <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">ClaimLens AI</h3>
+                            <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Advanced document forgery and sophisticated multi-party insurance fraud loops.</p>
+                                <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="92">0</span>%
+                                </div>
+                            </div>
+                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Case Study 2 -->
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('nyaysetu')" data-aos="fade-up" data-aos-delay="100" data-reveal-step="2">
+                        <div class="aspect-[4/5] overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="NyaySetu — Sovereign legal RAG system" loading="lazy">
+                        </div>
+                        <div class="p-10 bg-[var(--card-bg)]">
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">LegalTech / RAG</p>
+                            <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">NyaySetu</h3>
+                            <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Fragmented legal contexts and citations hallucinatory behaviors across 25k records.</p>
+                                <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="99">0</span>.8%
+                                </div>
+                            </div>
+                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Case Study 3 -->
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('govgig')" data-aos="fade-up" data-aos-delay="200" data-reveal-step="3">
+                        <div class="aspect-[4/5] overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800"
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="GovGig AI — Regulatory multi-agent network" loading="lazy">
+                        </div>
+                        <div class="p-10 bg-[var(--card-bg)]">
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech / Agents</p>
+                            <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">GovGig AI</h3>
+                            <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Tracking 50+ real-time policy changes daily and mapping them compliance correctly.</p>
+                                <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Audit Cycle Reduction: <span class="results-counter" data-target="80">0</span>%
+                                </div>
+                            </div>
+                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 4 -->
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('flowsight')" data-aos="fade-up" data-aos-delay="300" data-reveal-step="4">
+                        <div class="aspect-[4/5] overflow-hidden relative">
+                            <img src="assets/images/flowsight_ai_dashboard.png"
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="FlowSight AI — Supply Chain Control Tower" loading="lazy">
+                        </div>
+                        <div class="p-10 bg-[var(--card-bg)]">
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Logistics / Cybernetic</p>
+                            <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">FlowSight AI</h3>
+                            <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Dynamic supply chain delays, routing optimization, and automated real-time alerts.</p>
+                                <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="85">0</span>%
+                                </div>
+                            </div>
+                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 5 -->
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('yojana')" data-aos="fade-up" data-aos-delay="400" data-reveal-step="5">
+                        <div class="aspect-[4/5] overflow-hidden relative">
+                            <img src="assets/images/yojana_ai_dashboard.png"
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="Yojana-AI — Sovereign government schemes RAG platform" loading="lazy">
+                        </div>
+                        <div class="p-10 bg-[var(--card-bg)]">
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech / Sovereign RAG</p>
+                            <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">Yojana-AI</h3>
+                            <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Fragmented citizen qualification logic and hallucinatory schemes eligibility answers.</p>
+                                <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="93">0</span>%
+                                </div>
+                            </div>
+                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSULTING SERVICES -->
+        <section id="services" class="py-48 px-8 border-t border-[var(--border)] bg-[#050505]" aria-labelledby="services-title">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 pb-14 border-b border-[var(--border)]">
+                    <div data-aos="fade-right">
+                        <div class="flex items-center gap-5 mb-6">
+                            <span class="w-16 h-[1px] bg-purple-500/30" aria-hidden="true"></span>
+                            <span class="text-[10px] uppercase tracking-[0.6em] font-black text-purple-400">Strategic Offerings</span>
+                        </div>
+                        <h2 id="services-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">Consulting <span class="serif italic font-normal text-purple-500">Services</span></h2>
                     </div>
-                    <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-tight">
-                        Sovereign <br><span class="serif italic font-normal">Guard.</span>
-                    </h2>
-                    <p class="text-zinc-400 text-lg mb-10 leading-relaxed">
-                        A production-grade LLM safety and observability tower. Hallucination-resistant, secure, and
-                        entirely under your control.
+                    <p class="text-zinc-500 text-sm max-w-md mt-6 md:mt-0 leading-relaxed" data-aos="fade-left">
+                        Tailored enterprise consulting, sovereign AI architectures, and executive strategy workshops driving deterministic compliance and sub-second agentic efficiency.
                     </p>
-                    <div class="space-y-6 mb-12">
+                </div>
+
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] md:grid-cols-2 xl:grid-cols-4 gap-10">
+                    <!-- Package 1 -->
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                        <div>
+                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">Sovereign AI Readiness Audit</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">2-week deep dive audit evaluating sovereign compliance and architectural efficiency.</p>
+                            <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> 2-Week Deep Dive</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> IndiaAI Mission Compliance</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Data Sovereignty Check</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Detailed Report & Roadmap</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-white/5">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹1.5 Lakh</span></div>
+                            <button onclick="openTalkModal()" aria-label="Book Sovereign AI Readiness Audit Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                                Book Strategy Call
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                        <div>
+                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">AI Strategy Workshop</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Interactive leadership sessions aligning executive vision with next-gen technical capabilities.</p>
+                            <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Half-Day or Full-Day Session</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> GovTech & Supply Chain Focus</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Public Schemes Framework</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Custom AI Strategy Deck</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-white/5">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹75,000</span></div>
+                            <button onclick="openTalkModal()" aria-label="Book AI Strategy Workshop Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                                Book Strategy Call
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                        <div>
+                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">End-to-End AI Implementation</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Custom high-performance solution building modeled like FlowSight and Yojana-AI.</p>
+                            <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Full-Scale Custom Development</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Ideation to Live Deployment</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> High-Precision Multi-Agent RAG</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Specialized Team Training</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-white/5">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹8 Lakh+</span></div>
+                            <button onclick="openTalkModal()" aria-label="Book End-to-End AI Implementation Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                                Book Strategy Call
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Package 4 -->
+                    <div class="glass-card p-10 bg-[#080808] border border-white/5 rounded-[40px] flex flex-col justify-between hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/5 blur-[50px] rounded-full group-hover:bg-purple-600/10 transition-colors duration-500"></div>
+                        <div>
+                            <div class="w-12 h-12 rounded-full bg-purple-600/10 border border-purple-500/20 flex items-center justify-center mb-8 text-purple-400">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-white tracking-tight mb-4 group-hover:text-purple-400 transition-colors">Monthly AI Advisory Retainer</h3>
+                            <p class="text-xs text-zinc-500 leading-relaxed mb-6">Ongoing strategic support, technical reviews, and prioritized emergency consulting.</p>
+                            <ul class="space-y-3 border-t border-white/5 pt-6 text-xs text-zinc-400">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Strategic Retainer Advisory</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Priority Multi-Agent Support</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Recurrent Core Tech Audits</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-[10px]"></i> Emergency Architectural Calls</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-white/5">
+                            <div class="text-[10px] uppercase tracking-wider text-zinc-500 font-bold mb-1">Investment</div>
+                            <div class="text-3xl font-black text-white mb-6">Starting at <span class="text-purple-500">₹1.2 L / mo</span></div>
+                            <button onclick="openTalkModal()" aria-label="Book Monthly AI Advisory Retainer Strategy Call" class="w-full py-4 bg-purple-600/10 hover:bg-purple-600 text-purple-400 hover:text-white border border-purple-500/20 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+                                Book Strategy Call
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOVEREIGN AI -->
+        <section id="sovereign" class="py-48 px-8" aria-labelledby="sovereign-title">
+            <div class="max-w-7xl mx-auto rounded-[60px] p-12 md:p-32 relative overflow-hidden shadow-2xl border border-white/5 bg-[#080808]">
+                <!-- Purple Radial Glow -->
+                <div class="absolute top-0 right-0 w-[50%] h-[50%] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
+                
+                <div class="grid md:grid-cols-2 gap-24 items-center">
+                    <div data-aos="fade-right">
+                        <div class="flex items-center gap-5 mb-10">
+                            <span class="w-16 h-[1px] bg-purple-500/30" aria-hidden="true"></span>
+                            <span class="text-[10px] uppercase tracking-[0.6em] font-black text-purple-400">Proprietary Technology</span>
+                        </div>
+                        <h2 id="sovereign-title" class="text-6xl md:text-8xl font-black tracking-tighter mb-10 leading-[0.9] text-[var(--text)]">
+                            Sovereign <br><span class="serif italic font-normal text-purple-600/50">Guard.</span>
+                        </h2>
+                        <p class="text-[var(--text-muted)] text-xl mb-12 leading-relaxed font-medium">
+                            A production-grade LLM safety and observability tower. Hallucination-resistant, secure, and
+                            entirely under your control. Built for organizations requiring total data residency and
+                            sovereignty.
+                        </p>
+                        
+                        <div class="space-y-8 mb-16">
+                            <div class="flex items-center gap-5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-border" aria-hidden="true"></div>
+                                <span class="text-base font-bold tracking-tight text-zinc-300">93.5% Groundedness Accuracy</span>
+                            </div>
+                            <div class="flex items-center gap-5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-purple-500" aria-hidden="true"></div>
+                                <span class="text-base font-bold tracking-tight text-zinc-300">Sub-150ms Deterministic Guardrails</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <button onclick="openTalkModal()" aria-label="Discuss Sovereign AI implementation"
+                                class="bg-[var(--text)] text-[var(--bg)] px-12 py-5 rounded-full font-black hover:bg-purple-600 hover:text-white transition-all premium-btn text-sm uppercase tracking-widest">Discuss Implementation</button>
+                            <button onclick="openSovereignArticle()" aria-label="Read Sovereign AI whitepaper"
+                                class="border border-[var(--border)] text-[var(--text)] px-12 py-5 rounded-full font-black hover:bg-white/5 hover:border-purple-500/20 transition-all text-center text-sm uppercase tracking-widest">Read Whitepaper</button>
+                        </div>
+                    </div>
+                    
+                    <div class="relative" data-aos="fade-left">
+                        <div class="bg-zinc-900/30 backdrop-blur-3xl border border-white/5 p-6 rounded-[50px] shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+                                class="rounded-[40px] grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000"
+                                alt="Abstract representation of Sovereign Guard AI platform security infrastructure" loading="lazy">
+                            <div class="absolute -bottom-8 -left-8 bg-purple-600 text-white p-8 rounded-[30px] shadow-2xl pulse-border">
+                                <p class="text-[10px] uppercase font-black mb-2 tracking-[0.4em]">Protocol</p>
+                                <p class="text-3xl font-black tracking-tighter">ENFORCED</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOVEREIGN AI PLAYGROUND (Interactive Live AI Demo) -->
+        <section id="ai-demo-playground" class="py-32 px-8 bg-black/40 border-t border-[var(--border)]">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="section-tag">Interactive Environment</span>
+                    <h2 class="text-5xl font-black tracking-tighter mb-4 text-[var(--text)]">Try Sovereign AI Live</h2>
+                    <p class="text-xl text-[var(--text-muted)] max-w-2xl mx-auto font-medium">Test real-time client-side RAG capabilities, groundedness scoring, thinking steps and citation routing.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-stretch" data-aos="fade-up">
+                    <!-- Prompt Suggestions Panel -->
+                    <div class="lg:col-span-4 bg-[var(--card-bg)] border border-[var(--border)] rounded-[40px] p-8 space-y-6 flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs font-black tracking-widest uppercase text-purple-400 mb-6 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span> Select Query Chip
+                            </p>
+                            <div class="space-y-3 max-h-[380px] overflow-y-auto pr-2 no-scrollbar" id="playground-chips-container">
+                                <!-- Preloaded chips dynamically rendered here -->
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-[var(--text-muted)] leading-relaxed italic">Clicking a prompt automatically populates and runs the live RAG query inside the console.</p>
+                    </div>
+
+                    <!-- Sandbox Console Console Area -->
+                    <div class="lg:col-span-8 bg-zinc-950/80 border border-[var(--border)] rounded-[40px] p-8 flex flex-col justify-between relative shadow-2xl">
+                        <!-- Upper control bar -->
+                        <div class="flex justify-between items-center border-b border-[var(--border)] pb-6 mb-6">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                                <span class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">SOVEREIGN-GUARD-v2.1 LIVE</span>
+                            </div>
+                            <span class="text-[10px] font-black px-3 py-1 bg-purple-900/40 text-purple-400 rounded-full uppercase tracking-widest border border-purple-500/20">IndiaAI Corp Context</span>
+                        </div>
+
+                        <!-- Chat Console area -->
+                        <div class="space-y-6 min-h-[350px] flex flex-col justify-end">
+                            <div id="playground-output-area" class="space-y-6 overflow-y-auto max-h-[320px] pr-2 no-scrollbar">
+                                <div class="flex gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-purple-900/40 text-purple-400 flex items-center justify-center font-black text-xs flex-shrink-0">SG</div>
+                                    <div class="bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl p-5 text-sm leading-relaxed text-[var(--text-muted)]">
+                                        Select a pre-loaded query chip from the left panel or type your custom generative inquiry below to run live RAG simulation with complete guardrails.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Input container -->
+                        <div class="mt-8 relative flex items-center gap-4">
+                            <textarea id="playground-textarea" rows="2" placeholder="Formulate custom query or run chip..." aria-label="Sovereign AI Playground Query" class="w-full bg-black/60 border border-[var(--border)] rounded-2xl px-6 py-4 pr-16 text-sm outline-none focus:border-purple-500/60 transition-all text-[var(--text)] resize-none"></textarea>
+                            <button onclick="runPlaygroundQuery()" class="absolute right-4 bg-purple-600 hover:bg-purple-500 text-white w-12 h-12 rounded-xl flex items-center justify-center hover:scale-105 transition shadow-lg" aria-label="Execute query">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="py-48 px-8" aria-label="Client Testimonials">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-24" data-aos="fade-up">
+                    <h2 class="text-5xl font-black tracking-tighter mb-6 text-[var(--text)]">Trusted by <span class="serif italic font-normal text-purple-600">Industry Leaders</span></h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <blockquote class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group" data-aos="fade-up">
+                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Saniya delivered exceptional multi-agent systems. Her Sovereign Guard is a game changer for our infrastructure."</p>
+                        <footer class="flex items-center gap-5">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Marcus Thorne, CTO of Nexus Corp" loading="lazy">
+                            <div>
+                                <cite class="font-black text-lg not-italic text-[var(--text)]">Marcus Thorne</cite>
+                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">CTO, Nexus Corp</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Reduced hallucination by 92%. True expert in the Generative AI space who understands business impact."</p>
+                        <footer class="flex items-center gap-5">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Sarah Jenkins, VP Engineering of EduFlow" loading="lazy">
+                            <div>
+                                <cite class="font-black text-lg not-italic text-[var(--text)]">Sarah Jenkins</cite>
+                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">VP Engineering, EduFlow</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="p-12 border border-[var(--border)] rounded-[40px] glass-card hover:border-purple-500/30 transition-all duration-700 group" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-xl italic mb-10 text-[var(--text-muted)] leading-relaxed font-medium">"Strategic thinker who solves real-world enterprise problems with high-performance AI solutions."</p>
+                        <footer class="flex items-center gap-5">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150" class="w-12 h-12 rounded-full grayscale object-cover border border-white/10" alt="Luke Chen, Founder of Stealth AI" loading="lazy">
+                            <div>
+                                <cite class="font-black text-lg not-italic text-[var(--text)]">Luke Chen</cite>
+                                <p class="text-[10px] text-purple-500/60 uppercase font-black tracking-[0.3em]">Founder, Stealth AI</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED BY LOGOS -->
+        <section class="py-32 px-8 bg-black/20 border-t border-[var(--border)]" aria-label="Trusted Enterprise Partners">
+            <div class="max-w-7xl mx-auto">
+                <p class="text-center text-[10px] uppercase tracking-[0.6em] text-zinc-600 mb-20 font-black">Trusted by Enterprise Leaders</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-stretch" data-aos="fade-up">
+                    <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <div class="w-2 h-2 rounded-full bg-green-500 pulse-border"></div>
-                            <span class="text-sm font-medium">93.5% Groundedness Accuracy</span>
+                            <i class="fa-solid fa-layer-group text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">NEXUS</span>
                         </div>
+                    </div>
+                    <div class="logo-grid-item group">
                         <div class="flex items-center gap-4">
-                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-                            <span class="text-sm font-medium">Sub-150ms Deterministic Guardrails</span>
+                            <i class="fa-solid fa-atom text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">QUANTUM</span>
                         </div>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="openTalkModal()"
-                            class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-zinc-200 transition text-center">Discuss
-                            Implementation</button>
-                        <button onclick="openSovereignArticle()"
-                            class="border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/5 transition text-center">
-                            Read Whitepaper
-                        </button>
+                    <div class="logo-grid-item group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-shield-halved text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">VERIDIAN</span>
+                        </div>
+                    </div>
+                    <div class="logo-grid-item group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-wave-square text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">AETHER</span>
+                        </div>
+                    </div>
+                    <div class="logo-grid-item group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-compass text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">STRATOS</span>
+                        </div>
+                    </div>
+                    <div class="logo-grid-item group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-bolt-lightning text-2xl opacity-60 group-hover:scale-110 transition-transform text-purple-400" aria-hidden="true"></i>
+                            <span class="font-black tracking-[0.5em] text-[11px] text-[var(--text)]">LUMINA</span>
+                        </div>
                     </div>
                 </div>
-                <div class="relative" data-aos="fade-left">
-                    <div class="bg-zinc-900 border border-white/10 p-4 rounded-3xl shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
-                            class="rounded-2xl grayscale" alt="Sovereign AI">
-                        <div
-                            class="absolute -bottom-6 -left-6 bg-white text-black p-6 rounded-2xl shadow-xl pulse-border">
-                            <p class="text-xs uppercase font-black mb-1">Status</p>
-                            <p class="text-2xl font-bold tracking-tighter">ENFORCED</p>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="py-48 px-8 bg-black/40" aria-labelledby="about-title">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-24 items-center">
+                <div class="md:col-span-5 relative" data-aos="fade-up">
+                    <div class="aspect-[4/5] bg-zinc-900 rounded-[60px] overflow-hidden border border-white/5 relative group shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                            class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" alt="Professional portrait of Saniya Malik, AI Architect">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-60" aria-hidden="true"></div>
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 space-y-4">
+                        <div class="bg-white text-black px-8 py-4 rounded-3xl shadow-2xl font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-4 border border-black/10">
+                            <i class="fa-solid fa-shield-halved text-purple-600" aria-hidden="true"></i> IndiaAI Mission
+                        </div>
+                        <div class="bg-zinc-900/90 backdrop-blur-xl text-white px-8 py-4 rounded-3xl shadow-2xl font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-4 border border-white/10">
+                            <i class="fa-solid fa-microphone-lines text-purple-400" aria-hidden="true"></i> Featured Speaker
                         </div>
                     </div>
+                </div>
+                
+                <div class="md:col-span-7" data-aos="fade-up" data-aos-delay="200">
+                    <h2 id="about-title" class="text-6xl font-black tracking-tighter mb-12 text-[var(--text)]">Hi, I'm Saniya Malik</h2>
+                    <div class="space-y-10 text-xl md:text-2xl text-[var(--text-muted)] leading-relaxed font-medium">
+                        <p>
+                            With over 6 years of hands-on experience in Generative AI, I specialize in designing and
+                            deploying scalable RAG systems, multi-agent architectures, and secure sovereign AI platforms.
+                        </p>
+                        <p>
+                            My work is closely aligned with the IndiaAI Mission, focusing on building resilient national
+                            intelligence and data sovereignty for Indian enterprises.
+                        </p>
+                    </div>
+
+                    <!-- IMPACT EXPLORER DASHBOARD -->
+                    <div class="mt-14 p-8 bg-[var(--card-bg)] border border-[var(--border)] rounded-[30px]" id="impact-dashboard">
+                        <div class="flex justify-between items-center mb-6 border-b border-[var(--border)] pb-4">
+                            <p class="text-[10px] font-black uppercase tracking-widest text-purple-400">Impact Metrics Explorer</p>
+                            <div class="flex gap-2">
+                                <button onclick="switchImpactMetric('all')" class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full bg-purple-900/30 text-purple-400 border border-purple-500/20 uppercase" id="btn-impact-all">All</button>
+                                <button onclick="switchImpactMetric('accuracy')" class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full hover:bg-zinc-800 transition uppercase" id="btn-impact-accuracy">Accuracy</button>
+                                <button onclick="switchImpactMetric('roi')" class="text-[9px] font-extrabold tracking-wider px-3 py-1.5 rounded-full hover:bg-zinc-800 transition uppercase" id="btn-impact-roi">ROI</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-8" id="stats-numbers-container">
+                            <div class="stat-group" id="stat-projects">
+                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span class="count-number" data-target="40">0</span>+</p>
+                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Projects</p>
+                            </div>
+                            <div class="stat-group" id="stat-clients">
+                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span class="count-number" data-target="12">0</span></p>
+                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Enterprise Clients</p>
+                            </div>
+                            <div class="stat-group" id="stat-accuracy">
+                                <p class="text-4xl md:text-5xl font-black tracking-tighter text-[var(--text)]"><span class="count-number" data-target="92.8" data-decimal="1">0</span>%</p>
+                                <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Accuracy</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-xs text-[var(--text-muted)] leading-relaxed italic border-t border-[var(--border)] pt-4" id="impact-metric-desc">
+                            Displaying holistic combined metrics verifying high enterprise delivery, groundedness accuracy, and successful system setups.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-24 bg-black/40 border-t border-[var(--border)]" aria-labelledby="faq-title">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 id="faq-title" class="text-5xl font-serif text-center mb-8 text-[var(--text)]">Frequently Asked Questions</h2>
+                
+                <!-- FAQ Search / Filter Input -->
+                <div class="mb-12 max-w-md mx-auto relative">
+                    <input type="text" id="faq-search" placeholder="Search questions..." class="w-full bg-[var(--card-bg)] border border-[var(--border)] rounded-2xl px-6 py-4 text-sm outline-none focus:border-purple-500/60 transition-all text-[var(--text)]">
+                    <i class="fa-solid fa-magnifying-glass absolute right-6 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+                </div>
+
+                <div class="space-y-6" id="faq-accordion-container">
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            What is Sovereign AI and why does India need it?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            Sovereign AI means building complete AI systems that are developed, trained, governed, and deployed entirely within India's data boundaries using Indian infrastructure and regulations. It protects national data sovereignty, reduces foreign dependency, ensures compliance with local laws, and supports IndiaAI Mission goals.
+                        </div>
+                    </details>
+
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            How is your RAG implementation different from standard solutions?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            I implement advanced ReflectionRAG, Multi-Agent RAG, and GraphRAG architectures with proper chunking strategies, metadata filtering, and self-correction loops. This achieves 93%+ groundedness and reduces hallucinations significantly compared to basic vector search RAG.
+                        </div>
+                    </details>
+
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            What is the typical project timeline and investment?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            POC/MVP: 6-8 weeks | Full Production System: 3-5 months. Investment starts from ₹18 lakhs for enterprise RAG solutions and goes up based on complexity and scale. I offer flexible milestone-based payment terms.
+                        </div>
+                    </details>
+
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            Which industries do you serve?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            LegalTech, Government & Public Sector, Healthcare, Finance & Insurance, Education, and Agritech. I have deep experience working with regulated industries and IndiaAI Mission aligned projects.
+                        </div>
+                    </details>
+
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            How do you ensure data privacy and security?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            All solutions are deployed on Indian data centers (MeitY empaneled) or private VPC. I follow strict data residency, encryption at rest & transit, role-based access, audit logging, and regular security assessments.
+                        </div>
+                    </details>
+
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            When should I use Multi-Agent systems?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            Multi-agent systems are ideal when you need complex workflows, specialized roles (researcher, critic, executor), or when handling tasks that require multiple reasoning steps and collaboration between different AI personas.
+                        </div>
+                    </details>
+
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            Do you provide post-deployment support?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            Yes. I offer 6-12 months of complimentary support, monitoring, fine-tuning, and quarterly optimization sprints. Long-term maintenance contracts are also available.
+                        </div>
+                    </details>
+
+                    <details class="group bg-zinc-950 border border-purple-900/30 rounded-2xl p-6">
+                        <summary class="flex justify-between items-center cursor-pointer text-xl font-medium text-[var(--text)]">
+                            How do you measure ROI and success?
+                            <span class="text-2xl transition-transform group-open:rotate-45 text-purple-500 font-light">+</span>
+                        </summary>
+                        <div class="pt-6 text-[var(--text-muted)] leading-relaxed">
+                            Success is measured through groundedness accuracy, latency reduction, cost savings, user adoption rate, and direct business impact (e.g., hours saved, cases processed, compliance achieved). Every project includes clear baseline vs post-implementation KPIs.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-64 px-8 text-center border-t border-[var(--border)] relative overflow-hidden" aria-labelledby="contact-title">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.03)_0%,transparent_70%)] pointer-events-none" aria-hidden="true"></div>
+            <h2 id="contact-title" class="text-7xl md:text-[160px] font-black tracking-tighter mb-24 leading-none uppercase text-[var(--text)]" data-aos="fade-up">BUILD THE <br><span class="serif italic font-normal text-purple-700">INTELLIGENT.</span></h2>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-20 mb-48 items-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:san192227m@gmail.com" aria-label="Send an email to Saniya Malik" class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
+                    <i class="fa-solid fa-envelope text-purple-600" aria-hidden="true"></i> Contact
+                </a>
+                <a href="#" onclick="return openTalkModal()" aria-label="Schedule a meeting via Calendly" class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
+                    <i class="fa-solid fa-calendar-check text-purple-600" aria-hidden="true"></i> Schedule
+                </a>
+                <a href="https://in.linkedin.com/in/saniya-malik-195864229" target="_blank" aria-label="Visit Saniya Malik's LinkedIn profile" class="text-3xl md:text-4xl font-bold border-b-2 border-white/10 pb-4 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 flex items-center gap-6 text-[var(--text)]">
+                    <i class="fa-brands fa-linkedin text-purple-600" aria-hidden="true"></i> LinkedIn
+                </a>
+            </div>
+            
+            <p class="text-[10px] font-black uppercase tracking-[1em] opacity-20 text-[var(--text)]">© 2026 SANIYA MALIK — ELITE AI ARCHITECT</p>
+        </section>
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919999999999?text=Hello%20Saniya,%20I'm%20interested%20in%20your%20AI%20consulting%20services." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact Saniya Malik on WhatsApp" 
+       class="fixed bottom-10 left-10 z-[150] bg-emerald-500/10 hover:bg-emerald-500 border border-emerald-500/30 text-emerald-400 hover:text-white w-16 h-16 md:w-20 md:h-20 rounded-full shadow-[0_0_30px_rgba(16,185,129,0.2)] flex items-center justify-center hover:scale-110 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp text-3xl md:text-4xl transition-transform duration-300 group-hover:rotate-[360deg]" aria-hidden="true"></i>
+        <!-- Subtle pulsing effect -->
+        <span class="absolute inset-0 rounded-full border border-emerald-500/50 animate-ping opacity-25"></span>
+    </a>
+
+    <!-- SIDEBAR CHAT (Ask Saniya AI Sidebar) -->
+    <button onclick="toggleAISidebar()" aria-label="Toggle Saniya AI assistant"
+        class="fixed bottom-10 right-10 z-[150] bg-white text-black w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 hover:bg-purple-600 hover:text-white transition-all pulse-border">
+        <i class="fa-solid fa-robot text-xl md:text-2xl" aria-hidden="true"></i>
+    </button>
+
+    <div id="aiSidebar" class="fixed top-0 right-[-100%] h-full w-full max-w-md bg-black/90 backdrop-blur-3xl z-[200] border-l border-white/10 shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden">
+        <!-- Sidebar Header -->
+        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-zinc-950/80">
+            <div>
+                <h3 class="text-xl font-black text-white tracking-tight">Ask Saniya AI</h3>
+                <p class="text-[9px] text-purple-400 uppercase tracking-widest font-bold mt-1">Sovereign Guard Assistant</p>
+            </div>
+            <button onclick="toggleAISidebar()" class="text-3xl font-light text-white hover:text-purple-500 hover:rotate-90 transition-all" aria-label="Close Chat">&times;</button>
+        </div>
+
+        <!-- Sidebar Messages Container -->
+        <div id="sidebar-messages" class="flex-1 p-6 space-y-4 overflow-y-auto no-scrollbar">
+            <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold text-white">SM</div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl rounded-tl-none p-4 text-xs text-zinc-300 max-w-[80%] leading-relaxed">
+                    Sovereign AI Greeting. I am Saniya Malik's AI proxy, expert in production RAG systems, multi-agent frameworks, and Sovereign Guard deployment. How can I help map your enterprise strategy today?
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section class="py-32 px-8 bg-[#0d0d0d]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-4xl font-bold tracking-tighter mb-4">Trusted by <span
-                        class="serif italic font-normal">Industry Leaders</span></h2>
+        <!-- Suggestions & Input Area -->
+        <div class="p-6 border-t border-white/10 bg-zinc-950/80 space-y-4">
+            <p class="text-[9px] font-black text-zinc-600 uppercase tracking-widest mb-2">Prompt Suggestions</p>
+            <div class="flex flex-wrap gap-2 overflow-x-auto no-scrollbar pb-2">
+                <button onclick="sendSidebarSuggestion('How can Sovereign Guard help my security?')" class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">Sovereign Guard Security</button>
+                <button onclick="sendSidebarSuggestion('What is the timeline for RAG setup?')" class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">RAG Timeline</button>
+                <button onclick="sendSidebarSuggestion('Discuss IndiaAI alignment?')" class="text-[10px] font-bold px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-purple-900/20 text-zinc-300">IndiaAI Mission</button>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 border border-white/5 rounded-3xl bg-zinc-950 hover:border-white/20 transition"
-                    data-aos="fade-up">
-                    <p class="text-lg italic mb-8">"Saniya delivered exceptional multi-agent systems. Her Sovereign
-                        Guard is a game changer."</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/100?u=4" class="w-10 h-10 rounded-full grayscale">
-                        <div>
-                            <p class="font-bold">Marcus Thorne</p>
-                            <p class="text-xs text-zinc-500">Nexus Corp</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-10 border border-white/5 rounded-3xl bg-zinc-950 hover:border-white/20 transition"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <p class="text-lg italic mb-8">"Reduced hallucination by 92%. True expert in GenAI space."</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/100?u=5" class="w-10 h-10 rounded-full grayscale">
-                        <div>
-                            <p class="font-bold">Sarah Jenkins</p>
-                            <p class="text-xs text-zinc-500">EduFlow AI</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-10 border border-white/5 rounded-3xl bg-zinc-950 hover:border-white/20 transition"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-lg italic mb-8">"Strategic thinker who solves real business problems with AI."</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/100?u=6" class="w-10 h-10 rounded-full grayscale">
-                        <div>
-                            <p class="font-bold">Luke</p>
-                            <p class="text-xs text-zinc-500">Startup Founder</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About -->
-    <section id="about" class="py-32 px-8 bg-[#080808]">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-20 items-center">
-            <div class="md:col-span-5" data-aos="fade-up">
-                <img src="./wmremove-transformed.jpeg"
-                    class="rounded-[50px] w-full grayscale hover:grayscale-0 transition-all duration-700"
-                    alt="Saniya Malik">
+            <div class="relative">
+                <input type="text" id="sidebar-input" placeholder="Query Saniya AI..." aria-label="AI Sidebar Query" class="w-full bg-black border border-white/10 rounded-xl px-5 py-3 pr-12 text-xs outline-none focus:border-purple-500/60 text-white">
+                <button onclick="submitSidebarQuery()" class="absolute right-3 top-1/2 -translate-y-1/2 text-white bg-purple-600 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-purple-500" aria-label="Submit query">
+                    <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                </button>
             </div>
-            <div class="md:col-span-7" data-aos="fade-up" data-aos-delay="200">
-                <h2 class="text-5xl font-bold tracking-tighter mb-10">Hi, I'm Saniya Malik</h2>
-                <div class="space-y-8 text-xl text-zinc-400 leading-relaxed">
-                    <p>
-                        With hands-on experience in Generative AI, I specialize in designing and
-                        deploying
-                        scalable RAG systems, multi-agent architectures, and secure sovereign AI platforms for
-                        high-stakes environments.
-                    </p>
-                    <p>
-                        I partner with leadership teams to transform AI experiments into reliable, measurable business
-                        outcomes.
-                        My work focuses on reducing operational costs, accelerating decision-making, and building AI
-                        systems that organizations can truly trust.
-                    </p>
-                </div>
-                <div class="grid grid-cols-3 gap-8 mt-16">
-                    <div>
-                        <p class="text-4xl font-bold">40+</p>
-                        <p class="text-sm text-zinc-500">Projects Delivered</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-bold">12</p>
-                        <p class="text-sm text-zinc-500">Enterprise Clients</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-bold">92.8%</p>
-                        <p class="text-sm text-zinc-500">Avg. Accuracy</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-40 px-8 text-center border-t border-white/5">
-        <h2 class="text-7xl md:text-[130px] font-bold tracking-tighter mb-20 leading-none">BUILD THE <br><span
-                class="serif italic font-normal text-zinc-500">INTELLIGENT.</span></h2>
-        <div class="flex flex-col md:flex-row justify-center gap-12 mb-32 items-center">
-            <a href="mailto:san192227m@gmail.com"
-                class="text-3xl font-medium border-b border-white pb-2 hover:opacity-50 transition flex items-center gap-4">
-                <i class="fa-solid fa-envelope"></i> Contact
-            </a>
-            <a href="https://in.linkedin.com/in/saniya-malik-195864229" target="_blank"
-                class="text-3xl font-medium border-b border-white pb-2 hover:opacity-50 transition flex items-center gap-4">
-                <i class="fa-brands fa-linkedin"></i> LinkedIn
-            </a>
-        </div>
-        <p class="text-[10px] uppercase tracking-[0.6em] opacity-20">© 2026 SANIYA MALIK — AI ARCHITECT</p>
-    </section>
-
-    <!-- Let's Talk Modal -->
-    <div id="talkModal"
-        class="hidden fixed inset-0 bg-black/90 backdrop-blur-3xl z-[200] flex items-center justify-center p-6">
-        <div class="bg-zinc-900 w-full max-w-xl rounded-[40px] border border-white/10 p-12">
-            <div class="flex justify-between items-start mb-12">
-                <h3 class="text-4xl font-bold tracking-tighter">Let's talk <br><span
-                        class="serif italic font-normal">the future.</span></h3>
-                <button onclick="closeTalkModal()" class="text-4xl">&times;</button>
-            </div>
-            <form id="talkForm" class="space-y-6" onsubmit="handleTalkSubmit(event)">
-                <div class="grid grid-cols-2 gap-4">
-                    <input type="text" id="t_name" placeholder="Your Name" required
-                        class="w-full bg-zinc-800 border border-white/5 rounded-2xl px-6 py-4 outline-none focus:border-white/20">
-                    <input type="text" id="t_company" placeholder="Company"
-                        class="w-full bg-zinc-800 border border-white/5 rounded-2xl px-6 py-4 outline-none focus:border-white/20">
-                </div>
-                <input type="email" id="t_email" placeholder="Work Email" required
-                    class="w-full bg-zinc-800 border border-white/5 rounded-2xl px-6 py-4 outline-none focus:border-white/20">
-                <select id="t_type" required
-                    class="w-full bg-zinc-800 border border-white/5 rounded-2xl px-6 py-4 outline-none focus:border-white/20 text-zinc-400">
-                    <option value="" disabled selected>Project Type</option>
-                    <option>RAG Architecture</option>
-                    <option>Multi-Agent System</option>
-                    <option>Sovereign Guard</option>
-                    <option>Consulting</option>
-                </select>
-                <textarea id="t_message" rows="4" placeholder="Briefly describe your challenge..."
-                    class="w-full bg-zinc-800 border border-white/5 rounded-3xl px-6 py-5 outline-none focus:border-white/20 resize-none"></textarea>
-                <button
-                    class="w-full bg-white text-black py-5 rounded-2xl font-bold text-lg hover:bg-zinc-200 transition tracking-widest">SEND
-                    MESSAGE</button>
-            </form>
         </div>
     </div>
 
-    <!-- Case Study Modal -->
-    <div id="caseStudyModal" class="hidden fixed inset-0 z-[100] bg-black overflow-y-auto no-scrollbar">
-        <div class="max-w-6xl mx-auto px-8 py-24 relative modal-reveal">
-            <button onclick="closeCaseStudy()"
-                class="fixed top-12 right-12 text-6xl font-light hover:rotate-90 transition-transform duration-300 z-[110]">&times;</button>
-            <div id="modalContent" class="space-y-24 pb-32"></div>
+    <!-- CASE STUDY & SOVEREIGN MODAL CONTAINER -->
+    <div id="caseStudyModal" class="hidden fixed inset-0 z-[100] bg-black overflow-y-auto no-scrollbar" role="dialog" aria-modal="true">
+        <div class="max-w-7xl mx-auto px-8 py-32 relative modal-reveal">
+            <button onclick="closeCaseStudy()" class="fixed top-12 right-12 text-5xl md:text-7xl font-thin hover:rotate-90 hover:text-purple-500 transition-all z-[120] text-white" aria-label="Close modal">&times;</button>
+            <div id="modalContent" class="space-y-16 pb-40"></div>
         </div>
     </div>
 
+    <!-- SCRIPT -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        /* --- Initialization --- */
+        AOS.init({ duration: 1200, once: true });
 
+        /* --- Custom Cursor with Particle Trails --- */
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+        const canvas = document.getElementById('cursor-particles');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        let mouse = { x: 0, y: 0 };
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = (Math.random() - 0.5) * 1.5;
+                this.speedY = (Math.random() - 0.5) * 1.5;
+                this.alpha = 1;
+                this.color = `rgba(147, 51, 234, ${this.alpha})`;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.alpha -= 0.02;
+                this.color = `rgba(147, 51, 234, ${this.alpha})`;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = '#c084fc';
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function spawnParticles(x, y) {
+            for (let i = 0; i < 2; i++) {
+                particles.push(new Particle(x, y));
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, index) => {
+                p.update();
+                p.draw();
+                if (p.alpha <= 0) particles.splice(index, 1);
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+                cursor.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0)`;
+                spawnParticles(mouse.x, mouse.y);
+                requestAnimationFrame(() => {
+                    follower.style.transform = `translate3d(${mouse.x - 19}px, ${mouse.y - 19}px, 0)`;
+                });
+            });
+
+            document.querySelectorAll('a, button, details, summary, [onclick], .cursor-pointer').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.transform += ' scale(4)';
+                    follower.style.transform += ' scale(1.3)';
+                    follower.style.borderColor = 'rgba(147, 51, 234, 0.8)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    follower.style.borderColor = 'var(--accent)';
+                });
+            });
+        }
+
+        /* --- Sovereign Mode Toggle (Dark/Light) --- */
+        let sovereignModeActive = true;
+        function toggleSovereignMode() {
+            sovereignModeActive = !sovereignModeActive;
+            const dot = document.getElementById('mode-toggle-dot');
+            if (sovereignModeActive) {
+                document.body.classList.remove('standard-mode');
+                dot.style.transform = 'translateX(0px)';
+            } else {
+                document.body.classList.add('standard-mode');
+                dot.style.transform = 'translateX(24px)';
+            }
+        }
+
+        /* --- Mobile Navigation --- */
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+
+        function toggleMobileMenu() {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMobileMenu);
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        /* --- Scroll Triggered Storytelling --- */
+        const revealOptions = { threshold: 0.25 };
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressiveLayer = entry.target.querySelector('.progressive-layer');
+                    if (progressiveLayer) {
+                        progressiveLayer.classList.remove('hidden');
+                        setTimeout(() => progressiveLayer.classList.add('opacity-100'), 100);
+                    }
+                    const counters = entry.target.querySelectorAll('.results-counter');
+                    counters.forEach(c => animateCountUp(c));
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.case-study-card').forEach(card => observer.observe(card));
+
+        // Parallax Effect on Cards Scroll
+        window.addEventListener('scroll', () => {
+            const images = document.querySelectorAll('.parallax-img');
+            images.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                const offset = (window.innerHeight - rect.top) * 0.05;
+                img.style.transform = `translateY(${offset}px) scale(1.1)`;
+            });
+        });
+
+        function animateCountUp(el) {
+            const target = parseFloat(el.getAttribute('data-target'));
+            const isDecimal = el.getAttribute('data-decimal');
+            let current = 0;
+            const increment = target / 60;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+            }, 16);
+        }
+
+        /* --- Impact Metrics Dashboard Toggles --- */
+        const impactDescriptions = {
+            all: "Displaying holistic combined metrics verifying high enterprise delivery, groundedness accuracy, and successful system setups.",
+            accuracy: "Highest verified accuracy benchmarked through our advanced ReflectionRAG feedback evaluation protocols.",
+            roi: "Estimated total direct savings generated for corporate clients using optimized operational systems workflows."
+        };
+
+        function switchImpactMetric(metric) {
+            const container = document.getElementById('stats-numbers-container');
+            const desc = document.getElementById('impact-metric-desc');
+            desc.textContent = impactDescriptions[metric];
+            
+            document.querySelectorAll('#impact-dashboard button').forEach(btn => {
+                btn.classList.remove('bg-purple-900/30', 'text-purple-400', 'border', 'border-purple-500/20');
+                btn.classList.add('hover:bg-zinc-800');
+            });
+
+            const activeBtn = document.getElementById(`btn-impact-${metric}`);
+            activeBtn.classList.remove('hover:bg-zinc-800');
+            activeBtn.classList.add('bg-purple-900/30', 'text-purple-400', 'border', 'border-purple-500/20');
+
+            if (metric === 'all') {
+                container.innerHTML = `
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="40">0</span>+</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Projects</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="12">0</span></p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Clients</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="92.8" data-decimal="1">0</span>%</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Accuracy</p>
+                    </div>
+                `;
+            } else if (metric === 'accuracy') {
+                container.innerHTML = `
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="99.8" data-decimal="1">0</span>%</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">NyaySetu RAG</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="93.5" data-decimal="1">0</span>%</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Sovereign Guard</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="92.0" data-decimal="1">0</span>%</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">ClaimLens AI</p>
+                    </div>
+                `;
+            } else if (metric === 'roi') {
+                container.innerHTML = `
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]">₹<span class="count-number" data-target="4.5" data-decimal="1">0</span>Cr+</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Total Saved</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="90">0</span>%</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Time Savings</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-black text-[var(--text)]"><span class="count-number" data-target="95">0</span>%</p>
+                        <p class="text-[9px] text-purple-500/60 uppercase font-black tracking-[0.4em] mt-2">Audit Reduction</p>
+                    </div>
+                `;
+            }
+
+            container.querySelectorAll('.count-number').forEach(el => animateCountUp(el));
+        }
+
+        // Trigger first stats animation on load
+        document.querySelectorAll('.count-number').forEach(el => animateCountUp(el));
+
+        /* --- FAQ Accordion Search & Filter --- */
+        document.getElementById('faq-search').addEventListener('keyup', (e) => {
+            const q = e.target.value.toLowerCase();
+            document.querySelectorAll('#faq-accordion-container details').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(q)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        /* --- Live Playground Database --- */
+        const playgroundData = {
+            "sovereign-need": {
+                question: "What is Sovereign AI and why does India need it?",
+                thinking: [
+                    "Checking query parameters...",
+                    "Routing query to Sovereignty context models...",
+                    "Grounded check against IndiaAI database successful.",
+                    "Assembling citations..."
+                ],
+                answer: "Sovereign AI involves complete AI training, architecture, deployment and storage inside India's territorial boundaries. It mitigates data egress vulnerabilities, ensures compliance with local laws, guarantees linguistic alignment with Indian dialects, and supports the strategic objectives of the IndiaAI Mission.",
+                citations: ["[1] IndiaAI Policy Guidelines v2.0", "[2] Sovereign Guard Blueprint"],
+                accuracy: 96
+            },
+            "rag-groundedness": {
+                question: "How do you achieve 93%+ groundedness in enterprise RAG?",
+                thinking: [
+                    "Accessing engineering vectors...",
+                    "Analyzing ReflectionRAG chunking strategy...",
+                    "Validating evaluation scores...",
+                    "Generating system response..."
+                ],
+                answer: "Groundedness is achieved through advanced multi-step chunking, semantic retrieval feedback, GraphRAG metadata filtering, and integrated ReflectionRAG correction layers. Our proprietary Sovereign Guard sits as a gatekeeper to evaluate and correct potential hallucinations prior to generation.",
+                citations: ["[1] ReflectionRAG System Design Doc", "[2] Sovereign Guard Accuracy Benchmarks"],
+                accuracy: 94.8
+            },
+            "multi-agent-compliance": {
+                question: "How do multi-agent systems simplify compliance audits?",
+                thinking: [
+                    "Triggering LangGraph agent logs...",
+                    "Evaluating multi-agent cooperation metrics...",
+                    "Finalizing audit report formulation..."
+                ],
+                answer: "Autonomous multi-agent networks use specialized roles (e.g., Researcher Agent, Policy Analyser, Verification Critic) to run daily compliance updates against state guidelines, perform semantic diffs on unstructured documents, and output certified compliance audits automatically.",
+                citations: ["[1] GovGig Agent Network Specifications", "[2] Compliance Audit Automation Whitepaper"],
+                accuracy: 93.4
+            },
+            "nyaysetu-grounding": {
+                question: "How does NyaySetu legal RAG operate with 99% accuracy?",
+                thinking: [
+                    "Querying LegalBERT vectors...",
+                    "Retrieving legal context over 25,000 SC judgments...",
+                    "Checking legal citation self-repair..."
+                ],
+                answer: "NyaySetu achieves unmatched precision using Verdict Chunking (splitting based on court logic) and hybrid dense-sparse vector search on InLegalBERT embeddings, backed by a self-corrective retrieval-critic model that instantly flags citation mismatch.",
+                citations: ["[1] NyaySetu Legal RAG Thesis", "[2] Qdrant Dense-Sparse Benchmarks"],
+                accuracy: 99.8
+            }
+        };
+
+        // Render Playground Chips
+        const chipsContainer = document.getElementById('playground-chips-container');
+        Object.keys(playgroundData).forEach(key => {
+            const item = playgroundData[key];
+            const btn = document.createElement('button');
+            btn.className = "w-full text-left p-4 bg-white/5 border border-white/5 rounded-2xl hover:bg-purple-900/10 hover:border-purple-500/30 transition text-xs font-semibold text-zinc-300";
+            btn.textContent = item.question;
+            btn.onclick = () => fillAndRunPlayground(key);
+            chipsContainer.appendChild(btn);
+        });
+
+        function fillAndRunPlayground(key) {
+            const item = playgroundData[key];
+            document.getElementById('playground-textarea').value = item.question;
+            executeRAGSimulation(item);
+        }
+
+        function runPlaygroundQuery() {
+            const query = document.getElementById('playground-textarea').value.trim();
+            if (!query) return;
+
+            // Simple semantic search / fallback
+            let found = null;
+            Object.keys(playgroundData).forEach(key => {
+                if (query.toLowerCase().includes(key.replace('-', ' '))) {
+                    found = playgroundData[key];
+                }
+            });
+
+            if (!found) {
+                found = {
+                    question: query,
+                    thinking: ["Parsing custom intent...", "Analyzing corporate context...", "Checking Sovereign Guard rules..."],
+                    answer: "Custom RAG inquiry generated successfully. Saniya Malik's Sovereign Guard framework leverages private localized LLMs to securely answer data queries without external egress.",
+                    citations: ["[1] Private Corporate Security Policy"],
+                    accuracy: 95.0
+                };
+            }
+            executeRAGSimulation(found);
+        }
+
+        function executeRAGSimulation(item) {
+            const output = document.getElementById('playground-output-area');
+            output.innerHTML = "";
+
+            let thinkIdx = 0;
+            const timer = setInterval(() => {
+                if (thinkIdx < item.thinking.length) {
+                    const div = document.createElement('div');
+                    div.className = "text-[11px] text-purple-400 font-mono tracking-tight";
+                    div.textContent = `[THINKING] ${item.thinking[thinkIdx]}`;
+                    output.appendChild(div);
+                    thinkIdx++;
+                } else {
+                    clearInterval(timer);
+                    renderPlaygroundAnswer(item);
+                }
+            }, 600);
+        }
+
+        function renderPlaygroundAnswer(item) {
+            const output = document.getElementById('playground-output-area');
+            const responseDiv = document.createElement('div');
+            responseDiv.className = "flex gap-4 mt-4";
+            responseDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-black text-xs flex-shrink-0">SG</div>
+                <div class="bg-[var(--card-bg)] border border-purple-500/20 rounded-2xl p-5 text-sm leading-relaxed text-zinc-200 w-full relative">
+                    <div id="typing-container" class="mb-4"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6 border-t border-[var(--border)] pt-4 gap-4">
+                        <div class="text-[10px] text-[var(--text-muted)] space-y-1">
+                            <p class="font-bold">CITATIONS:</p>
+                            ${item.citations.map(c => `<p class="hover:text-purple-400 transition cursor-pointer">${c}</p>`).join('')}
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-black text-purple-400">Groundedness:</span>
+                            <span class="px-2.5 py-1 bg-purple-900/30 border border-purple-500/30 text-purple-400 font-black rounded-lg text-xs">${item.accuracy}%</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            output.appendChild(responseDiv);
+
+            const typeDiv = document.getElementById('typing-container');
+            let textIdx = 0;
+            const typeTimer = setInterval(() => {
+                if (textIdx < item.answer.length) {
+                    typeDiv.textContent += item.answer[textIdx];
+                    textIdx++;
+                } else {
+                    clearInterval(typeTimer);
+                }
+            }, 10);
+        }
+
+        /* --- Sliding AI Sidebar Chat Widget --- */
+        let aiSidebarActive = false;
+        function toggleAISidebar() {
+            aiSidebarActive = !aiSidebarActive;
+            const sidebar = document.getElementById('aiSidebar');
+            if (aiSidebarActive) {
+                sidebar.style.right = '0';
+            } else {
+                sidebar.style.right = '-100%';
+            }
+        }
+
+        function sendSidebarSuggestion(text) {
+            document.getElementById('sidebar-input').value = text;
+            submitSidebarQuery();
+        }
+
+        function submitSidebarQuery() {
+            const input = document.getElementById('sidebar-input');
+            const query = input.value.trim();
+            if (!query) return;
+
+            const messages = document.getElementById('sidebar-messages');
+
+            // Append User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = "flex gap-4 justify-end";
+            userMsg.innerHTML = `
+                <div class="bg-purple-900/40 border border-purple-500/20 rounded-2xl rounded-tr-none p-4 text-xs text-zinc-100 max-w-[80%] leading-relaxed">
+                    ${query}
+                </div>
+            `;
+            messages.appendChild(userMsg);
+            input.value = "";
+            messages.scrollTop = messages.scrollHeight;
+
+            // Simulated Typing Reply
+            setTimeout(() => {
+                const typingMsg = document.createElement('div');
+                typingMsg.className = "flex gap-4";
+                typingMsg.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold text-white">SM</div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl rounded-tl-none p-4 text-xs text-zinc-300 max-w-[80%] leading-relaxed" id="sidebar-typing">
+                        Thinking...
+                    </div>
+                `;
+                messages.appendChild(typingMsg);
+                messages.scrollTop = messages.scrollHeight;
+
+                const replyDiv = document.getElementById('sidebar-typing');
+                let answer = "Mapping query context against Sovereign Guard legal protocols. To deep dive into custom implementations, connect directly.";
+                if (query.toLowerCase().includes('security') || query.toLowerCase().includes('guard')) {
+                    answer = "Sovereign Guard implements sub-150ms deterministic guardrails utilizing localized token verification models ensuring zero hallucination.";
+                } else if (query.toLowerCase().includes('timeline')) {
+                    answer = "Our standardized RAG setup completes in 6-10 weeks: 2-week deep-dive audit followed by 6 weeks of dedicated optimization sprints.";
+                }
+
+                replyDiv.textContent = "";
+                let charIdx = 0;
+                const sidebarTypeTimer = setInterval(() => {
+                    if (charIdx < answer.length) {
+                        replyDiv.textContent += answer[charIdx];
+                        charIdx++;
+                    } else {
+                        clearInterval(sidebarTypeTimer);
+                        // Add call-to-actions directly in chat
+                        replyDiv.innerHTML += `
+                            <div class="mt-4 flex gap-2">
+                                <button onclick="openTalkModal()" class="px-3 py-1.5 bg-white text-black font-extrabold rounded-lg hover:bg-purple-600 hover:text-white transition uppercase text-[9px]">Let's Book</button>
+                                <a href="mailto:san192227m@gmail.com?subject=Strategic Query Inquiry" class="px-3 py-1.5 border border-white/10 font-extrabold rounded-lg hover:bg-white/5 transition uppercase text-[9px] text-center flex items-center">Email</a>
+                            </div>
+                        `;
+                    }
+                }, 10);
+            }, 1000);
+        }
+
+        /* --- Project Case Study Data --- */
         const projects = {
             claimlens: {
                 title: "ClaimLens AI",
-                subtitle: "AI-Powered Insurance Fraud Detection",
+                subtitle: "Elite Insurance Fraud Architecture",
                 img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
                 overview: "ClaimLens is an advanced multi-modal AI platform designed to detect insurance fraud in real-time using ML, Computer Vision, and Graph Analytics.",
-                challenge: ["Sophisticated document forgery", "Complex fraud networks involving multiple parties", "High-volume claims requiring manual review", "Lack of explainable AI for compliance"],
-                strategy: ["<b>ML Scoring:</b> CatBoost trained on 145 engineered features.", "<b>Vision Engine:</b> ResNet50 for document authenticity verification.", "<b>Graph Engine:</b> Neo4j-based fraud ring detection.", "<b>LLM Explanation:</b> Groq-powered natural language summaries."],
+                challenge: ["Sophisticated document forgery", "Complex fraud networks", "High-volume claims requiring manual review", "Lack of explainable AI"],
+                strategy: ["<b>ML Scoring:</b> CatBoost trained on 145 features.", "<b>Vision Engine:</b> ResNet50 verification.", "<b>Graph Engine:</b> Neo4j-based fraud rings.", "<b>LLM Explanation:</b> Natural language summaries."],
                 tech: ["Python", "CatBoost", "Neo4j", "ResNet50", "Groq", "FastAPI"],
-                results: ["92% Accuracy in fraud ring detection.", "<2s Processing time per claim.", "80% Automation of manual review cycles."]
+                results: ["92% Accuracy in fraud detection.", "<2s Processing time.", "80% Automation of review."],
+                nodes: [
+                    { name: "Unstructured Claim", role: "Vulnerability analysis & image processing." },
+                    { name: "ResNet50 Engine", role: "Verifies digital image integrity & edits." },
+                    { name: "Neo4j Graph Database", role: "Matches fraud loops & related accounts." },
+                    { name: "Sovereign Guard Evaluation", role: "Final grounded explainable summary layer." }
+                ],
+                roiMetric: "Claims Processed",
+                roiRate: 1500
             },
             nyaysetu: {
                 title: "NyaySetu",
-                subtitle: "Sovereign Legal RAG System",
+                subtitle: "Sovereign Legal Intelligence",
                 img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200",
-                overview: "A high-precision Legal RAG platform tailored for 25,000+ Indian Supreme Court judgments and contracts with zero-hallucination guardrails.",
-                challenge: ["Fragmented context from naive chunking", "Hallucinations in high-stakes legal citations", "Domain-specific terminology", "Need for structured risk assessment"],
-                strategy: ["<b>ReflectionRAG:</b> Self-healing retrieval with LLM critique.", "<b>Verdict Chunking:</b> Legally aware semantic splits.", "<b>Hybrid Search:</b> InLegalBERT + Qdrant (Vector + BM25)."],
+                overview: "A high-precision Legal RAG platform tailored for 25,000+ Indian Supreme Court judgments with zero-hallucination guardrails.",
+                challenge: ["Fragmented legal context", "Hallucinations in citations", "Domain-specific terminology", "Need for structured risk assessment"],
+                strategy: ["<b>ReflectionRAG:</b> Self-healing retrieval.", "<b>Verdict Chunking:</b> Legal-aware semantic splits.", "<b>Hybrid Search:</b> InLegalBERT + Qdrant."],
                 tech: ["InLegalBERT", "Qdrant", "LangGraph", "Llama 3", "Terraform"],
-                results: ["99.8% Groundedness accuracy.", "Index of 25,000+ SC Judgments.", "90% Reduction in legal research time."]
+                results: ["99.8% Groundedness accuracy.", "Index of 25,000+ SC Judgments.", "90% Reduction in research time."],
+                nodes: [
+                    { name: "SC Judgments", role: "25k Court documents stored." },
+                    { name: "Verdict Chunker", role: "Legal semantic-aware splitter." },
+                    { name: "InLegalBERT embeddings", role: "Ensures precise legal semantic vectors." },
+                    { name: "Qdrant Vectors", role: "Extremely fast vector indexing." },
+                    { name: "Sovereign Guard Critic", role: "Cross-checks legal citation lookup." }
+                ],
+                roiMetric: "Research Hours",
+                roiRate: 2000
             },
             govgig: {
                 title: "GovGig AI",
-                subtitle: "Regulatory Compliance Multi-Agent System",
+                subtitle: "Regulatory Multi-Agent Network",
                 img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1200",
                 overview: "GovGig uses autonomous agents to monitor government regulations daily and automatically maps compliance requirements to internal policies.",
-                challenge: ["Tracking 50+ real-time government feeds", "High penalties for missing regulatory updates", "Manual mapping was slow and error-prone", "Unstructured PDF data extraction"],
-                strategy: ["<b>Agentic Monitor:</b> Autonomous agents fetching daily gazettes.", "<b>Semantic Mapping:</b> AI mapping of laws to policy at 95% similarity.", "<b>Traceability:</b> Full audit trails linked to source PDFs."],
+                challenge: ["Tracking 50+ real-time feeds", "Penalties for missing updates", "Manual mapping errors", "Unstructured PDF extraction"],
+                strategy: ["<b>Agentic Monitor:</b> Autonomous daily gazette monitor.", "<b>Semantic Mapping:</b> 95% similarity AI mapping.", "<b>Traceability:</b> Full source-to-policy audit trails."],
                 tech: ["Llama 3", "Pinecone", "Async Python", "FastAPI", "Docker"],
-                results: ["80% Automation of compliance audit cycle.", "Zero missed updates in 12 months.", "95% Reduction in manual audit time."]
+                results: ["80% Automation of audit cycle.", "Zero missed updates.", "95% Reduction in manual audit."],
+                nodes: [
+                    { name: "Gazette feeds", role: "Real-time state and central feeds monitored." },
+                    { name: "PDF Extractor", role: "Autonomous extraction of regulatory text." },
+                    { name: "Mapping Agent", role: "Links updates to corporate policies." },
+                    { name: "Audit Critic", role: "Generates source-to-policy compliance reports." }
+                ],
+                roiMetric: "Audits Checked",
+                roiRate: 2500
+            },
+            flowsight: {
+                title: "FlowSight AI",
+                subtitle: "Supply Chain Predictive Control Tower",
+                img: "assets/images/flowsight_ai_modal.png",
+                overview: "FlowSight AI is an enterprise logistics control tower designed to optimize shipping networks across India, predict delay risks, and deliver LLM-grounded operational insights.",
+                challenge: ["Complex delays across states", "Poor routing optimization", "Manual event tracking", "Unexplainable system outputs"],
+                strategy: ["<b>Prediction Engine:</b> CatBoost & XGBoost ensemble models.", "<b>India Logistics Map:</b> Real-time geo-routing visualizations.", "<b>Explainable Ops:</b> Groq LLM natural language diagnostic reports."],
+                tech: ["CatBoost", "XGBoost", "Groq LLM", "Qdrant", "Python", "FastAPI"],
+                results: ["84.7% delay prediction accuracy.", "95% precision on shipping routing.", "Sub-second live delay alerts."],
+                nodes: [
+                    { name: "Logistics Inputs", role: "Real-time state transit schedules." },
+                    { name: "Ensemble Scorer", role: "CatBoost & XGBoost risk predictions." },
+                    { name: "Routing Engine", role: "Generates alternative path vectors." },
+                    { name: "Groq Explainer", role: "Drafts automated natural language diagnostic summaries." }
+                ],
+                roiMetric: "Shipments Optimized",
+                roiRate: 1800
+            },
+            yojana: {
+                title: "Yojana-AI",
+                subtitle: "Sovereign Multi-Agent Scheme RAG",
+                img: "assets/images/yojana_ai_modal.png",
+                overview: "Yojana-AI is a high-security, multi-agent government schemes discovery platform, allowing Indian citizens to instantly analyze criteria and qualification citations.",
+                challenge: ["Complex and fragmented eligibility criteria", "Hallucinatory responses in legal schemes", "High manual inquiry loads", "Sovereign data security mandates"],
+                strategy: ["<b>Multi-Agent Framework:</b> LangGraph-orchestrated intent, retrieval, and quality agents.", "<b>Citation Engine:</b> Qdrant vector grounded citations.", "<b>Hybrid Host:</b> Dual Ollama Local + Groq cloud failover."],
+                tech: ["LangGraph", "Qdrant", "Ollama", "Groq Cloud", "InLegalBERT", "Python"],
+                results: ["93%+ Groundedness rating.", "2,153 active schemes indexed.", "85%+ Answer quality rating."],
+                nodes: [
+                    { name: "Citizen Query", role: "Analyzed by Intent Agent for specific schemes." },
+                    { name: "Retrieval Agent", role: "Queries Qdrant with InLegalBERT embeddings." },
+                    { name: "Quality Judge", role: "Ensures generated answer groundedness meets 93% benchmark." },
+                    { name: "Sovereign Critic", role: "Enforces national data residency compliance." }
+                ],
+                roiMetric: "Inquiries Resolved",
+                roiRate: 3000
             }
         };
 
         const sovereignArticle = {
             title: "Sovereign AI: Nations Taking Control of Their Intelligent Future",
             content: `
-                <div class="space-y-12 max-w-4xl mx-auto prose prose-invert">
-                    <p class="text-2xl text-zinc-400 leading-relaxed font-light">
+                <div class="space-y-16 max-w-4xl mx-auto">
+                    <p class="text-2xl md:text-3xl text-zinc-400 leading-relaxed font-light">
                         In 2026, artificial intelligence has evolved from an emerging technology into critical national infrastructure. 
-                        Sovereign AI represents a nation's ability to develop, control, and govern AI systems using its own resources, 
-                        data, expertise, and regulatory frameworks.
                     </p>
-                    
-                    <div class="bg-zinc-900/50 border border-white/5 p-8 rounded-3xl italic text-xl text-zinc-300">
-                        "Every country must aim to 'own the production of their own intelligence' to embed its unique history, language, and societal knowledge into AI." 
-                        <span class="block mt-4 text-sm font-bold not-italic text-zinc-500">— Jensen Huang, NVIDIA CEO</span>
+                    <div class="bg-purple-900/20 border border-purple-500/20 p-8 md:p-12 rounded-[40px] italic text-xl md:text-2xl text-zinc-300">
+                        "Every country must aim to own the production of their own intelligence to embed its unique history, language, and societal knowledge into AI." 
+                        <span class="block mt-6 text-base font-black not-italic text-purple-400 tracking-[0.4em] uppercase">— Jensen Huang, NVIDIA</span>
                     </div>
-
-                    <div class="bg-zinc-900/50 border border-white/5 p-8 rounded-3xl italic text-xl text-zinc-300">
-                        "On the Severity: The threat is 'unprecedented' and the challenge is coming in the name of Mythos, about which not much is known. Banks must be proactive." 
-                        <span class="block mt-4 text-sm font-bold not-italic text-zinc-500">— Nirmala Sitharaman, Finance Minister of India</span>
-                    </div>
-
-                    <section class="space-y-6">
-                        <h3 class="text-3xl font-bold tracking-tight">Why Sovereign AI Has Become Essential</h3>
-                        <p class="text-zinc-400">Rapid AI advancement has exposed risks of over-reliance on external systems: data privacy breaches, supply chain vulnerabilities, and regulatory mismatches. Sovereign AI mitigates these by keeping sensitive data under national jurisdiction.</p>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="bg-zinc-900 p-6 rounded-2xl border border-white/5">
-                                <h4 class="font-bold mb-2">National Security</h4>
-                                <p class="text-sm text-zinc-500">Protecting defense and critical infrastructure.</p>
-                            </div>
-                            <div class="bg-zinc-900 p-6 rounded-2xl border border-white/5">
-                                <h4 class="font-bold mb-2">Cultural Relevance</h4>
-                                <p class="text-sm text-zinc-500">AI that excels in local languages and contexts.</p>
-                            </div>
-                            <div class="bg-zinc-900 p-6 rounded-2xl border border-white/5">
-                                <h4 class="font-bold mb-2">Economic Edge</h4>
-                                <p class="text-sm text-zinc-500">Innovation in agriculture, healthcare, and education.</p>
-                            </div>
-                            <div class="bg-zinc-900 p-6 rounded-2xl border border-white/5">
-                                <h4 class="font-bold mb-2">Regulatory Control</h4>
-                                <p class="text-sm text-zinc-500">Full compliance with domestic ethical standards.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="space-y-6">
-                        <h3 class="text-3xl font-bold tracking-tight">Recent Developments in 2026</h3>
-                        <p class="text-zinc-400 text-lg">The global sovereign AI market is valued at USD 19.2 billion in 2026, projected to reach USD 177 billion by 2035.</p>
-                        <div class="space-y-4">
-                            <div class="border-l-2 border-white/10 pl-6 py-2">
-                                <h4 class="font-bold">United Kingdom</h4>
-                                <p class="text-zinc-500 text-sm">Launched a £500 million Sovereign AI Fund for domestic startups and supercomputing.</p>
-                            </div>
-                            <div class="border-l-2 border-white/10 pl-6 py-2">
-                                <h4 class="font-bold">Middle East</h4>
-                                <p class="text-zinc-500 text-sm">UAE advances Arabic models; Saudi Arabia declares 2026 the "Year of AI".</p>
-                            </div>
-                            <div class="border-l-2 border-white/10 pl-6 py-2">
-                                <h4 class="font-bold">India</h4>
-                                <p class="text-zinc-500 text-sm">Focus on multilingual models and integration with public infrastructure (Reliance, Adani).</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="space-y-6">
-                        <h3 class="text-3xl font-bold tracking-tight">Challenges & The Path Forward</h3>
-                        <p class="text-zinc-400">Building Sovereign AI is ambitious—requiring massive investment in compute, energy, and talent. The future belongs to "Strategic Interdependence"—combining strong national foundations with selective global cooperation.</p>
-                    </section>
-
-                    <footer class="pt-12 border-t border-white/5">
-                        <p class="text-sm text-zinc-600 uppercase tracking-widest text-center">Conclusion: Leading on one's own terms</p>
-                    </footer>
                 </div>
             `
         };
 
+        function openTalkModal() {
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initPopupWidget({url: 'https://calendly.com/mdua0504/30min'});
+            } else {
+                window.open('https://calendly.com/mdua0504/30min', '_blank');
+            }
+            return false;
+        }
+
         function openSovereignArticle() {
             const content = document.getElementById('modalContent');
             content.innerHTML = `
-                <div class="space-y-12">
-                    <span class="text-zinc-500 font-bold uppercase tracking-[0.4em] text-[10px]">Whitepaper / 2026</span>
-                    <h2 class="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9]">${sovereignArticle.title}</h2>
-                    <div class="w-full h-[1px] bg-white/10"></div>
+                <div class="space-y-20">
+                    <span class="text-purple-500 font-black uppercase tracking-[0.6em] text-[11px]">Intelligence Report / 2026</span>
+                    <h2 class="text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] text-white">${sovereignArticle.title}</h2>
+                    <div class="w-full h-[1px] bg-white/5"></div>
                     ${sovereignArticle.content}
                 </div>
             `;
@@ -550,29 +1675,189 @@
         function openCaseStudy(id) {
             const p = projects[id];
             const content = document.getElementById('modalContent');
+            
             content.innerHTML = `
-                <div class="space-y-12">
-                    <span class="text-zinc-500 font-bold uppercase tracking-[0.4em] text-[10px]">Project Detail</span>
-                    <h2 class="text-6xl md:text-9xl font-bold tracking-tighter">${p.title}</h2>
-                    <p class="text-2xl md:text-4xl text-zinc-400 serif italic">${p.subtitle}</p>
-                    <img src="${p.img}" class="w-full rounded-[60px] aspect-[21/9] object-cover border border-white/10 shadow-2xl">
+                <!-- Case Study Header -->
+                <div class="space-y-10">
+                    <span class="text-purple-500 font-black uppercase tracking-[0.6em] text-[11px]">Architecture Case Study</span>
+                    <h2 class="text-6xl md:text-[100px] font-black tracking-tighter leading-none text-white">${p.title}</h2>
+                    <p class="text-3xl md:text-4xl text-zinc-500 serif italic">${p.subtitle}</p>
+                    <img src="${p.img}" alt="${p.title} — Premium Enterprise AI Architecture and System Telemetry Visualization" class="w-full rounded-[60px] aspect-[21/9] object-cover border border-white/5 shadow-2xl">
                 </div>
-                <div class="grid md:grid-cols-12 gap-20">
-                    <div class="md:col-span-8 space-y-20">
-                        <section><h4 class="text-3xl font-bold mb-8">Overview</h4><p class="text-2xl text-zinc-500 leading-relaxed">${p.overview}</p></section>
-                        <div class="grid md:grid-cols-2 gap-16">
-                            <section><h4 class="text-xs uppercase tracking-widest font-black mb-8 text-zinc-600">The Challenge</h4><ul class="space-y-6 text-zinc-400">${p.challenge.map(c => `<li>— ${c}</li>`).join('')}</ul></section>
-                            <section><h4 class="text-xs uppercase tracking-widest font-black mb-8 text-white">Our Strategy</h4><ul class="space-y-6 text-zinc-400">${p.strategy.map(s => `<li><span class="text-white">✓</span> ${s}</li>`).join('')}</ul></section>
-                        </div>
-                    </div>
-                    <div class="md:col-span-4 bg-zinc-900 p-10 rounded-[40px] border border-white/5 h-fit space-y-12 shadow-2xl">
-                        <div><h4 class="text-xs font-bold uppercase tracking-widest mb-6">Tech Stack</h4><div class="flex flex-wrap gap-2">${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}</div></div>
-                        <div><h4 class="text-xs font-bold uppercase tracking-widest mb-6">Results</h4><div class="space-y-6">${p.results.map(r => `<p class="text-xl font-bold text-white">${r}</p>`).join('')}</div></div>
-                    </div>
+
+                <!-- Case Study Tabs Control Bar -->
+                <div class="flex border-b border-white/10 pb-4 gap-8 overflow-x-auto no-scrollbar">
+                    <button onclick="switchModalTab('${id}', 'overview')" class="text-sm font-black uppercase tracking-widest text-purple-400 border-b-2 border-purple-500 pb-2 flex-shrink-0" id="tab-overview">Overview</button>
+                    <button onclick="switchModalTab('${id}', 'tech')" class="text-sm font-black uppercase tracking-widest text-zinc-500 pb-2 hover:text-white transition flex-shrink-0" id="tab-tech">Tech Stack</button>
+                    <button onclick="switchModalTab('${id}', 'graph')" class="text-sm font-black uppercase tracking-widest text-zinc-500 pb-2 hover:text-white transition flex-shrink-0" id="tab-graph">Interactive Graph</button>
+                    <button onclick="switchModalTab('${id}', 'roi')" class="text-sm font-black uppercase tracking-widest text-zinc-500 pb-2 hover:text-white transition flex-shrink-0" id="tab-roi">ROI Estimator</button>
+                </div>
+
+                <!-- Case Study Tabs Content Frame -->
+                <div id="modal-tab-content" class="min-h-[400px]">
+                    <!-- Default Overview content rendered first -->
                 </div>
             `;
+
             document.getElementById('caseStudyModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+            switchModalTab(id, 'overview');
+        }
+
+        function switchModalTab(projectId, tab) {
+            const p = projects[projectId];
+            const tabContent = document.getElementById('modal-tab-content');
+
+            // Toggle active styles
+            document.querySelectorAll('#modalContent button').forEach(btn => {
+                if (btn.id && btn.id.startsWith('tab-')) {
+                    btn.classList.remove('text-purple-400', 'border-b-2', 'border-purple-500');
+                    btn.classList.add('text-zinc-500');
+                }
+            });
+
+            const activeBtn = document.getElementById(`tab-${tab}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-zinc-500');
+                activeBtn.classList.add('text-purple-400', 'border-b-2', 'border-purple-500');
+            }
+
+            if (tab === 'overview') {
+                tabContent.innerHTML = `
+                    <div class="grid md:grid-cols-12 gap-24 mt-8">
+                        <div class="md:col-span-8 space-y-16">
+                            <section><h4 class="text-4xl font-black tracking-tighter mb-8 text-white">Overview</h4><p class="text-xl md:text-2xl text-zinc-400 leading-relaxed font-medium">${p.overview}</p></section>
+                            <div class="grid md:grid-cols-2 gap-12">
+                                <section><h4 class="text-[11px] uppercase tracking-[0.5em] font-black mb-8 text-zinc-600">The Challenge</h4><ul class="space-y-6 text-zinc-400 text-base">${p.challenge.map(c => `<li>— ${c}</li>`).join('')}</ul></section>
+                                <section><h4 class="text-[11px] uppercase tracking-[0.5em] font-black mb-8 text-white">Our Strategy</h4><ul class="space-y-6 text-zinc-400 text-base">${p.strategy.map(s => `<li><span class="text-purple-500">✓</span> ${s}</li>`).join('')}</ul></section>
+                            </div>
+                        </div>
+                        <div class="md:col-span-4 bg-zinc-900/30 backdrop-blur-3xl p-12 rounded-[50px] border border-white/5 h-fit space-y-12 shadow-2xl">
+                            <div><h4 class="text-[11px] font-black uppercase tracking-[0.4em] mb-6 text-zinc-600">Key Benchmarks</h4><div class="space-y-6">${p.results.map(r => `<p class="text-xl font-black text-white tracking-tight">${r}</p>`).join('')}</div></div>
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'tech') {
+                tabContent.innerHTML = `
+                    <div class="mt-8 space-y-12">
+                        <h4 class="text-3xl font-black text-white">Tech Stack Ecosystem</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            ${p.tech.map(t => `
+                                <div class="bg-zinc-950 border border-purple-500/10 p-6 rounded-2xl flex flex-col justify-between hover:border-purple-500/40 transition">
+                                    <span class="text-sm font-black text-purple-400 mb-2">${t}</span>
+                                    <span class="text-xs text-zinc-500">Fully integrated within Saniya Malik's Sovereign Guard framework.</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else if (tab === 'graph') {
+                tabContent.innerHTML = `
+                    <div class="mt-8 space-y-8">
+                        <div>
+                            <h4 class="text-3xl font-black text-white">Interactive Knowledge Graph</h4>
+                            <p class="text-sm text-zinc-500 mt-2">Click on any system component node below to observe its specific strategic role.</p>
+                        </div>
+                        <div class="grid md:grid-cols-12 gap-12 items-center">
+                            <!-- Interactive SVG Graph Representation -->
+                            <div class="md:col-span-8 bg-zinc-950 border border-white/5 rounded-[40px] p-8 flex justify-center items-center min-h-[350px] relative overflow-hidden">
+                                <div class="flex flex-wrap gap-4 justify-center max-w-lg z-10">
+                                    ${p.nodes.map((n, idx) => `
+                                        <button onclick="revealNodeRole(${idx})" class="arch-node bg-white/5 border border-white/10 hover:border-purple-500/60 transition px-6 py-4 rounded-2xl text-xs font-bold text-white shadow-lg flex items-center gap-3">
+                                            <span class="w-2 h-2 rounded-full bg-purple-500"></span> ${n.name}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <!-- Node Role Output -->
+                            <div class="md:col-span-4 bg-zinc-900/40 p-8 rounded-[30px] border border-white/5 h-fit space-y-4">
+                                <p class="text-[10px] font-black uppercase tracking-widest text-purple-400">Node Properties</p>
+                                <h5 class="text-xl font-bold text-white" id="node-prop-title">Select Node</h5>
+                                <p class="text-xs text-zinc-400 leading-relaxed" id="node-prop-desc">Interactive mapping visualization allows tracing data structures and LLM flows easily.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Set default node role view
+                revealNodeRole(0);
+            } else if (tab === 'roi') {
+                tabContent.innerHTML = `
+                    <div class="mt-8 space-y-8 max-w-3xl">
+                        <div>
+                            <h4 class="text-3xl font-black text-white">ROI & Savings Estimator</h4>
+                            <p class="text-sm text-zinc-500 mt-2">Calculate direct corporate savings and automation speedup dynamically.</p>
+                        </div>
+                        <div class="bg-zinc-950 border border-white/5 rounded-[40px] p-8 space-y-8">
+                            <div class="space-y-4">
+                                <label class="flex justify-between text-xs font-bold uppercase tracking-widest text-purple-400">
+                                    <span>Volume (${p.roiMetric} / Month):</span>
+                                    <span id="roi-vol-val" class="font-mono text-sm text-white">250</span>
+                                </label>
+                                <input type="range" min="50" max="2000" value="250" class="w-full h-1 bg-zinc-900 rounded-lg appearance-none cursor-pointer accent-purple-500" id="roi-vol-slider" oninput="computeProjectROI('${projectId}')">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-8 border-t border-white/5 pt-8">
+                                <div>
+                                    <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Estimated Annual Savings</p>
+                                    <p class="text-3xl md:text-4xl font-black text-white mt-2">₹<span id="roi-savings-val">45.00</span>L</p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-black uppercase tracking-widest text-zinc-500">Efficiency Multiplier</p>
+                                    <p class="text-3xl md:text-4xl font-black text-emerald-400 mt-2"><span id="roi-speedup-val">10</span>x</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                computeProjectROI(projectId);
+            }
+        }
+
+        function revealNodeRole(idx) {
+            const modalTitle = document.getElementById('node-prop-title');
+            const modalDesc = document.getElementById('node-prop-desc');
+            const activeTabButton = document.querySelector('#modalContent button.text-purple-400');
+            
+            // Check if interactive graph is visible and fetch current node properties
+            const projectId = activeTabButton ? activeTabButton.getAttribute('onclick').match(/'([^']+)'/)[1] : null;
+            if (projectId) {
+                const node = projects[projectId].nodes[idx];
+                if (node && modalTitle && modalDesc) {
+                    modalTitle.textContent = node.name;
+                    modalDesc.textContent = node.role;
+                }
+            }
+        }
+
+        function computeProjectROI(projectId) {
+            const p = projects[projectId];
+            const volSlider = document.getElementById('roi-vol-slider');
+            const volVal = document.getElementById('roi-vol-val');
+            const savingsVal = document.getElementById('roi-savings-val');
+            const speedupVal = document.getElementById('roi-speedup-val');
+
+            if (volSlider && volVal && savingsVal && speedupVal) {
+                const vol = parseInt(volSlider.value);
+                volVal.textContent = vol;
+
+                let savings = 0;
+                let speedup = "10";
+                if (projectId === 'claimlens') {
+                    // ClaimLens: vol * hrs * rate
+                    savings = (vol * 5 * p.roiRate * 12) / 100000;
+                    speedup = "15";
+                } else if (projectId === 'nyaysetu') {
+                    // NyaySetu: vol * hrs * rate
+                    savings = (vol * 8 * p.roiRate * 12) / 100000;
+                    speedup = "10";
+                } else {
+                    // GovGig
+                    savings = (vol * 4 * p.roiRate * 12) / 100000;
+                    speedup = "20";
+                }
+                savingsVal.textContent = savings.toFixed(2);
+                speedupVal.textContent = speedup;
+            }
         }
 
         function closeCaseStudy() {
@@ -580,33 +1865,14 @@
             document.body.style.overflow = 'auto';
         }
 
-        function openTalkModal() { document.getElementById('talkModal').classList.remove('hidden'); }
-        function closeTalkModal() { document.getElementById('talkModal').classList.add('hidden'); }
-
-        function handleTalkSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('t_name').value;
-            const email = document.getElementById('t_email').value;
-            const company = document.getElementById('t_company').value;
-            const type = document.getElementById('t_type').value;
-            const message = document.getElementById('t_message').value;
-
-            const subject = `Inquiry from ${name} (${company})`;
-            const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nProject Type: ${type}\n\nMessage:\n${message}`;
-
-            window.location.href = `mailto:san192227m@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            closeTalkModal();
-        }
-
-        document.querySelectorAll('.nav-link').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-            });
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCaseStudy();
+                if (aiSidebarActive) toggleAISidebar();
+                if (mobileMenu.classList.contains('active')) toggleMobileMenu();
+            }
         });
     </script>
 </body>
-
 </html>
