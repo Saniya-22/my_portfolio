@@ -37,6 +37,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Image Preloads for Critical Dashboard Performance -->
+    <link rel="preload" as="image" href="flowsight_ai_dashboard.png" fetchpriority="high">
+    <link rel="preload" as="image" href="yojana_ai_dashboard.png" fetchpriority="high">
+    <link rel="preload" as="image" href="flowsight_ai_modal.png" fetchpriority="high">
+    <link rel="preload" as="image" href="yojana_ai_modal.png" fetchpriority="high">
+    
     <!-- Calendly -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -388,7 +394,7 @@
                 <div class="flex justify-between items-end mb-24 border-b border-[var(--border)] pb-14">
                     <h2 id="work-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">Selected <span class="serif italic font-normal text-purple-500">Works</span></h2>
                 </div>
-                <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-10">
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] md:grid-cols-2 xl:grid-cols-4 gap-10">
                     <!-- Case Study 1 -->
                     <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('claimlens')" data-aos="fade-up" data-aos-delay="0" data-reveal-step="1">
                         <div class="aspect-[4/5] overflow-hidden relative">
@@ -1545,7 +1551,7 @@
                     <span class="text-purple-500 font-black uppercase tracking-[0.6em] text-[11px]">Architecture Case Study</span>
                     <h2 class="text-6xl md:text-[100px] font-black tracking-tighter leading-none text-white">${p.title}</h2>
                     <p class="text-3xl md:text-4xl text-zinc-500 serif italic">${p.subtitle}</p>
-                    <img src="${p.img}" alt="${p.title} visualization" class="w-full rounded-[60px] aspect-[21/9] object-cover border border-white/5 shadow-2xl">
+                    <img src="${p.img}" alt="${p.title} — Premium Enterprise AI Architecture and System Telemetry Visualization" class="w-full rounded-[60px] aspect-[21/9] object-cover border border-white/5 shadow-2xl">
                 </div>
 
                 <!-- Case Study Tabs Control Bar -->
