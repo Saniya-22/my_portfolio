@@ -388,9 +388,9 @@
                 <div class="flex justify-between items-end mb-24 border-b border-[var(--border)] pb-14">
                     <h2 id="work-title" class="text-6xl font-black tracking-tighter text-[var(--text)]">Selected <span class="serif italic font-normal text-purple-500">Works</span></h2>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-10">
                     <!-- Case Study 1 -->
-                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('claimlens')" data-aos="fade-up" data-reveal-step="1">
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('claimlens')" data-aos="fade-up" data-aos-delay="0" data-reveal-step="1">
                         <div class="aspect-[4/5] overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
                                 class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="ClaimLens AI — Advanced insurance fraud detection dashboard" loading="lazy">
@@ -444,9 +444,51 @@
                             <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech / Agents</p>
                             <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">GovGig AI</h3>
                             <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
-                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Tracking 50+ real-time policy changes daily and mapping them correctly.</p>
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Tracking 50+ real-time policy changes daily and mapping them compliance correctly.</p>
                                 <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
                                     <i class="fa-solid fa-square-poll-vertical"></i> Audit Cycle Reduction: <span class="results-counter" data-target="80">0</span>%
+                                </div>
+                            </div>
+                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 4 -->
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('flowsight')" data-aos="fade-up" data-aos-delay="300" data-reveal-step="4">
+                        <div class="aspect-[4/5] overflow-hidden relative">
+                            <img src="flowsight_ai_dashboard.png"
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="FlowSight AI — Supply Chain Control Tower" loading="lazy">
+                        </div>
+                        <div class="p-10 bg-[var(--card-bg)]">
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Logistics / Cybernetic</p>
+                            <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">FlowSight AI</h3>
+                            <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Dynamic supply chain delays, routing optimization, and automated real-time alerts.</p>
+                                <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="85">0</span>%
+                                </div>
+                            </div>
+                            <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
+                                VIEW CASE STUDY <i class="fa-solid fa-arrow-right-long ml-3 group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case Study 5 -->
+                    <article class="case-study-card glass-card group cursor-pointer" onclick="openCaseStudy('yojana')" data-aos="fade-up" data-aos-delay="400" data-reveal-step="5">
+                        <div class="aspect-[4/5] overflow-hidden relative">
+                            <img src="yojana_ai_dashboard.png"
+                                class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-1000 parallax-img" alt="Yojana-AI — Sovereign government schemes RAG platform" loading="lazy">
+                        </div>
+                        <div class="p-10 bg-[var(--card-bg)]">
+                            <p class="text-purple-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">GovTech / Sovereign RAG</p>
+                            <h3 class="text-3xl font-black mb-4 tracking-tight text-[var(--text)]">Yojana-AI</h3>
+                            <div class="progressive-layer mb-6 hidden opacity-0 transition-opacity duration-1000">
+                                <p class="text-xs text-[var(--text-muted)] mb-3"><b>Challenge:</b> Fragmented citizen qualification logic and hallucinatory schemes eligibility answers.</p>
+                                <div class="flex items-center gap-1.5 py-1 text-[11px] font-bold text-emerald-400">
+                                    <i class="fa-solid fa-square-poll-vertical"></i> Grounded Accuracy: <span class="results-counter" data-target="93">0</span>%
                                 </div>
                             </div>
                             <div class="flex items-center text-[9px] font-black border-b border-purple-500/30 w-fit pb-1.5 group-hover:border-purple-500 group-hover:pr-10 transition-all tracking-[0.4em] uppercase text-[var(--text)]">
@@ -1416,6 +1458,42 @@
                 ],
                 roiMetric: "Audits Checked",
                 roiRate: 2500
+            },
+            flowsight: {
+                title: "FlowSight AI",
+                subtitle: "Supply Chain Predictive Control Tower",
+                img: "flowsight_ai_modal.png",
+                overview: "FlowSight AI is an enterprise logistics control tower designed to optimize shipping networks across India, predict delay risks, and deliver LLM-grounded operational insights.",
+                challenge: ["Complex delays across states", "Poor routing optimization", "Manual event tracking", "Unexplainable system outputs"],
+                strategy: ["<b>Prediction Engine:</b> CatBoost & XGBoost ensemble models.", "<b>India Logistics Map:</b> Real-time geo-routing visualizations.", "<b>Explainable Ops:</b> Groq LLM natural language diagnostic reports."],
+                tech: ["CatBoost", "XGBoost", "Groq LLM", "Qdrant", "Python", "FastAPI"],
+                results: ["84.7% delay prediction accuracy.", "95% precision on shipping routing.", "Sub-second live delay alerts."],
+                nodes: [
+                    { name: "Logistics Inputs", role: "Real-time state transit schedules." },
+                    { name: "Ensemble Scorer", role: "CatBoost & XGBoost risk predictions." },
+                    { name: "Routing Engine", role: "Generates alternative path vectors." },
+                    { name: "Groq Explainer", role: "Drafts automated natural language diagnostic summaries." }
+                ],
+                roiMetric: "Shipments Optimized",
+                roiRate: 1800
+            },
+            yojana: {
+                title: "Yojana-AI",
+                subtitle: "Sovereign Multi-Agent Scheme RAG",
+                img: "yojana_ai_modal.png",
+                overview: "Yojana-AI is a high-security, multi-agent government schemes discovery platform, allowing Indian citizens to instantly analyze criteria and qualification citations.",
+                challenge: ["Complex and fragmented eligibility criteria", "Hallucinatory responses in legal schemes", "High manual inquiry loads", "Sovereign data security mandates"],
+                strategy: ["<b>Multi-Agent Framework:</b> LangGraph-orchestrated intent, retrieval, and quality agents.", "<b>Citation Engine:</b> Qdrant vector grounded citations.", "<b>Hybrid Host:</b> Dual Ollama Local + Groq cloud failover."],
+                tech: ["LangGraph", "Qdrant", "Ollama", "Groq Cloud", "InLegalBERT", "Python"],
+                results: ["93%+ Groundedness rating.", "2,153 active schemes indexed.", "85%+ Answer quality rating."],
+                nodes: [
+                    { name: "Citizen Query", role: "Analyzed by Intent Agent for specific schemes." },
+                    { name: "Retrieval Agent", role: "Queries Qdrant with InLegalBERT embeddings." },
+                    { name: "Quality Judge", role: "Ensures generated answer groundedness meets 93% benchmark." },
+                    { name: "Sovereign Critic", role: "Enforces national data residency compliance." }
+                ],
+                roiMetric: "Inquiries Resolved",
+                roiRate: 3000
             }
         };
 
